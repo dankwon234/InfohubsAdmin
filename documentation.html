@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Mint - Documentation</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta name="description" content="Mint by Grozav is a flat design approach towards Admin Dashboards. Intuitive, cutting-edge, clean and easy to use and customize, as every Application UI should be. ">
+
+        <link rel="author" href="http://grozav.com"/>
+
+        <!-- Core CSS - Include with every page -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Page-Level Plugin CSS - Blank -->
+        <style>
+            .color-test{
+                padding:20px;
+            }
+        </style>
+
+        <!-- Mint Admin CSS - Include with every page -->
+        <link href="css/mint-admin.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="navbar-header" style='width: 100%'>
+                    <a class="navbar-brand" href="index.html"><img class="brand-logo" src="img/logo.png" alt=""/>Mint</a>
+                </div>
+                <!-- /.navbar-header -->
+            </nav>
+            <!-- /.navbar-static-top -->
+
+            <div class="container">
+                <h1 class="text-white">Documentation</h1>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                About Mint
+                            </div>
+                            <div class="panel-body">
+                                <h3 style='margin-top:0;'>Mint</h3>
+                                <p>
+                                    <strong>Mint</strong> by Grozav is a flat design approach towards Admin Dashboards. Intuitive, cutting-edge, clean and easy to use and customize, as every Application UI should be. <br/>
+                                </p>
+                                <p>
+                                    Mint has a sleek, clean and intuitive elegant design which makes your next project look so awesome you'll simply love logging in.<br/> 
+                                </p>
+                                <br/>
+                                <h4>The interface</h4>
+                                <p>
+                                    It also has a great collection of plugins and UI components and works seamlessly on all major web browsers, tablets and phones.<br/>
+                                </p>
+                                <p>
+                                    The SASS files are included, therefore you have unlimited color possibilities and customization options, by changing simple variables.
+                                </p>
+                                <br/>
+                                <h4>Updates</h4>
+                                <p>
+                                    We've worked a lot to make Mint a useful tool for everyone. We are keen to release continuous long term updates and dozens of new features will be coming soon in the future releases.
+                                </p>
+                                <p>
+                                    Once you have purchased Mint, you will be entitled to free download of all future updates. Enjoy using Mint and stay tuned for future updates!
+                                </p>
+                            </div>
+                            <div class="panel-footer">
+                                Thank you for purchasing Mint! You're awesome!
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Contact
+                            </div>
+                            <div class="panel-body">
+                                <p><b>Created:</b> 01/21/2014</p>
+                                <p><b>Author:</b> Grozav <a href="http://grozav.com" target="_blank">http://grozav.com</a></p>
+                                <p><b>Email:</b> <a href="mailto:alex@grozav.com">alex@grozav.com</a></p>
+                            </div>
+                            <div class="panel-footer">
+                                Feel free to contact me at any time!
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Table of Contents
+                            </div>
+                            <div class="panel-body">
+                                <ol id="table">
+                                    <li><a href="#htmlstructure">HTML Structure</a></li>
+                                    <li><a href="#cssstructure">CSS Structure</a></li>
+                                    <li><a href="#javascript">Javascript</a></li>
+                                    <li><a href="#sourcesandcredits">Sources and Credits</a></li>
+                                    <li><a href="#endofdocumentation">End of Documentation</a></li>
+                                </ol>
+                            </div>
+                            <div class="panel-footer">
+                                Let's get customizing!
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-6 -->
+                </div>
+                <!-- /.row -->
+                <div class='row'>
+                    <div class="col-lg-12">
+                        <div class="panel panel-default" id='htmlstructure'>
+                            <div class="panel-heading">
+                                <h2 style='margin:0;'><i class='fa fa-html5 pull-left'></i> HTML Structure</h2>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <strong>Mint</strong> has a very well commented and intuitive HTML5 markup which can be easily customized. Comments and text here will explain better what you need to use in order to make a new design. Here's the basic markup for a page:
+                                </p>
+
+
+                                <h3>The Head</h3>
+                                <p>The head tag contains the <strong>title</strong>, <strong>meta tags</strong> and <strong>CSS links</strong> which you will use in your pages.</p>
+
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;head&gt;</span>
+
+    <span style="color: #000080; font-weight: bold">&lt;title&gt;</span>Mint - Your Title goes here<span style="color: #000080; font-weight: bold">&lt;/title&gt;</span>
+
+    <span style="color: #000080; font-weight: bold">&lt;meta</span> <span style="color: #FF0000">http-equiv=</span><span style="color: #0000FF">&quot;Content-Type&quot;</span> <span style="color: #FF0000">content=</span><span style="color: #0000FF">&quot;text/html; charset=UTF-8&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+
+    <span style="color: #000080; font-weight: bold">&lt;meta</span> <span style="color: #FF0000">name=</span><span style="color: #0000FF">&quot;viewport&quot;</span> <span style="color: #FF0000">content=</span><span style="color: #0000FF">&quot;width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+
+    <span style="color: #000080; font-weight: bold">&lt;meta</span> <span style="color: #FF0000">name=</span><span style="color: #0000FF">&quot;description&quot;</span> <span style="color: #FF0000">content=</span><span style="color: #0000FF">&quot;Your description goes here. &quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+
+    <span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;author&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;http://grozav.com&quot;</span><span style="color: #000080; font-weight: bold">/&gt;</span>
+
+    <span style="color: #008800; font-style: italic">&lt;!-- Core CSS - Include with every page --&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;css/bootstrap.css&quot;</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css&quot;</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+
+    <span style="color: #008800; font-style: italic">&lt;!-- Page-Level Plugin CSS - Blank --&gt;</span>
+
+    <span style="color: #008800; font-style: italic">&lt;!-- Mint Admin CSS - Include with every page --&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;css/mint-admin.css&quot;</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+
+<span style="color: #000080; font-weight: bold">&lt;/head&gt;</span></pre></div>
+
+                                <br/>
+                                <p class='alert alert-info'><i class='fa fa-info-circle fa-2x pull-left'></i> When copying elements from another page, make sure to copy the CSS file links related to them as well.</p>
+
+
+                                <p>As you can see, pages contain 3 types of css files:  <strong>Core CSS, Page-level Plugin CSS and Mint Admin CSS</strong>.</p>
+                                <ul>
+                                    <li>The Core CSS is the Bootstrap and FontAwesome CSS files which are the dependencies of the CSS classes we use in our markup.</li>
+                                    <li>The Page-level Plugin CSS are the files you need in order to make the plugins used look the way they're supposed to. </li>
+                                    <li>The Mint Admin CSS is a CSS file which contains custom styling elements specific to Mint Admin.</li>
+                                </ul>
+
+                                <h3>The Body</h3>
+                                <p>The body tag contains all of our <strong>HTML elements</strong> and <strong>scripts</strong> which you will see in your pages.</p>
+
+                                <!-- HTML generated using hilite.me --><div ><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;body&gt;</span>
+      <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">id=</span><span style="color: #0000FF">&quot;wrapper&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            <span style="color: #008800; font-style: italic">&lt;!-- Top Nav --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;nav</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;navbar navbar-default navbar-static-top&quot;</span> <span style="color: #FF0000">role=</span><span style="color: #0000FF">&quot;navigation&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/nav&gt;</span>
+            <span style="color: #008800; font-style: italic">&lt;!-- Side Nav --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;nav</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;navbar-default navbar-static-side&quot;</span> <span style="color: #FF0000">role=</span><span style="color: #0000FF">&quot;navigation&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/nav&gt;</span>
+            <span style="color: #008800; font-style: italic">&lt;!-- Main Content --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">id=</span><span style="color: #0000FF">&quot;page-wrapper&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/div&gt;</span>
+      <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+      <span style="color: #000080; font-weight: bold">&lt;script&gt;&lt;/script&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;/body&gt;</span>
+                                    </pre></div>
+
+                                <p>Let's analyze each component in particular.</p>
+                                <br/>
+                                <h4>Top Nav</h4>
+                                <p>The Top Navbar is where your logo and notification links are. The top Nav consists out of custom bootstrap dropdown menus.</p>
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;nav</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;navbar navbar-default navbar-static-top&quot;</span> <span style="color: #FF0000">role=</span><span style="color: #0000FF">&quot;navigation&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+    
+    <span style="color: #008800; font-style: italic">&lt;!-- Navbar Header - Logo, Title &amp; Toggle --&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;navbar-header&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;button</span> <span style="color: #FF0000">type=</span><span style="color: #0000FF">&quot;button&quot;</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;navbar-toggle&quot;</span> <span style="color: #FF0000">data-toggle=</span><span style="color: #0000FF">&quot;collapse&quot;</span> <span style="color: #FF0000">data-target=</span><span style="color: #0000FF">&quot;.sidebar-collapse&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;sr-only&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Toggle navigation<span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;icon-bar&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/span&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;icon-bar&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/span&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;icon-bar&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/span&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;/button&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;navbar-brand&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;index.html&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;img</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;brand-logo&quot;</span> <span style="color: #FF0000">src=</span><span style="color: #0000FF">&quot;img/logo.png&quot;</span> <span style="color: #FF0000">alt=</span><span style="color: #0000FF">&quot;&quot;</span><span style="color: #000080; font-weight: bold">/&gt;</span>Your Page Title
+        <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+    
+    <span style="color: #008800; font-style: italic">&lt;!-- Navbar Top Right - Notification Dropdowns --&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;nav navbar-top-links navbar-right&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+        <span style="color: #008800; font-style: italic">&lt;!-- Message Notifications --&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-toggle&quot;</span> <span style="color: #FF0000">data-toggle=</span><span style="color: #0000FF">&quot;dropdown&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-envelope fa-2x fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-menu dropdown-messages&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;img</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;pull-left dropdown-messages-profile&quot;</span> <span style="color: #FF0000">src=</span><span style="color: #0000FF">&quot;img/profile-2.jpg&quot;</span><span style="color: #000080; font-weight: bold">/&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;div&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;strong&gt;</span>Lara Smith<span style="color: #000080; font-weight: bold">&lt;/strong&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;pull-right dropdown-messages-date text-muted&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                                <span style="color: #000080; font-weight: bold">&lt;em&gt;</span>Yesterday<span style="color: #000080; font-weight: bold">&lt;/em&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-messages-message&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...<span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;divider&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;text-center&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;strong&gt;</span>Read All Messages<span style="color: #000080; font-weight: bold">&lt;/strong&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-angle-right&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+        
+        <span style="color: #008800; font-style: italic">&lt;!-- Task Notifications --&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-toggle&quot;</span> <span style="color: #FF0000">data-toggle=</span><span style="color: #0000FF">&quot;dropdown&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-tasks fa-2x fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-menu dropdown-tasks&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;div&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;p&gt;</span>
+                                <span style="color: #000080; font-weight: bold">&lt;strong&gt;</span>Task 1<span style="color: #000080; font-weight: bold">&lt;/strong&gt;</span>
+                                <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;pull-right text-muted&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>40% Complete<span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;/p&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;progress progress-slim progress-striped active&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                                <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;progress-bar progress-bar-success&quot;</span> <span style="color: #FF0000">style=</span><span style="color: #0000FF">&quot;width: 40%&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                                    <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;sr-only&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>40% Complete (success)<span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+                                <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;divider&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;text-center&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;strong&gt;</span>See All Tasks<span style="color: #000080; font-weight: bold">&lt;/strong&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-angle-right&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+        
+        <span style="color: #008800; font-style: italic">&lt;!-- Alert Notifications --&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-toggle&quot;</span> <span style="color: #FF0000">data-toggle=</span><span style="color: #0000FF">&quot;dropdown&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #008800; font-style: italic">&lt;!-- Example with count label --&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-bell fa-2x fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;notification-icon label label-danger&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>3<span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-menu dropdown-alerts&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;div&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-comment fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> New Comment
+                            <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;pull-right text-muted small&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>4 minutes ago<span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;divider&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;text-center&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;strong&gt;</span>See All Alerts<span style="color: #000080; font-weight: bold">&lt;/strong&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-angle-right&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+        
+        <span style="color: #008800; font-style: italic">&lt;!-- User Notifications --&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-toggle&quot;</span> <span style="color: #FF0000">data-toggle=</span><span style="color: #0000FF">&quot;dropdown&quot;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-user  fa-2x fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;dropdown-menu dropdown-user&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-user fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> User Profile<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-gear fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> Settings<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;divider&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;li&gt;&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;login.html&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-sign-out fa-fw&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> Logout<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+
+    <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+
+<span style="color: #000080; font-weight: bold">&lt;/nav&gt;</span>
+                                    </pre></div>
+                                <br/>
+                                <p>
+                                    To set a label which shows how many new notifications you have, you simply have to add this nearby your item icon:
+                                </p>
+                                <div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;notification-icon label label-danger&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>3<span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+                                    </pre></div>
+
+                                <br/>
+                                <h4>Side Nav</h4>
+                                <p>The Side Navbar is where your user status and main navigation is. It's not complicated at all. Let's see the structure:</p>
+
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;nav</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;navbar-default navbar-static-side&quot;</span> <span style="color: #FF0000">role=</span><span style="color: #0000FF">&quot;navigation&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;sidebar-collapse&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;nav&quot;</span> <span style="color: #FF0000">id=</span><span style="color: #0000FF">&quot;side-menu&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+            
+            <span style="color: #008800; font-style: italic">&lt;!-- User Info --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;user-info-wrapper&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>	
+                    <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;user-info-profile-image&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;img</span> <span style="color: #FF0000">src=</span><span style="color: #0000FF">&quot;img/profile-1.jpg&quot;</span> <span style="color: #FF0000">alt=</span><span style="color: #0000FF">&quot;&quot;</span>  <span style="color: #FF0000">width=</span><span style="color: #0000FF">&quot;65&quot;</span> <span style="color: #FF0000">height=</span><span style="color: #0000FF">&quot;65&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;user-info&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;user-welcome&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Welcome<span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;username&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>John <span style="color: #000080; font-weight: bold">&lt;strong&gt;</span>Doe<span style="color: #000080; font-weight: bold">&lt;/strong&gt;&lt;/div&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;status&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Status <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;status-now&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-circle text-emerald fa&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> Online<span style="color: #000080; font-weight: bold">&lt;/span&gt;</span> <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            
+            <span style="color: #008800; font-style: italic">&lt;!-- Search Form --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;sidebar-search&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;input-group custom-search-form&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;input</span> <span style="color: #FF0000">type=</span><span style="color: #0000FF">&quot;text&quot;</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;form-control&quot;</span> <span style="color: #FF0000">placeholder=</span><span style="color: #0000FF">&quot;Search...&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;input-group-btn&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;button</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;btn btn-default&quot;</span> <span style="color: #FF0000">type=</span><span style="color: #0000FF">&quot;button&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-search&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;/button&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/span&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            
+            <span style="color: #008800; font-style: italic">&lt;!-- Single Level Menu Item --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;index.html&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-dashboard fa-fw fa-3x&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> Dashboard<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            
+            <span style="color: #008800; font-style: italic">&lt;!-- Multi Level Menu Item --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-sitemap fa-fw fa-3x&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> Multi-Level Dropdown<span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa arrow&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;nav nav-second-level&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Second Level Item<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Second Level Item<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Third Level <span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa arrow&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;nav nav-third-level&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                                <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Third Level Item<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+                                <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Third Level Item<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+                            <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                        <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+                        <span style="color: #008800; font-style: italic">&lt;!-- /.nav-third-level --&gt;</span>
+                    <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+                <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+                <span style="color: #008800; font-style: italic">&lt;!-- /.nav-second-level --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+            
+        <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;/nav&gt;</span>
+                                    </pre></div>
+                                <br/>
+                                <p>In <strong>Mint</strong>, we have <strong>active links</strong> and <strong>active list items</strong>. An active link is the one that shows the page you're currently viewing. An active list item shows that the active link is inside the list dropdown, therefore it will open the dropdown on page load.</p>
+                                <p>To set a link or list item active, simply add the <span class='label label-primary'>active</span> class to it. Here's an example:</p>
+
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">&lt;!-- Shows that the dropdown contains the current page link --&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;li</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&#39;active&#39;</span><span style="color: #000080; font-weight: bold">&gt;</span> 
+    <span style="color: #008800; font-style: italic">&lt;!-- Shows that the dropdown contains the current page link if the dropdown gets closed by the user --&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&#39;active&#39;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;i</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa fa-sitemap fa-fw fa-3x&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/i&gt;</span> Multi-Level Dropdown<span style="color: #000080; font-weight: bold">&lt;span</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;fa arrow&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;ul</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&quot;nav nav-second-level&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Second Level Item<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;li&gt;</span>
+            <span style="color: #008800; font-style: italic">&lt;!-- Shows the current page link --&gt;</span>
+            <span style="color: #000080; font-weight: bold">&lt;a</span> <span style="color: #FF0000">class=</span><span style="color: #0000FF">&#39;active&#39;</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;#&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>Current Page<span style="color: #000080; font-weight: bold">&lt;/a&gt;</span>
+        <span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>
+    <span style="color: #000080; font-weight: bold">&lt;/ul&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;/li&gt;</span>   
+                                    </pre></div>
+                                <br/>
+                                <h4>Main Content</h4>
+                                <p>Inside the main content (#page-wrapper) you can use any of the bootstrap elements provided by the Mint Template. Fore example:</p>
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;div</span> <span style="color: #FF0000">id=</span><span style="color: #0000FF">&quot;page-wrapper&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+    <span style="color: #008800; font-style: italic">&lt;!-- Bootstrap Content Here --&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;/div&gt;</span>
+                                    </pre></div>
+                                <br/>
+                                <p>This is where you let your creativity say it's word.</p>
+                                <br/>
+                                <h4>Scripts</h4>
+                                <p>In order to make the page load faster, we include the scripts at the bottom of our page.</p>
+
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">&lt;!-- Core Scripts - Include with every page --&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;script </span><span style="color: #FF0000">src=</span><span style="color: #0000FF">&quot;js/jquery-1.10.2.js&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/script&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;script </span><span style="color: #FF0000">src=</span><span style="color: #0000FF">&quot;js/bootstrap.min.js&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/script&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;script </span><span style="color: #FF0000">src=</span><span style="color: #0000FF">&quot;js/plugins/metisMenu/jquery.metisMenu.js&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/script&gt;</span>
+
+<span style="color: #008800; font-style: italic">&lt;!-- Page-Level Plugin Scripts - Blank --&gt;</span>
+
+<span style="color: #008800; font-style: italic">&lt;!-- Mint Admin Scripts - Include with every page --&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;script </span><span style="color: #FF0000">src=</span><span style="color: #0000FF">&quot;js/mint-admin.js&quot;</span><span style="color: #000080; font-weight: bold">&gt;&lt;/script&gt;</span>
+
+<span style="color: #008800; font-style: italic">&lt;!-- Page-Level Demo Scripts - Blank - Use for reference --&gt;</span>
+                                    </pre></div>
+                                <br/>
+                                <p class="alert alert-info"><i class="fa fa-info-circle fa-2x pull-left"></i> 
+                                    When copying elements from another page, make sure to copy the JS scripts related to them as well. Also check out the demo pages and use them to create your custom graphs.
+                                </p>
+
+                                <p>Let's see what each type of script is:</p>
+                                <ul>
+                                    <li><strong>Core Scripts</strong> are the ones needed on every page. These are dependencies that make the jQuery, Bootstrap and Menu Interface UI parts work.</li>
+                                    <li><strong>Page-Level Plugin Scripts</strong> this is where you include scripts needed for elements such as dataTables and graphs.</li>
+                                    <li><strong>Mint Admin Script</strong> is the main javascript files which makes the template run properly.</li>
+                                    <li><strong>Page-Level Demo Scripts</strong> are for some plugins, like the graphs, which need to be initialized properly.</li>
+                                </ul>
+                            </div>
+                            <div class="panel-footer">
+                                Now, let's get to the beauty of our design!
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id='cssstructure'>
+                            <div class="panel-heading">
+                                <h2 style='margin:0;'><i class='fa fa-css3 pull-left'></i> CSS Structure</h2>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <strong>SASS</strong> is strongly recommended for customizing the template since it reduces to work to changing a few intuitive variables.
+                                </p>
+
+                                <h3>SASS</h3>
+                                <p>The head tag contains the <strong>title</strong>, <strong>meta tags</strong> and <strong>CSS file links</strong> which you will use in your pages.</p>
+                                <p>We have 3 main SASS files:</p>
+                                <ul>
+                                    <li><strong>bootstrap.scss</strong> - which generates our custom bootstrap 3 ui</li>
+                                    <li><strong>css3-mixins.scss</strong> - which provides our css3 mixins</li>
+                                    <li><strong>mint-admin.scss</strong> - which generates the css design which is not default in bootstrap</li>
+                                </ul>
+
+                                <h4>Bootstrap</h4>
+                                <p>Let's analyze the bootstrap.scss file. 
+                                    The main file you will want to edit will be the 
+                                    <span class='label label-primary'>_variables.scss</span>
+                                    which contains the variables (dimensions, variables, colors) used by all the other bootstrap files.
+                                    Let's see the content of our _variables.scss file that you should focus on:
+                                </p>
+                                <p>
+                                    <strong>Colors</strong>
+                                </p>
+                                <p>
+                                    Mint provides a large variety 
+                                    of default colors you can use to create a theme on your liking.
+                                </p>
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #FF0000">$color-name</span>: 
+<span style="color: #000080; font-weight: bold">turquoise</span>,      //<span style="color: #000080; font-weight: bold">1</span>
+<span style="color: #000080; font-weight: bold">green-sea</span>,      //<span style="color: #000080; font-weight: bold">2</span>
+<span style="color: #000080; font-weight: bold">emerald</span>,        //<span style="color: #000080; font-weight: bold">3</span>
+<span style="color: #000080; font-weight: bold">nephritis</span>,      //<span style="color: #000080; font-weight: bold">4</span>
+<span style="color: #000080; font-weight: bold">peter-river</span>,    //<span style="color: #000080; font-weight: bold">5</span>
+<span style="color: #000080; font-weight: bold">belize-hole</span>,    //<span style="color: #000080; font-weight: bold">6</span>
+<span style="color: #000080; font-weight: bold">amethyst</span>,       //<span style="color: #000080; font-weight: bold">7</span>
+<span style="color: #000080; font-weight: bold">wisteria</span>,       //<span style="color: #000080; font-weight: bold">8</span>
+<span style="color: #000080; font-weight: bold">wet-ashpalt</span>,    //<span style="color: #000080; font-weight: bold">9</span>
+<span style="color: #000080; font-weight: bold">midnight-blue</span>,  //<span style="color: #000080; font-weight: bold">10</span>
+<span style="color: #000080; font-weight: bold">sun-flower</span>,     //<span style="color: #000080; font-weight: bold">11</span>
+<span style="color: #000080; font-weight: bold">orange</span>,         //<span style="color: #000080; font-weight: bold">12</span>
+<span style="color: #000080; font-weight: bold">carrot</span>,         //<span style="color: #000080; font-weight: bold">13</span>
+<span style="color: #000080; font-weight: bold">pumpkin</span>,        //<span style="color: #000080; font-weight: bold">14</span>
+<span style="color: #000080; font-weight: bold">alizarin</span>,       //<span style="color: #000080; font-weight: bold">15</span>
+<span style="color: #000080; font-weight: bold">pomegranate</span>,    //<span style="color: #000080; font-weight: bold">16</span>
+<span style="color: #000080; font-weight: bold">clouds</span>,         //<span style="color: #000080; font-weight: bold">17</span>
+<span style="color: #000080; font-weight: bold">silver</span>,         //<span style="color: #000080; font-weight: bold">18</span>
+<span style="color: #000080; font-weight: bold">concrete</span>,       //<span style="color: #000080; font-weight: bold">19</span>
+<span style="color: #000080; font-weight: bold">asbestos</span>,       //<span style="color: #000080; font-weight: bold">20</span>
+<span style="color: #000080; font-weight: bold">white</span>,          //<span style="color: #000080; font-weight: bold">21</span>
+<span style="color: #000080; font-weight: bold">black</span>,          //<span style="color: #000080; font-weight: bold">22</span>
+<span style="color: #000080; font-weight: bold">gold</span>,           //<span style="color: #000080; font-weight: bold">23</span>
+<span style="color: #000080; font-weight: bold">custom</span>;</pre></div>
+                                <br/>
+                                <p>You can use any of the colors above in the following manner:</p>
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #FF0000">background-color</span>: nth($color-value, <span style="color: #0000FF">4</span>)<span style="color: #a61717; background-color: #e3d2d2">;</span>
+<span style="color: #FF0000">color</span>: nth($color-value, <span style="color: #0000FF">21</span>)<span style="color: #a61717; background-color: #e3d2d2">;</span></pre></div>
+                                <br/>
+                                <p>This selects the nth value from our list of colors.</p>
+                                <p>
+                                    <strong>Theme Color</strong>
+                                </p>
+                                <p>
+                                    You can change the color of the whole admin template by simply changing the global variable $theme-color. 
+                                </p>
+
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">//theme default color, can be also set to #HEXCOD</span>
+<span style="color: #FF0000">$theme-color</span>: nth($color-value, <span style="color: #0000FF">1</span>)<span style="color: #a61717; background-color: #e3d2d2">;</span>
+<span style="color: #008800; font-style: italic">//theme content background </span>
+<span style="color: #FF0000">$wrapper-bg</span>: <span style="color: #0000FF">#e7e7e7</span><span style="color: #a61717; background-color: #e3d2d2">;</span> 
+<span style="color: #008800; font-style: italic">//theme content elements background</span>
+<span style="color: #FF0000">$wrapper-default</span>: <span style="color: #0000FF">#f5f5f5</span><span style="color: #a61717; background-color: #e3d2d2">;</span> 
+<span style="color: #008800; font-style: italic">//theme content elements light background</span>
+<span style="color: #FF0000">$wrapper-light</span>: <span style="color: #0000FF">#fbfbfb</span><span style="color: #a61717; background-color: #e3d2d2">;</span> 
+                                    </pre></div>
+
+                                <br/>
+                                <p class="alert alert-info"><i class="fa fa-info-circle fa-2x pull-left"></i> 
+                                    Graphs color can be changed inside the javascript demo files related to them.
+                                </p>
+                                <br/>
+                                <h3>Themes</h3>
+
+                                <p>
+                                    In Mint version 1.1, we have implemented color themes, therefore you do not have to 
+                                    worry about your favorite color. Mint comes with 20 Color Themes implemented for
+                                    you to use.
+                                </p>
+
+                                <p>
+                                    A theme is simply implemented by replacing the CSS file link inside the <span class='label label-primary'>&lt;head&gt;</span> tag.
+                                </p>
+
+                                <div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;css/mint-admin.css&quot;</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;css/bootstrap.css&quot;</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span></pre></div>
+
+                                <br/>
+                                <p>
+                                    Replace the links above with a chosen theme css, where [color] is a color chosen from the list below.
+                                </p>
+                                <div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;css/themes/mint-admin-[color].css&quot;</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+<span style="color: #000080; font-weight: bold">&lt;link</span> <span style="color: #FF0000">href=</span><span style="color: #0000FF">&quot;css/themes/bootstrap-[color].css&quot;</span> <span style="color: #FF0000">rel=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span></pre></div>
+                                <br/>
+                                <p>
+                                    Here's the list of the built-in theme colors you can use:
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test turquoise">default</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test green-sea">green-sea</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test emerald">emerald</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test nephritis">nephritis</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test peter-river">peter-river</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test belize-hole">belize-hole</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test amethyst">amethyst</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test wisteria">wisteria</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test wet-ashpalt">wet-asphalt</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test midnight-blue">midnight-blue</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test sun-flower">sun-flower</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test orange">orange</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test carrot">carrot</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test pumpkin">pumpkin</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test alizarin">alizarin</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test pomegranate">pomegranate</div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test silver">silver</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test concrete">concrete</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test asbestos">asbestos</div>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="color-test gold">gold</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br/><br/>
+                                <p class="alert alert-info"><i class="fa fa-info-circle fa-2x pull-left"></i> 
+                                    You can use the helper classes <strong>.[color]</strong> to set a colored background and <strong>.text-[color]</strong> to set a colored text on any of the UI elements.
+                                </p>
+                                
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                SASS Language
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world. In Mint Admin, we are using SASS to enhance the developer experience. The documentation for SASS is available on their website, <a target="_blank" href="http://sass-lang.com/">http://sass-lang.com/</a>.</p>
+                                <a target="_blank" class="btn btn-default btn-lg btn-block" href="http://sass-lang.com/">View SASS Documentation</a>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+
+                        <div class="panel panel-default" id='javascript'>
+                            <div class="panel-heading">
+                                <h2 style='margin:0;'><i class='fa fa-magic pull-left'></i> JavaScript</h2>
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <p>
+                                    Mint uses several javascript plugins,
+                                    each of them coming with a complete demo page and a link to their documentation.
+                                </p>
+                                <p>
+                                    There's not really much to say here. The only javascript our admin system uses 
+                                    besides the plugins is a resize bind to make the charts responsive.
+                                </p>
+
+                                <!-- HTML generated using hilite.me --><div><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> morris = <span style="color: #000080; font-weight: bold">new</span> Morris(data);
+
+<span style="color: #000080; font-weight: bold">var</span> delay = (<span style="color: #000080; font-weight: bold">function</span>() {
+    <span style="color: #000080; font-weight: bold">var</span> timer = <span style="color: #0000FF">0</span>;
+    <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">function</span>(callback, ms) {
+        clearTimeout(timer);
+        timer = setTimeout(callback, ms);
+    };
+})();
+$(window).resize(<span style="color: #000080; font-weight: bold">function</span>() {
+    delay(<span style="color: #000080; font-weight: bold">function</span>() {
+        morris.redraw();
+    }, <span style="color: #0000FF">500</span>);
+}).trigger(<span style="color: #0000FF">&#39;resize&#39;</span>);
+                                    </pre></div>
+                                <br/>
+                                <p>We use the timeout trick to make the graphs resize once the
+                                    resize is done, since the redraw operation is quite resource 
+                                    costly. I recommend using it whenever you have something to resize.</p>
+                            </div>
+                            <!-- /.panel-body -->
+                            <div class='panel-footer'>
+                                Let's see everything that has been used
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id='sourcesandcredits'>
+                            <div class="panel-heading">
+                                <h2 style='margin:0;'><i class='fa fa-chain pull-left'></i> Sources and Credits</h2>
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <ul class="list-unstyled" style='line-height:200%'>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        jQuery <a href="http://jquery.com/">http://jquery.com/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        Twitter Bootstrap 
+                                        <a href="http://getbootstrap.com">http://getbootstrap.com/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        FontAwesome
+                                        <a href="http://fontawesome.io/">http://fontawesome.io/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        jQuery DataTables 
+                                        <a href="https://datatables.net/">https://datatables.net/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        Flot Charts 
+                                        <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        Morris Charts 
+                                        <a href="http://www.oesmith.co.uk/morris.js/">http://www.oesmith.co.uk/morris.js/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        Metis Menu
+                                        <a href="http://www.jqueryscript.net/menu/jQuery-Accordion-Menu-Plugin-For-Bootstrap-3-metisMenu.html">http://www.jqueryscript.net/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        FullCalendar
+                                        <a href="http://www.jqueryscript.net/menu/jQuery-Accordion-Menu-Plugin-For-Bootstrap-3-metisMenu.html">http://www.jqueryscript.net/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        jQuery Form Plugin
+                                        <a href="http://malsup.com/jquery/form/">http://malsup.com/jquery/form/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        Plupload
+                                        <a href="http://www.plupload.com/">http://www.plupload.com/</a>
+                                    </li>
+                                    <li><i class="fa fa-check-square"></i> 
+                                        Bootstrap WYSIWYG 
+                                        <a href="http://mindmup.github.io/bootstrap-wysiwyg/">http://mindmup.github.io/bootstrap-wysiwyg/</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.col-lg-12 -->
+                        </div>
+
+                        <div class="panel panel-default" id='endofdocumentation'>
+                            <div class="panel-heading">
+                                <h2 style='margin:0;'><i class='fa fa-code pull-left'></i> End of Documentation</h2>
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <p>
+                                    I can't express in words how much you're helping into the development of bright new projects by purchasing this template.
+                                </p>
+                                <p>
+                                    In case you want to keep in touch or ask me anything about Mint Admin, I'm offering complete support for anyone who has purchased it. If you bought the Extended License, I'm also offering further development help. 
+                                </p>
+                                <p>
+                                    After buying Mint Admin, you're entitled to download any new version that gets released for free. <strong>Be prepared for some great updates!</strong>
+                                </p>
+                            </div>
+                            <div class='panel-footer'>
+                                Once again, Thank you so much for buying Mint Admin! 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Core Scripts - Include with every page -->
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+        <!-- Page-Level Plugin Scripts - Blank -->
+
+        <!-- Mint Admin Scripts - Include with every page -->
+        <script src="js/mint-admin.js"></script>
+
+        <!-- Page-Level Demo Scripts - Blank - Use for reference -->
+        <script>
+            $(document).ready(function() {
+                $('#table li a').click(function(event) {
+                    event.preventDefault();
+                    //calculate destination place
+                    var dest = 0;
+                    if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+                        dest = $(document).height() - $(window).height();
+                    } else {
+                        dest = $(this.hash).offset().top;
+                    }
+                    //go to destination
+                    $('html,body').animate({scrollTop: dest}, 2000);
+                });
+            });
+        </script>
+
+    </body>
+
+</html>
+
+
+
