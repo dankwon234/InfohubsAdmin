@@ -7,7 +7,7 @@ app.controller("HomeController", function($scope, $http, $upload){
 	
 	// Venue Search Stuff:
 	$scope.searchEntry = '';
-	$scope.searchResults = new Array();
+	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
 
 	
 	
@@ -127,7 +127,8 @@ app.controller("HomeController", function($scope, $http, $upload){
             console.log('RESULTS: '+JSON.stringify(results));
             confirmation = results['confirmation'];
             if (confirmation=='success'){
-                $scope.searchResults = results['entries'];
+            	entries = results['entries'];
+                $scope.searchResults.infohubs = entries.infohubs;
                 
             } 
             else {
