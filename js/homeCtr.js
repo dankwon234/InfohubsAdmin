@@ -129,6 +129,7 @@ app.controller("HomeController", function($scope, $http, $upload){
             if (confirmation=='success'){
             	entries = results['entries'];
                 $scope.searchResults.infohubs = entries.infohubs;
+                $scope.searchResults.foursqaure = entries.foursqaure;
                 
             } 
             else {
