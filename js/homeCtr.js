@@ -120,10 +120,25 @@ app.controller("HomeController", function($scope, $http, $upload){
     		return;
     	}
     	
-    	console.log('SEARCH ENTRIES: '+JSON.stringify($scope.selectedDevice));
+    	foursquarefilter = 'shops';
+    	if ($scope.currentCategory == 'SEE'){
+    		foursquarefilter = 'shops';
+    	}
+    	if ($scope.currentCategory == 'EAT'){
+    		foursquarefilter = 'food';
+    	}
+    	if ($scope.currentCategory == 'SHOP'){
+    		foursquarefilter = 'shops';
+    	}
+    	if ($scope.currentCategory == 'GO'){
+    		foursquarefilter = 'shops';
+    	}
+
+    	
+//    	console.log('SEARCH ENTRIES: '+JSON.stringify($scope.selectedDevice));
     	latLong = $scope.selectedDevice.latitude+','+$scope.selectedDevice.longitude;
 
-        var url = '/api/entries?search='+$scope.searchEntry+'&ll='+latLong+'&foursquarefilter=shops';
+        var url = '/api/entries?search='+$scope.searchEntry+'&ll='+latLong+'&foursquarefilter='+foursquarefilter;
         $http.get(url).success(function(data, status, headers, config) {
             results = data['results'];
             console.log('RESULTS: '+JSON.stringify(results));
