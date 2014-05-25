@@ -8,6 +8,7 @@
 
 	<body ng-app="Home" ng-controller="HomeController" ng-init="init()">
 
+
         <div id="wrapper">
         
           {{header}}
@@ -237,7 +238,7 @@
                 	          <h4>Select Venue</h4>
 							  
                       		  <input style="width:50%" class="form-control" ng-model="searchEntry" placeholder="Venue Name"><br />
-                              <button ng-click="searchEntries()" class="btn btn-primary">Search</button>
+                              <button data-toggle='modal' href='#loginModal' ng-click="searchEntries()" class="btn btn-primary">Search</button>
                               
                               <br /><br />
                               
@@ -270,6 +271,7 @@
             <!-- /#page-wrapper -->
 
         </div>
+      </div>
         <!-- /#wrapper -->
 
 
