@@ -115,13 +115,15 @@ app.controller("HomeController", function($scope, $http, $upload){
 
     
     $scope.searchEntries = function() {
-    	console.log('SEARCH ENTRIES: '+$scope.searchEntry);
     	if ($scope.searchEntry.length<1){
     		alert('Please Enter a Valid Venue.');
     		return;
     	}
+    	
+    	console.log('SEARCH ENTRIES: '+JSON.stringify($scope.selectedDevice));
+    	latLong = $scope.selectedDevice.latitude+','+$scope.selectedDevice.longitude;
 
-        var url = '/api/entries?search='+$scope.searchEntry;
+        var url = '/api/entries?search='+$scope.searchEntry+'&ll='+latLong+'&foursquarefilter=shops';
         $http.get(url).success(function(data, status, headers, config) {
             results = data['results'];
             console.log('RESULTS: '+JSON.stringify(results));
