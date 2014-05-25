@@ -115,13 +115,14 @@ app.controller("HomeController", function($scope, $http, $upload){
 
     
     $scope.searchEntries = function() {
-	    $scope.loading = true;
 
     	if ($scope.searchEntry.length<1){
     		alert('Please Enter a Valid Venue.');
     		return;
     	}
-    	
+
+	    $scope.loading = true;
+
     	foursquarefilter = 'shops';
     	if ($scope.currentCategory == 'SEE'){
     		foursquarefilter = 'shops';
@@ -137,11 +138,11 @@ app.controller("HomeController", function($scope, $http, $upload){
     	}
 
     	
-//    	console.log('SEARCH ENTRIES: '+JSON.stringify($scope.selectedDevice));
     	latLong = $scope.selectedDevice.latitude+','+$scope.selectedDevice.longitude;
 
         var url = '/api/entries?search='+$scope.searchEntry+'&ll='+latLong+'&foursquarefilter='+foursquarefilter;
         $http.get(url).success(function(data, status, headers, config) {
+    	    $scope.loading = false;
             results = data['results'];
             console.log('RESULTS: '+JSON.stringify(results));
             confirmation = results['confirmation'];
@@ -154,12 +155,14 @@ app.controller("HomeController", function($scope, $http, $upload){
                 alert(results['message']);
             }
         }).error(function(data, status, headers, config) {
+    	    $scope.loading = false;
             console.log("error", data, status, headers, config);
         });
     }
     
     
     $scope.onFileSelect = function($files, property) {
+	    $scope.loading = true;
     	console.log('SELECT IMAGE: '+property);
         var url = '/api/upload?resource=device&property='+property+'&id='+$scope.selectedDevice.uuid;
     	
@@ -196,6 +199,7 @@ app.controller("HomeController", function($scope, $http, $upload){
                     
                     //TODO: check confirmation key for success
                     confirmation = results['confirmation'];
+            	    $scope.loading = false;
                     if (confirmation=='success'){
                         updatedDevice = results['device'];
                         
@@ -218,9 +222,11 @@ app.controller("HomeController", function($scope, $http, $upload){
                 // $scope.upload = $upload.http({...})  see 88#issuecomment-31366487 for sample code.
             }
             else {
+        	    $scope.loading = false;
                 alert(results['message']);
             }
         }).error(function(data, status, headers, config) {
+    	    $scope.loading = false;
             console.log("error", data, status, headers, config);
         });
       };
@@ -228,4 +234,42 @@ app.controller("HomeController", function($scope, $http, $upload){
 
 });
 
+
+app.directive('spinner', function() {
+    return {
+        restrict: 'A',
+        replace: true,
+        scope: {
+            startSpinner: '=spin'
+        },
+        template: '<div></div>',
+        link: function (scope, element, attrs) {
+            var opts = {
+              lines: 13,
+              length: 20,
+              width: 10,
+              radius: 30,
+              corners: 1,
+              rotate: 0,
+              direction: 1,
+              color: '#000',
+              speed: 1,
+              trail: 60,
+              shadow: false,
+              hwaccel: false,
+              className: 'spinner',
+              zIndex: 2e9
+            };
+            var spinner = new Spinner(opts);
+            scope.$watch('startSpinner', function (startSpinner) {
+                if (startSpinner) {
+                    spinner.spin(element[0]);
+                } 
+                else {
+                    spinner.stop();
+                }
+            });
+        }
+    }
+});
 
