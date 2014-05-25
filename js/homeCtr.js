@@ -4,12 +4,12 @@ app.controller("HomeController", function($scope, $http, $upload){
 	$scope.devices = new Array();
 	$scope.selectedDevice = {'name':'Loading...', 'configuration':{'sequence':[], 'SEE':{'order':[]}, 'GO':{'order':[]}, 'EAT':{'order':[]}, 'SEE':{'order':[]}}};
 	$scope.currentCategory = 'SEE';
+	$scope.loading = false;
 	
 	// Venue Search Stuff:
 	$scope.searchEntry = '';
 	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
 
-	
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -115,6 +115,8 @@ app.controller("HomeController", function($scope, $http, $upload){
 
     
     $scope.searchEntries = function() {
+	    $scope.loading = true;
+
     	if ($scope.searchEntry.length<1){
     		alert('Please Enter a Valid Venue.');
     		return;
