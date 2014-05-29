@@ -1715,7 +1715,8 @@ ul.inbox-pagination li {
 	width:279px;
 	height:100%;
 	padding:0px;
-	
+	color:#fff;
+	padding:5px;
 }
 
 .tallPanel {
@@ -1733,13 +1734,25 @@ ul.inbox-pagination li {
 }
 
 .topBoxEntry {
-	background:yellow;
+	text-align:center;
+	background:blue;
 	width:100%;
 	height:50%;
+	padding:5px;
+}
+
+.topBoxEntry strong {
+	color:#fff;
 }
 
 .bottomBoxEntry {
+	text-align:center;
 	background:orange;
 	width:100%;
 	height:50%;
+	padding:5px;
+}
+
+.bottomBoxEntry strong {
+	color:#fff;
 }
