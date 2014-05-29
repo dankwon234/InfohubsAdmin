@@ -160,6 +160,19 @@ app.controller("HomeController", function($scope, $http, $upload){
         });
     }
     
+    $scope.selectFoursquareEntry = function(index){
+    	entry = $scope.searchResults.foursquare[index];
+    	console.log('Search Foursquare Entry: '+JSON.stringify(entry));
+    	
+    }
+    
+    $scope.selectInfoHubsEntry = function(index){
+    	entry = $scope.searchResults.infohubs[index];
+    	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
+    	
+    }
+    
+    
     
     $scope.onFileSelect = function($files, property) {
 	    $scope.loading = true;
