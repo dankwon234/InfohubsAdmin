@@ -4,6 +4,7 @@ app.controller("HomeController", function($scope, $http, $upload){
 	$scope.devices = new Array();
 	$scope.selectedDevice = {'name':'Loading...', 'configuration':{'sequence':[], 'SEE':{'order':[]}, 'GO':{'order':[]}, 'EAT':{'order':[]}, 'SEE':{'order':[]}}};
 	$scope.currentCategory = 'SEE';
+	$scope.currentSubcategory = '';
 	$scope.loading = false;
 	
 	// Venue Search Stuff:
@@ -105,6 +106,16 @@ app.controller("HomeController", function($scope, $http, $upload){
     $scope.selectCategory = function(categoryName) {
     	console.log('SELECT CATEGORY: '+categoryName);
     	$scope.currentCategory = categoryName;
+    	
+    	category = $scope.selectedDevice.configuration[categoryName];
+    	
+    	order = category.order;
+    	$scope.currentSubcategory = order[0]; // default to first subcategory
+    	console.log('CURRENT SUB CATEGORY: '+JSON.stringify($scope.currentSubcategory));
+    	
+    	subcategory = category[$scope.currentSubcategory];
+    	console.log(JSON.stringify(subcategory));
+    	
     }
     
     $scope.editSubcategory = function() {
