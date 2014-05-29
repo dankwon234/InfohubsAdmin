@@ -1721,12 +1721,15 @@ ul.inbox-pagination li {
 
 .tallPanel {
 	background:green;
+	text-align:center;
 	width:135px;
 	height:100%;
-	padding:0px;
+	padding:5px;
+	color:#fff;
 }
 
 .splitPanel {
+	text-align:center;
 	background: #ededed;
 	width:135px;
 	height:100%;
