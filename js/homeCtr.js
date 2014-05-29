@@ -128,7 +128,7 @@ app.controller("HomeController", function($scope, $http, $upload){
     	
     }
     
-    $scope.numberOfGroups = function() {
+    $scope.numberOfPages = function() {
     	return [0, 1, 2, 3, 4, 5, 6];
 
     }

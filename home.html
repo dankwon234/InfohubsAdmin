@@ -212,15 +212,15 @@
 							  <div id="container">
 							  
 							  
-    							<div ng-repeat="group in numberOfGroups() track by $index" class="contents">
-    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 widePanel" style="text-align:center"><strong>Entry 0</strong></div>
+    							<div ng-repeat="page in numberOfPages() track by $index" class="contents">
+    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 widePanel"><strong>Entry {{ $index }}</strong></div>
     							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 splitPanel">
-    							    <div ng-show="$index%2 == 0" class="topBoxEntry"><strong>Entry 1</strong></div>
-    							    <div ng-show="$index%2 == 0" class="bottomBoxEntry"><strong>Entry 2</strong></div>
+    							    <div ng-show="$index%2 == 0" class="topBoxEntry"><strong>Entry {{ $index }}</strong></div>
+    							    <div ng-show="$index%2 == 0" class="bottomBoxEntry"><strong>Entry {{ $index }}</strong></div>
     							  </div>
 
-    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 tallPanel"><strong>Entry 3</strong></div>
-    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 widePanel" style="text-align:center"><strong>Entry 4</strong></div>
+    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 tallPanel"><strong>Entry {{ $index }}</strong></div>
+    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 widePanel"><strong>Entry {{ $index }}</strong></div>
     							  
     							</div>
     							

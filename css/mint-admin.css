@@ -1697,6 +1697,7 @@ ul.inbox-pagination li {
 
 .widePanel {
 	background:red;
+	text-align:center;
 	width:279px;
 	height:100%;
 	padding:0px;
