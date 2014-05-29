@@ -108,21 +108,30 @@ app.controller("HomeController", function($scope, $http, $upload){
     	$scope.currentCategory = categoryName;
     	
     	category = $scope.selectedDevice.configuration[categoryName];
-    	
-    	order = category.order;
-    	$scope.currentSubcategory = order[0]; // default to first subcategory
+//    	order = category.order;
+    	$scope.currentSubcategory = category.order[0]; // default to first subcategory
     	console.log('CURRENT SUB CATEGORY: '+JSON.stringify($scope.currentSubcategory));
     	
     	subcategory = category[$scope.currentSubcategory];
     	console.log(JSON.stringify(subcategory));
-    	
     }
+
+    
+    $scope.selectSubcategory = function() {
+    	subcategory = category[$scope.currentSubcategory];
+    	console.log('SELECT SUBCATEGORY: '+$scope.currentSubcategory+' = '+JSON.stringify(subcategory));
+    }
+    
     
     $scope.editSubcategory = function() {
-    	console.log('EDIT SUBCATEGORY: '+$scope.currentCategory);
+    	console.log('EDIT SUBCATEGORY: '+$scope.currentSubcategory);
     	
     }
     
+    $scope.numberOfGroups = function() {
+    	return [0, 1, 2, 3, 4, 5, 6];
+
+    }
 
     
     $scope.searchEntries = function() {

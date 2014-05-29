@@ -204,40 +204,30 @@
                 	        <div>
                 	          <h4>Edit Subcategory Configuration</h4>
                 	          
-                              <select style="width:40%;margin-top:20px" class="form-control">
+                              <select ng-model="currentSubcategory" ng-change="selectSubcategory()" style="width:40%;margin-top:20px" class="form-control">
                                 <option ng-repeat="subcategoryName in orderForCategory(currentCategory) track by $index">{{ subcategoryName }}</option>
                               </select><br />
                               <button ng-click="editSubcategory()" class="btn btn-primary">Edit Subcategory</button>
 
 							  <div id="container">
 							  
-    							<div class="contents" id="one">
-    							  <div class="col-xs-6 col-md-3 widePanel" style="text-align:center"><strong>Del Frisco's</strong></div>
-    							  
-    							  <div class="col-xs-6 col-md-3 splitPanel">
-    							    <div class="topBoxEntry"><strong>Entry 1</strong></div>
-    							    <div class="bottomBoxEntry"><strong>Entry 2</strong></div>
+							  
+    							<div ng-repeat="group in numberOfGroups() track by $index" class="contents">
+    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 widePanel" style="text-align:center"><strong>Entry 0</strong></div>
+    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 splitPanel">
+    							    <div ng-show="$index%2 == 0" class="topBoxEntry"><strong>Entry 1</strong></div>
+    							    <div ng-show="$index%2 == 0" class="bottomBoxEntry"><strong>Entry 2</strong></div>
     							  </div>
-    							</div>
-    							
-    							<div class="contents" id="two">
-    							  <div class="col-xs-6 col-md-3 tallPanel"><strong>Entry 3</strong></div>
-    							  <div class="col-xs-6 col-md-3 widePanel" style="text-align:center"><strong>Entry 4</strong></div>
-    							</div>
-    							
-    							<div class="contents" id="three">
-    							  <div class="col-xs-6 col-md-3 widePanel"></div>
+
+    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 tallPanel"><strong>Entry 3</strong></div>
+    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 widePanel" style="text-align:center"><strong>Entry 4</strong></div>
     							  
-    							  <div class="col-xs-6 col-md-3 splitPanel">
-    							    <div class="topBoxEntry"></div>
-    							    <div class="bottomBoxEntry"></div>
-    							  </div>
     							</div>
     							
-    							<div class="contents" id="four">
-    							  <div class="col-xs-6 col-md-3 tallPanel"></div>
-    							  <div class="col-xs-6 col-md-3 widePanel"></div>
-    							</div>
+    							
+
+    							
+
 							  </div>
 							  
 							  
