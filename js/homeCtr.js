@@ -27,6 +27,11 @@ app.controller("HomeController", function($scope, $http, $upload){
 //                console.log('DEVICES: '+JSON.stringify($scope.devices));
                 
                 $scope.selectedDevice = $scope.devices[0];
+                
+                // set default category and subcategory:
+            	$scope.currentCategory = 'SEE';
+            	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
+            	$scope.currentSubcategory = category.order[0]; // default to first subcategory
             } 
             else {
                 alert(results['message']);
@@ -107,8 +112,7 @@ app.controller("HomeController", function($scope, $http, $upload){
     	console.log('SELECT CATEGORY: '+categoryName);
     	$scope.currentCategory = categoryName;
     	
-    	category = $scope.selectedDevice.configuration[categoryName];
-//    	order = category.order;
+    	var category = $scope.selectedDevice.configuration[categoryName];
     	$scope.currentSubcategory = category.order[0]; // default to first subcategory
     	console.log('CURRENT SUB CATEGORY: '+JSON.stringify($scope.currentSubcategory));
     	
@@ -118,7 +122,9 @@ app.controller("HomeController", function($scope, $http, $upload){
 
     
     $scope.selectSubcategory = function() {
-    	subcategory = category[$scope.currentSubcategory];
+    	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
+    	
+    	var subcategory = category[$scope.currentSubcategory];
     	console.log('SELECT SUBCATEGORY: '+$scope.currentSubcategory+' = '+JSON.stringify(subcategory));
     }
     
@@ -129,7 +135,12 @@ app.controller("HomeController", function($scope, $http, $upload){
     }
     
     $scope.numberOfPages = function() {
-    	return [0, 1, 2, 3, 4, 5, 6];
+    	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
+    	var subcategory = category[$scope.currentSubcategory];
+    	
+    	
+
+    	return [0, 1, 2];
 
     }
 
@@ -190,6 +201,23 @@ app.controller("HomeController", function($scope, $http, $upload){
     	entry = $scope.searchResults.infohubs[index];
     	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
     	
+    }
+    
+    $scope.entryForIndex = function(index, offset) {
+    	console.log('ENTRY FOR INDEX: '+index+', OFFSET: '+offset);
+    	
+    	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
+    	var subcategory = category[$scope.currentSubcategory];
+    	console.log('ENTRY FOR INDEX: '+JSON.stringify(subcategory));
+
+    	var i = 0;
+    	if (offset < 3)
+    		i = 2.5*(index)+offset;
+    	else
+        	i = 2.5*(index-1)+offset;
+    	
+    	
+    	return subcategory[i];
     }
     
     
