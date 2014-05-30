@@ -138,10 +138,23 @@ app.controller("HomeController", function($scope, $http, $upload){
     	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
     	var subcategory = category[$scope.currentSubcategory];
     	
+    	var g = subcategory.length/5;
+    	var groups = Math.floor(g);
     	
+    	var numPages = 2*groups;
+    	var leftOver = subcategory.length%5;
+    	if (leftOver > 0)
+    		numPages++;
+    	if (leftOver > 3)
+    		numPages++;
 
-    	return [0, 1, 2];
+    	console.log('PAGES: '+numPages);
+    	var pagesArray = new Array();
+    	for (var i=0; i<numPages; i++){
+        	pagesArray.push(i);
+    	}
 
+    	return pagesArray;
     }
 
     
@@ -204,7 +217,7 @@ app.controller("HomeController", function($scope, $http, $upload){
     }
     
     $scope.entryForIndex = function(index, offset) {
-    	console.log('ENTRY FOR INDEX: '+index+', OFFSET: '+offset);
+//    	console.log('ENTRY FOR INDEX: '+index+', OFFSET: '+offset);
     	
     	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
     	var subcategory = category[$scope.currentSubcategory];
