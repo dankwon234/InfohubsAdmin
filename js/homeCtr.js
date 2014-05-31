@@ -247,6 +247,8 @@ app.controller("HomeController", function($scope, $http, $upload){
     	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
     	var subcategory = category[$scope.currentSubcategory];
     	subcategory[$scope.selectedEntryIndex] = entry.id;
+    	$scope.selectedEntryIndex++;
+
     }
     
     $scope.entryForIndex = function(index, offset) {
