@@ -6,6 +6,7 @@ app.controller("HomeController", function($scope, $http, $upload){
 	$scope.currentCategory = 'SEE';
 	$scope.currentSubcategory = '';
 	$scope.loading = false;
+	$scope.selectedEntryIndex = 0;
 	
 	// Venue Search Stuff:
 	$scope.searchEntry = '';
@@ -223,14 +224,24 @@ app.controller("HomeController", function($scope, $http, $upload){
     	var subcategory = category[$scope.currentSubcategory];
     	console.log('ENTRY FOR INDEX: '+JSON.stringify(subcategory));
 
+    	var i = calculateEntryIndex(index, offset);
+    	return subcategory[i];
+    }
+    
+    $scope.selectEntryIndex = function(index, offset) {
+    	var i = calculateEntryIndex(index, offset);
+    	$scope.selectedEntryIndex = i;
+    	console.log('SELECT ENTRY INDEX: '+i);
+    } 
+    
+    function calculateEntryIndex(index, offset){
     	var i = 0;
     	if (offset < 3)
     		i = 2.5*(index)+offset;
     	else
         	i = 2.5*(index-1)+offset;
     	
-    	
-    	return subcategory[i];
+    	return i;
     }
     
     

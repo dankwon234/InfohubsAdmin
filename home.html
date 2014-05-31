@@ -211,23 +211,18 @@
 
 							  <div id="container">
 							  
-							  
     							<div ng-repeat="page in numberOfPages() track by $index" class="contents">
-    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 widePanel"><a href="#"><strong>Entry {{ entryForIndex($index, 0) }}</strong></a></div>
+    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 widePanel"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 0)" href=""><strong>Entry {{ entryForIndex($index, 0) }}</strong></a></div>
     							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 splitPanel">
-    							    <div ng-show="$index%2 == 0" class="topBoxEntry"><a href="#"><strong>Entry {{ entryForIndex($index, 1) }}</strong></a></div>
-    							    <div ng-show="$index%2 == 0" class="bottomBoxEntry"><a href="#"><strong>Entry {{ entryForIndex($index, 2) }}</strong></a></div>
+    							    <div ng-show="$index%2 == 0" class="topBoxEntry"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 1)" href=""><strong>Entry {{ entryForIndex($index, 1) }}</strong></a></div>
+    							    <div ng-show="$index%2 == 0" class="bottomBoxEntry"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 2)" href=""><strong>Entry {{ entryForIndex($index, 2) }}</strong></a></div>
     							  </div>
 
-    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 tallPanel"><a href="#"><strong>Entry {{ entryForIndex($index, 3) }}</strong></a></div>
-    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 widePanel"><a href="#"><strong>Entry {{ entryForIndex($index, 4) }}</strong></a></div>
+    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 tallPanel"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 3)" href=""><strong>Entry {{ entryForIndex($index, 3) }}</strong></a></div>
+    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 widePanel"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 4)" href=""><strong>Entry {{ entryForIndex($index, 4) }}</strong></a></div>
     							  
     							</div>
     							
-    							
-
-    							
-
 							  </div>
 							  
 							  
