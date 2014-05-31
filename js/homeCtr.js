@@ -11,16 +11,45 @@ app.controller("HomeController", function($scope, $http, $upload){
 	// Venue Search Stuff:
 	$scope.searchEntry = '';
 	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
+	$scope.entriesMap = {};
 
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
-    	fetchDevices();
+    	fetchEntries();
+//    	fetchDevices();
+    }
+    
+    function fetchEntries() {
+    	$scope.loading = true;
+        var url = '/api/entries';
+        $http.get(url).success(function(data, status, headers, config) {
+            results = data['results'];
+            confirmation = results['confirmation'];
+            if (confirmation=='success'){
+            	var entries = results['entries'];
+            	
+            	for (var i=0; i<entries.length; i++){
+            		var entry = entries[i];
+            		$scope.entriesMap[entry.id] = entry;
+            	}
+            	
+//                $scope.devices = results['devices'];
+            	
+            	fetchDevices();
+            } 
+            else {
+                alert(results['message']);
+            }
+        }).error(function(data, status, headers, config) {
+            console.log("error", data, status, headers, config);
+        });
     }
     
     function fetchDevices() {
         var url = '/api/devices';
         $http.get(url).success(function(data, status, headers, config) {
+        	$scope.loading = false;
             results = data['results'];
             confirmation = results['confirmation'];
             if (confirmation=='success'){
@@ -214,7 +243,10 @@ app.controller("HomeController", function($scope, $http, $upload){
     $scope.selectInfoHubsEntry = function(index){
     	entry = $scope.searchResults.infohubs[index];
     	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
-    	
+
+    	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
+    	var subcategory = category[$scope.currentSubcategory];
+    	subcategory[$scope.selectedEntryIndex] = entry.id;
     }
     
     $scope.entryForIndex = function(index, offset) {
@@ -225,7 +257,9 @@ app.controller("HomeController", function($scope, $http, $upload){
     	console.log('ENTRY FOR INDEX: '+JSON.stringify(subcategory));
 
     	var i = calculateEntryIndex(index, offset);
-    	return subcategory[i];
+    	var entry = $scope.entriesMap[subcategory[i]];
+    	return entry.title;
+
     }
     
     $scope.selectEntryIndex = function(index, offset) {
