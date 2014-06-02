@@ -1,6 +1,6 @@
 var app = angular.module('Entry', []);
 
-app.controller("EntryController", function($scope, $http, $upload){
+app.controller("EntryController", function($scope, $http){
 	$scope.loading = false;
 		
 	// Venue Search Stuff:
