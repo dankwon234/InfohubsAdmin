@@ -18,9 +18,9 @@
 
 	<body ng-app="Entry" ng-controller="EntryController" ng-init="init()">
 
-	<div class="loading-overlay" ng-show="loading">
-      <div spinner spin="loading"></div>
-	</div>
+		<div class="loading-overlay" ng-show="loading">
+	      <div spinner spin="loading"></div>
+		</div>
 
 
         <div id="wrapper">
@@ -68,19 +68,55 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="page-header text-asbestos">Content</h3>
+                        <h3 class="page-header text-asbestos">Device Info | {{ selectedDevice.name }}</h3>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
                 
                 <br /><br />
-                </div>
 
+                <div class="row">
+                
+                    <div class="col-lg-12">
+                    
+						<div style="border-bottom:none" class="panel panel-default">
+	                        <div class="panel-heading">
+	                          <h4 class="panel-title">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Manage Entries</a>
+	                          </h4>
+	                        </div>
+	                        <div id="collapseOne" class="panel-collapse collapse collapse">
+		                          <div class="panel-body">
+		                            <div style="margin-top:20px">
+	                	          <h4>Select Venue</h4>
+								  
+	                      		  <input style="width:50%" class="form-control" ng-model="searchEntry" placeholder="Venue Name"><br />
+	                              <button data-toggle='modal' href='#loginModal' ng-click="searchEntries()" class="btn btn-primary">Search</button>
+	                              
+	                              <br /><br />
+	                              
+	                	          <h5>Foursquare Venues</h5>
+	                	          <ul>
+	                	            <li ng-repeat="entry in searchResults.foursquare track by $index"><a ng-click="selectFoursquareEntry($index)" href="">{{ entry.name }}</a></li>
+	                	          </ul>
+	                              
+	                              <br />
+	
+	                	          <h5>Other Venues</h5>
+	                	          <ul>
+	                	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
+	                	          </ul>
+								  
+								</div>
+	                          </div>
+	                        </div>
+						</div>
+                    </div>
+                </div>
             </div>
             <!-- /#page-wrapper -->
 
         </div>
-      </div>
         <!-- /#wrapper -->
 
 
