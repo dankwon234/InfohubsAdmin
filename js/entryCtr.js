@@ -53,9 +53,9 @@ app.controller("EntryController", function($scope, $http){
 
 	    $scope.loading = true;
 
-    	foursquarefilter = 'shops';
+    	//foursquarefilter = 'shops';
     	
-        var url = '/api/entries?search='+$scope.searchEntry+'&foursquarefilter='+foursquarefilter;
+        var url = '/api/entries?search='+$scope.searchEntry//+'&foursquarefilter='+foursquarefilter;
         $http.get(url).success(function(data, status, headers, config) {
     	    $scope.loading = false;
             results = data['results'];
