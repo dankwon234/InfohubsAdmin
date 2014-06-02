@@ -16,7 +16,7 @@
 		
     </head>
 
-	<body ng-app="Home" ng-controller="EntryController" ng-init="init()">
+	<body ng-app="Entry" ng-controller="EntryController" ng-init="init()">
 
 	<div class="loading-overlay" ng-show="loading">
       <div spinner spin="loading"></div>
@@ -44,12 +44,6 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-envelope fa-fw fa-3x"></i> Devices X<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li ng-repeat="device in devices track by $index">
-                                    <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
-                                </li>
-                            
-                            </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
@@ -74,193 +68,13 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="page-header text-asbestos">Device Info | {{ selectedDevice.name }}</h3>
+                        <h3 class="page-header text-asbestos">Content</h3>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
                 
                 <br /><br />
-
-                <div class="row">
-                
-                    <div class="col-lg-12">
-                    
-                      <div style="border-bottom:none" class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Device Settings</a>
-                          </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse collapse">
-                          <div class="panel-body">
-                            <div class="form-group">
-                              <label>Device Name</label>
-                              <input style="width:90%" class="form-control" ng-model="selectedDevice.name" placeholder="Device Name">
-                            </div>
-                            
-                <div class="row">
-                    <div class="col-xs-6 col-md-3">
-                      <label>Latitude</label>
-                      <input class="form-control" ng-model="selectedDevice.latitude" placeholder="Latitude">
-                    </div>
-                    <div class="col-xs-6 col-md-3">
-                      <label>Longitude</label>
-                      <input class="form-control" ng-model="selectedDevice.longitude" placeholder="Longitude">
-                    </div>
                 </div>
-                            
-                <hr />
-                
-                <div style="margin-top:20px">
-                  <h2>Images</h2>
-                </div>
-
-                <div class="row" style="margin-top:20px">
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-                            <div class="panel-body asbestos">
-                              <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
-                            </div>
-                            <div class="panel-footer">
-                                <span class="panel-eyecandy-title">
-                                    Logo
-                                </span>
-                            </div>
-                        </div>
-  			            <div class="dropZone" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">drop image file here</div>
-                    </div>
-                    <!-- /.col-xs-6 col-md-3 -->
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-                            <div class="panel-body theme-color">
-                              <img src="/site/images/{{ selectedDevice.coverScreen }}?crop=160" />
-                            </div>
-                            <div class="panel-footer">
-                                <span class="panel-eyecandy-title">
-                                    Cover Screen
-                                </span>
-                            </div>
-                        </div>
-  			            <div class="dropZone" ng-file-drop="onFileSelect($files, 'coverScreen')" ng-file-drag-over-class="optional-css-class">drop image file here</div>
-                    </div>
-                    <!-- /.col-xs-6 col-md-3 -->
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-                            <div class="panel-body asbestos">
-                              <img src="/site/images/{{ selectedDevice.categoryScreen }}?crop=160" />
-                            </div>
-                            <div class="panel-footer">
-                                <span class="panel-eyecandy-title">
-                                    Category Screen
-                                </span>
-                            </div>
-                        </div>
-  			           <div class="dropZone" ng-file-drop="onFileSelect($files, 'categoryScreen')" ng-file-drag-over-class="optional-css-class">drop image file here</div>
-                    </div>
-                    <!-- /.col-xs-6 col-md-3 -->
-                </div>
-                            
-                            <hr />
-                            <button ng-click="updateSelectedDevice()" class="btn btn-primary">Update Device</button>
-                            <button ng-click="deleteSelectedDevice()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Device</button>
-                            
-                          </div>
-                        </div>
-                      </div>
-                                    
-
-
-
-
-                      <div style="border-bottom:none" class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Device Configuration</a>
-                          </h4>
-                        </div>
-                        
-                        <div id="collapseTwo" class="panel-collapse collapse collapse">
-                          <div class="panel-body">
-                          
-						    <div class="row" style="margin-top:20px">
-                
-							  <div ng-repeat="categoryName in selectedDevice.configuration.sequence track by $index" class="col-xs-6 col-md-3">
-                        		<div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-                            	  <div class="panel-body asbestos">
-                              		<h4><a style="color:#fff" ng-click="selectCategory(categoryName)" href="">{{ categoryName }}</a></h4>
-                            	  </div>
-                            	  <div style="background:#fff" class="panel-footer">
-                              	    <ol>
-                                	  <li ng-repeat="subcategoryName in orderForCategory(categoryName) track by $index">{{ subcategoryName }}</li>
-                              	    </ol>
-                            	  </div>
-                        	    </div>
-                    	      </div>
-                
-                	        </div>
-                	        
-                	        <hr />
-                	        
-                	        <div>
-                	          <h4>Edit Subcategory Configuration</h4>
-                	          
-                              <select ng-model="currentSubcategory" ng-change="selectSubcategory()" style="width:40%;margin-top:20px" class="form-control">
-                                <option ng-repeat="subcategoryName in orderForCategory(currentCategory) track by $index">{{ subcategoryName }}</option>
-                              </select><br />
-                              <button ng-click="editSubcategory()" class="btn btn-primary">Edit Subcategory</button>
-
-							  <div id="container">
-							  
-    							<div ng-repeat="page in numberOfPages() track by $index" class="contents">
-    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 widePanel"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 0)" href=""><strong>{{ entryForIndex($index, 0) }}</strong></a></div>
-    							  <div ng-show="$index%2 == 0" class="col-xs-6 col-md-3 splitPanel">
-    							    <div ng-show="$index%2 == 0" class="topBoxEntry"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 1)" href=""><strong>{{ entryForIndex($index, 1) }}</strong></a></div>
-    							    <div ng-show="$index%2 == 0" class="bottomBoxEntry"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 2)" href=""><strong>{{ entryForIndex($index, 2) }}</strong></a></div>
-    							  </div>
-
-    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 tallPanel"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 3)" href=""><strong>{{ entryForIndex($index, 3) }}</strong></a></div>
-    							  <div ng-show="$index%2 != 0" class="col-xs-6 col-md-3 widePanel"><a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 4)" href=""><strong>{{ entryForIndex($index, 4) }}</strong></a></div>
-    							  
-    							</div>
-    							
-							  </div>
-							  
-							  
-                
-                            </div>
-                            
-							<div style="margin-top:20px">
-                	          <h4>Select Venue</h4>
-							  
-                      		  <input style="width:50%" class="form-control" ng-model="searchEntry" placeholder="Venue Name"><br />
-                              <button data-toggle='modal' href='#loginModal' ng-click="searchEntries()" class="btn btn-primary">Search</button>
-                              
-                              <br /><br />
-                              
-                	          <h5>Foursquare Venues</h5>
-                	          <ul>
-                	            <li ng-repeat="entry in searchResults.foursquare track by $index"><a ng-click="selectFoursquareEntry($index)" href="">{{ entry.name }}</a></li>
-                	          </ul>
-                              
-                              <br />
-
-                	          <h5>Other Venues</h5>
-                	          <ul>
-                	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
-                	          </ul>
-							  
-							</div>
-                            
-                            
-                          
-                          
-                        </div>
-                      </div>
-
-                    </div>
-                </div>
-
-
 
             </div>
             <!-- /#page-wrapper -->
@@ -284,7 +98,7 @@
 		<script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 		<script src="/admin/js/fileupload/angular-file-upload.js"></script>
-    	<script src="/admin/js/homeCtr.js"></script>
+    	<script src="/admin/js/entryCtr.js"></script>
         
 
     </body>
