@@ -88,6 +88,10 @@ app.controller("EntryController", function($scope, $http){
     	
     }
     
+    $scope.selectInfoHubsEntry = function(index){
+    	entry = $scope.searchResults.infohubs[index];
+    	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
+    }
 });
 
 
