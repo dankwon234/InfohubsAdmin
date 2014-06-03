@@ -7,9 +7,8 @@ app.controller("EntryController", function($scope, $http){
 	$scope.searchEntry = '';
 	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
 	$scope.entriesMap = {};
-	
-	$scope.editingEntry = '';
 
+	$scope.primaryURL = '';
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -54,13 +53,11 @@ app.controller("EntryController", function($scope, $http){
     	}
 
 	    $scope.loading = true;
-
-    	foursquarefilter = 'shops';
     	
     	//Dan's code to continue without LL throws error
     	latLong = '40.76528,-73.97898';
 
-        var url = '/api/entries?search='+$scope.searchEntry+'&ll='+latLong+'&foursquarefilter='+foursquarefilter;
+        var url = '/api/entries?search='+$scope.searchEntry+'&ll='+latLong;
         //this url only returns names for foursquare venues
         
         $http.get(url).success(function(data, status, headers, config) {
@@ -85,14 +82,19 @@ app.controller("EntryController", function($scope, $http){
     }
     
     $scope.selectFoursquareEntry = function(index){
-    	$scope.editingEntry = $scope.searchResults.foursquare[index];
-    	console.log('Search Foursquare Entry: '+JSON.stringify($scope.editingEntry));
+    	entry = $scope.searchResults.foursquare[index];
+    	console.log('Search Foursquare Entry: '+JSON.stringify(entry));
+    	
+		$scope.primaryURL = "test";
     	
     }
     
     $scope.selectInfoHubsEntry = function(index){
-    	$scope.editingEntry = $scope.searchResults.infohubs[index];
-    	console.log('Search InfoHubs Entry: '+JSON.stringify($scope.editingEntry));
+    	entry = $scope.searchResults.infohubs[index];
+    	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
+		
+		$scope.primaryURL = "test";
+		
     }
 });
 
