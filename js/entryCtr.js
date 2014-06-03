@@ -100,7 +100,7 @@ app.controller("EntryController", function($scope, $http){
         console.log('Update entry with ID: '+$scope.selectedEntry.id);
         
         var json = JSON.stringify($scope.selectedEntry);
-        console.log('test json: '_json);
+        console.log('test json: '+json);
         
         $http.put(url, json).success(function(data, status, headers, config) {
             results = data['results'];
