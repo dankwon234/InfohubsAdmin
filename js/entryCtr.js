@@ -100,8 +100,8 @@ app.controller("EntryController", function($scope, $http){
 		$scope.primaryURL = entry.url;
 		$scope.buttonURL = entry.secondaryUrls['Menu'];
 		$scope.buttonText = 'Menu';
-		$scope.logoURL = '';
-		$scope.backgroundImgURL = '';
+		$scope.logoURL = entry.logo;
+		$scope.backgroundImgURL = entry.backgroundImage;
 		
     }
 });
