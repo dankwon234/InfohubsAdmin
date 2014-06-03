@@ -9,7 +9,8 @@ app.controller("EntryController", function($scope, $http){
 	$scope.entriesMap = {};
 
 	$scope.selectedEntry = '';
-	$scope.newEntry = '';
+	$scope.newEntry = {};
+	$scope.entries = new Array();
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
