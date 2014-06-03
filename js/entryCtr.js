@@ -59,11 +59,12 @@ app.controller("EntryController", function($scope, $http){
         $http.get(url).success(function(data, status, headers, config) {
     	    $scope.loading = false;
             results = data['results'];
-            console.log('FOURSQUARE RESULTS: '+JSON.stringify(results['entries'].infohubs));
+          //  console.log('RESULTS: '+JSON.stringify(results));
             confirmation = results['confirmation'];
             if (confirmation=='success'){
             	entries = results['entries'];
                 $scope.searchResults.infohubs = entries.infohubs;
+                console.log('test:'+entries.infohubs);
                 $scope.searchResults.foursquare = entries.foursquare;
             } 
             else {
