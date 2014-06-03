@@ -55,9 +55,11 @@ app.controller("EntryController", function($scope, $http){
 
     	foursquarefilter = 'shops';
     	
+    	//Dan's code to continue without LL throws error
     	latLong = '40.76528,-73.97898';
 
         var url = '/api/entries?search='+$scope.searchEntry+'&ll='+latLong+'&foursquarefilter='+foursquarefilter;
+        //this url only returns names for foursquare venues
         
         $http.get(url).success(function(data, status, headers, config) {
     	    $scope.loading = false;
