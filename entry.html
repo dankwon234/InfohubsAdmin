@@ -108,10 +108,11 @@
 	                	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
 	                	          </ul>
 								  
+								  <br /><br />
 	                              
 	                	          <h4>Template B</h4>
 								  
-	                      		  <input style="width:50%" class="form-control" ng-model="primaryURL" placeholder="PrimaryURL" value="{{$scope.editingEntry.url}}"><br />
+	                      		  <input style="width:50%" class="form-control" ng-model="primaryURL" placeholder="PrimaryURL" value="{{$scope.editingEntry['url']}}"><br />
 	                              <button data-toggle='modal' href='#' class="btn btn-primary">Save</button>
 	                              
 	                              <br /><br />
