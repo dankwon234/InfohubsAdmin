@@ -105,29 +105,6 @@ app.controller("EntryController", function($scope, $http){
 		
     }
     
-    $scope.updateSelectedDevice = function() {
-    	console.log('Update Selected Device: '+JSON.stringify($scope.selectedDevice));
-        var url = '/api/devices/'+$scope.selectedDevice.uuid;
-        
-        var json = JSON.stringify($scope.selectedDevice);
-        console.log(json);
-        
-        $http.put(url, json).success(function(data, status, headers, config) {
-            results = data['results'];
-            confirmation = results['confirmation'];
-            if (confirmation=='success'){
-                alert($scope.selectedDevice.name+' successfully updated');
-                console.log(results);
-            }
-            else {
-                alert(results['message']);
-            }
-        }).error(function(data, status, headers, config) {
-            console.log("error", data, status, headers, config);
-        });
-    	
-    }
-
     $scope.updateEntry = function() {
 
 	    //$scope.loading = true;
