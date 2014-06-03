@@ -100,10 +100,12 @@ app.controller("EntryController", function($scope, $http){
         console.log('Update entry with ID: '+$scope.selectedEntry.id);
         
         var json = JSON.stringify($scope.selectedEntry);
+        console.log('test json: '_json);
         
         $http.put(url, json).success(function(data, status, headers, config) {
             results = data['results'];
             confirmation = results['confirmation'];
+			$scope.loading = false;
             if (confirmation=='success'){
                 alert($scope.selectedEntry.id+' successfully updated');
                 console.log(results);
@@ -112,6 +114,7 @@ app.controller("EntryController", function($scope, $http){
                 alert(results['message']);
             }
         }).error(function(data, status, headers, config) {
+	    	$scope.loading = false;
             console.log("error", data, status, headers, config);
         });
     }
