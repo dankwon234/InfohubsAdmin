@@ -66,7 +66,7 @@ app.controller("EntryController", function($scope, $http){
                 $scope.searchResults.infohubs = entries.infohubs;
                 console.log('infohubs:'+JSON.stringify(entries.infohubs));
                 $scope.searchResults.foursquare = entries.foursquare;
-                console.log('foursquare:'+JSON.stringify(entries.infohubs));
+                console.log('\n\nfoursquare:'+JSON.stringify(entries.foursquare));
             } 
             else {
                 alert(results['message']);
