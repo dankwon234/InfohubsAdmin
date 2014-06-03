@@ -96,13 +96,6 @@
 	                              
 	                              <br /><br />
 	                              
-	                	          <h4>Template B</h4>
-								  
-	                      		  <input style="width:50%" class="form-control" ng-model="primaryURL" placeholder="PrimaryURL" value="{{entry.url}}"><br />
-	                              <button data-toggle='modal' href='#' class="btn btn-primary">Save</button>
-	                              
-	                              <br /><br />
-	                              
 	                	          <h5>Foursquare Venues</h5>
 	                	          <ul>
 	                	            <li ng-repeat="entry in searchResults.foursquare track by $index"><a ng-click="selectFoursquareEntry($index)" href="">{{ entry.name }}</a></li>
@@ -115,6 +108,14 @@
 	                	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
 	                	          </ul>
 								  
+	                              
+	                	          <h4>Template B</h4>
+								  
+	                      		  <input style="width:50%" class="form-control" ng-model="primaryURL" placeholder="PrimaryURL" value="{{$scope.entry.url}}"><br />
+	                              <button data-toggle='modal' href='#' class="btn btn-primary">Save</button>
+	                              
+	                              <br /><br />
+	                              
 								</div>
 	                          </div>
 	                        </div>

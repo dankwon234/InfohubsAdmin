@@ -83,13 +83,13 @@ app.controller("EntryController", function($scope, $http){
     }
     
     $scope.selectFoursquareEntry = function(index){
-    	entry = $scope.searchResults.foursquare[index];
+    	$scope.entry = $scope.searchResults.foursquare[index];
     	console.log('Search Foursquare Entry: '+JSON.stringify(entry));
     	
     }
     
     $scope.selectInfoHubsEntry = function(index){
-    	entry = $scope.searchResults.infohubs[index];
+    	$scope.entry = $scope.searchResults.infohubs[index];
     	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
     }
 });
