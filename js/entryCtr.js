@@ -13,6 +13,7 @@ app.controller("EntryController", function($scope, $http){
 	$scope.buttonText = '';
 	$scope.logoURL = '';
 	$scope.backgroundImgURL = '';
+	$scope.entryID = '';
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -99,8 +100,40 @@ app.controller("EntryController", function($scope, $http){
 		$scope.buttonText = 'Menu';
 		$scope.logoURL = entry.logo;
 		$scope.backgroundImgURL = entry.backgroundImage;
+		$scope.entryID = entry.id;
 		
     }
+    
+    
+    $scope.updateEntry = function() {
+
+	    $scope.loading = true;
+    	
+        var url = '/api/entries/'+$scope.entryID;
+        console.log(url);
+        /*
+$http.put(url).success(function(data, status, headers, config) {
+    	    $scope.loading = false;
+            results = data['results'];
+          //  console.log('RESULTS: '+JSON.stringify(results));
+            confirmation = results['confirmation'];
+            if (confirmation=='success'){
+            	entries = results['entries'];
+                $scope.searchResults.infohubs = entries.infohubs;
+                console.log('infohubs:'+JSON.stringify(entries.infohubs));
+                $scope.searchResults.foursquare = entries.foursquare;
+                console.log('\n\nfoursquare:'+JSON.stringify(entries.foursquare));
+            } 
+            else {
+                alert(results['message']);
+            }
+        }).error(function(data, status, headers, config) {
+    	    $scope.loading = false;
+            console.log("error", data, status, headers, config);
+        });
+*/
+    }
+    
 });
 
 
