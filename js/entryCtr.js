@@ -8,6 +8,7 @@ app.controller("EntryController", function($scope, $http){
 	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
 	$scope.entriesMap = {};
 
+	$scope.selectedEntry = '';
 	$scope.primaryURL = '';
 	$scope.buttonURL = '';
 	$scope.buttonText = '';
@@ -92,46 +93,63 @@ app.controller("EntryController", function($scope, $http){
     }
     
     $scope.selectInfoHubsEntry = function(index){
-    	entry = $scope.searchResults.infohubs[index];
-    	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
+    	$scope.selectedEntry = $scope.searchResults.infohubs[index];
+    	console.log('Search InfoHubs Entry: '+JSON.stringify(selectedEntry));
 		
-		$scope.primaryURL = entry.url;
-		$scope.buttonURL = entry.secondaryUrls['Menu'];
+		$scope.primaryURL = $scope.selectedEntry.url;
+		$scope.buttonURL = $scope.selectedEntry.secondaryUrls['Menu'];
 		$scope.buttonText = 'Menu';
-		$scope.logoURL = entry.logo;
-		$scope.backgroundImgURL = entry.backgroundImage;
-		$scope.entryID = entry.id;
+		$scope.logoURL = $scope.selectedEntry.logo;
+		$scope.backgroundImgURL = $scope.selectedEntry.backgroundImage;
+		$scope.entryID = $scope.selectedEntry.id;
 		
     }
     
-    
-    $scope.updateEntry = function() {
-
-	    $scope.loading = true;
-    	
-        var url = '/api/entries/'+$scope.entryID;
-        console.log(url);
-        /*
-$http.put(url).success(function(data, status, headers, config) {
-    	    $scope.loading = false;
+    $scope.updateSelectedDevice = function() {
+    	console.log('Update Selected Device: '+JSON.stringify($scope.selectedDevice));
+        var url = '/api/devices/'+$scope.selectedDevice.uuid;
+        
+        var json = JSON.stringify($scope.selectedDevice);
+        console.log(json);
+        
+        $http.put(url, json).success(function(data, status, headers, config) {
             results = data['results'];
-          //  console.log('RESULTS: '+JSON.stringify(results));
             confirmation = results['confirmation'];
             if (confirmation=='success'){
-            	entries = results['entries'];
-                $scope.searchResults.infohubs = entries.infohubs;
-                console.log('infohubs:'+JSON.stringify(entries.infohubs));
-                $scope.searchResults.foursquare = entries.foursquare;
-                console.log('\n\nfoursquare:'+JSON.stringify(entries.foursquare));
-            } 
+                alert($scope.selectedDevice.name+' successfully updated');
+                console.log(results);
+            }
             else {
                 alert(results['message']);
             }
         }).error(function(data, status, headers, config) {
-    	    $scope.loading = false;
             console.log("error", data, status, headers, config);
         });
-*/
+    	
+    }
+
+    $scope.updateEntry = function() {
+
+	    //$scope.loading = true;
+    	
+        var url = '/api/entries/'+$scope.entryID;
+        console.log('Update entry with ID: '+$scope.entryID);
+        
+        var json = JSON.stringify($scope.selectedEntry);
+        
+        $http.put(url, json).success(function(data, status, headers, config) {
+            results = data['results'];
+            confirmation = results['confirmation'];
+            if (confirmation=='success'){
+                alert($scope.entryID+' successfully updated');
+                console.log(results);
+            }
+            else {
+                alert(results['message']);
+            }
+        }).error(function(data, status, headers, config) {
+            console.log("error", data, status, headers, config);
+        });
     }
     
 });
