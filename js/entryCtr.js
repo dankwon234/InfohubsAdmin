@@ -94,7 +94,7 @@ app.controller("EntryController", function($scope, $http){
     
     $scope.selectInfoHubsEntry = function(index){
     	$scope.selectedEntry = $scope.searchResults.infohubs[index];
-    	console.log('Search InfoHubs Entry: '+JSON.stringify(selectedEntry));
+    	console.log('Search InfoHubs Entry: '+JSON.stringify($scope.selectedEntry));
 		
 		$scope.primaryURL = $scope.selectedEntry.url;
 		$scope.buttonURL = $scope.selectedEntry.secondaryUrls['Menu'];
