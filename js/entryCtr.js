@@ -63,8 +63,8 @@ app.controller("EntryController", function($scope, $http){
             confirmation = results['confirmation'];
             if (confirmation=='success'){
             	entries = results['entries'];
-                $scope.searchResults.infohubs = entries.infohubs;
                 $scope.searchResults.foursquare = entries.foursquare;
+                $scope.searchResults.infohubs = entries.infohubs;
             } 
             else {
                 alert(results['message']);
