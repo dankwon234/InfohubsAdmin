@@ -93,7 +93,8 @@ app.controller("EntryController", function($scope, $http){
     	entry = $scope.searchResults.infohubs[index];
     	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
 		
-		$scope.primaryURL = "test";
+		$scope.primaryURL = entry.url;
+	    console.log($scope.primaryURL);
 		
     }
 });
