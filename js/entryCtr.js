@@ -9,6 +9,7 @@ app.controller("EntryController", function($scope, $http){
 	$scope.entriesMap = {};
 
 	$scope.selectedEntry = '';
+	$scope.newEntry = '';
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -118,6 +119,38 @@ app.controller("EntryController", function($scope, $http){
             console.log("error", data, status, headers, config);
         });
     }
+    
+    $scope.submitEntry = function(){
+    
+	   // $scope.loading = true;
+	
+		json = JSON.stringify($scope.newEntry);
+		console.log('newEntry: JSON = '+json);
+
+		/*
+var url = '/api/entries';
+		$http.post(url, json)
+		.success(function(data, status, headers, config) {
+	    	$scope.loading = false;
+		    results = data['results'];
+		    confirmation = results['confirmation'];
+		    if (confirmation=='success'){
+		    	$scope.newEntry = {}; // clear out the new entry reference
+		    	entry = results['entry'];
+		    	console.log('SUCCESS: '+JSON.stringify(entry));
+
+		    	$scope.entries = results['entries'];
+		    }
+		    else{
+		    	alert(results['message']);
+		    }
+
+		}).error(function(data, status, headers, config) {
+	    	$scope.loading = false;
+		    console.log("error", data, status, headers, config);
+		});
+*/
+	}
     
 });
 

@@ -121,7 +121,7 @@
 		                      		  <input style="width:50%" class="form-control" placeholder="Button Text"> <br />
 		                      		  <input style="width:50%" class="form-control" ng-model="selectedEntry.logo" placeholder="Logo URL"><button href='#' class="btn">Upload</button>
 		                      		  <input style="width:50%" class="form-control" ng-model="selectedEntry.backgroundImage" placeholder="Background Image URL"><button href='#' class="btn">Upload</button>
-		                      		  <br />
+		                      		  <br /><br />
 		                              <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="updateEntry()">Save</button>
 		                              
 		                              <br /><br />
@@ -131,6 +131,44 @@
 	                          </div>
 	                        </div>
 						</div>
+						
+						
+						<div style="border-bottom:none" class="panel panel-default">
+	                        <div class="panel-heading">
+	                          <h4 class="panel-title">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Create New Entry</a>
+	                          </h4>
+	                        </div>
+	                        <div id="collapseOne" class="panel-collapse collapse collapse">
+	                      
+		                          <div class="panel-body">
+		                            <div style="margin-top:20px">
+	                              
+	                	          <h4>Template B</h4>
+								  
+								  <div class="form-horizontal">
+								  
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.url" placeholder="PrimaryURL"> <br />
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.secondaryUrls['Menu']" placeholder="Menu Button URL"> <br />
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.title" placeholder="Title"> <br />
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.street" placeholder="Address"> <br />
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.phone" placeholder="Phone number"> <br />
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.rating" placeholder="Rating"> <br />
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> <br />
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.logo" placeholder="Logo URL"><button href='#' class="btn">Upload</button>
+		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.backgroundImage" placeholder="Background Image URL"><button href='#' class="btn">Upload</button>
+		                      		  <br />
+		                              <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="submitEntry()">Save</button>
+		                              
+		                              <br /><br />
+								  </div>
+	                              
+								</div>
+	                          </div>
+	                        </div>
+						</div>
+						
+						
                     </div>
                 </div>
             </div>
