@@ -7,6 +7,8 @@ app.controller("EntryController", function($scope, $http){
 	$scope.searchEntry = '';
 	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
 	$scope.entriesMap = {};
+	
+	$scope.editingEntry = '';
 
 	
     $scope.init = function() {
@@ -83,14 +85,14 @@ app.controller("EntryController", function($scope, $http){
     }
     
     $scope.selectFoursquareEntry = function(index){
-    	$scope.entry = $scope.searchResults.foursquare[index];
-    	console.log('Search Foursquare Entry: '+JSON.stringify(entry));
+    	$scope.editingEntry = $scope.searchResults.foursquare[index];
+    	console.log('Search Foursquare Entry: '+JSON.stringify($scope.editingEntry));
     	
     }
     
     $scope.selectInfoHubsEntry = function(index){
-    	$scope.entry = $scope.searchResults.infohubs[index];
-    	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
+    	$scope.editingEntry = $scope.searchResults.infohubs[index];
+    	console.log('Search InfoHubs Entry: '+JSON.stringify($scope.editingEntry));
     }
 });
 
