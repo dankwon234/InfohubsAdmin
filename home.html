@@ -43,7 +43,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-envelope fa-fw fa-3x"></i> Devices X<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-envelope fa-fw fa-3x"></i> Devices<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li ng-repeat="device in devices track by $index">
                                     <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
@@ -207,7 +207,6 @@
                               <select ng-model="currentSubcategory" ng-change="selectSubcategory()" style="width:40%;margin-top:20px" class="form-control">
                                 <option ng-repeat="subcategoryName in orderForCategory(currentCategory) track by $index">{{ subcategoryName }}</option>
                               </select><br />
-                              <button ng-click="editSubcategory()" class="btn btn-primary">Edit Subcategory</button>
 
 							  <div id="container">
 							  

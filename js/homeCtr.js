@@ -159,11 +159,6 @@ app.controller("HomeController", function($scope, $http, $upload){
     }
     
     
-    $scope.editSubcategory = function() {
-    	console.log('EDIT SUBCATEGORY: '+$scope.currentSubcategory);
-    	
-    }
-    
     $scope.numberOfPages = function() {
     	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
     	var subcategory = category[$scope.currentSubcategory];
