@@ -82,35 +82,6 @@ app.controller("EntryController", function($scope, $http){
         });
     }
     
-     $scope.selectFoursquareEntry = function(index){
-    	entry = $scope.searchResults.foursquare[index];
-    	console.log('Search Foursquare Entry: '+JSON.stringify(entry));
-    	
-    }
-    
-    $scope.selectInfoHubsEntry = function(index){
-    	entry = $scope.searchResults.infohubs[index];
-    	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
-
-    	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
-    	var subcategory = category[$scope.currentSubcategory];
-    	subcategory[$scope.selectedEntryIndex] = entry.id;
-    	$scope.selectedEntryIndex++;
-
-    }
-    
-    $scope.entryForIndex = function(index, offset) {
-//    	console.log('ENTRY FOR INDEX: '+index+', OFFSET: '+offset);
-    	
-    	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
-    	var subcategory = category[$scope.currentSubcategory];
-    	console.log('ENTRY FOR INDEX: '+JSON.stringify(subcategory));
-
-    	var i = calculateEntryIndex(index, offset);
-    	var entry = $scope.entriesMap[subcategory[i]];
-    	return entry.title;
-
-    }
     
     $scope.selectEntryIndex = function(index, offset) {
     	var i = calculateEntryIndex(index, offset);
