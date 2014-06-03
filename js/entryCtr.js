@@ -9,12 +9,6 @@ app.controller("EntryController", function($scope, $http){
 	$scope.entriesMap = {};
 
 	$scope.selectedEntry = '';
-	$scope.primaryURL = '';
-	$scope.buttonURL = '';
-	$scope.buttonText = '';
-	$scope.logoURL = '';
-	$scope.backgroundImgURL = '';
-	$scope.entryID = '';
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -96,21 +90,14 @@ app.controller("EntryController", function($scope, $http){
     	$scope.selectedEntry = $scope.searchResults.infohubs[index];
     	console.log('Search InfoHubs Entry: '+JSON.stringify($scope.selectedEntry));
 		
-		$scope.primaryURL = $scope.selectedEntry.url;
-		$scope.buttonURL = $scope.selectedEntry.secondaryUrls['Menu'];
-		$scope.buttonText = 'Menu';
-		$scope.logoURL = $scope.selectedEntry.logo;
-		$scope.backgroundImgURL = $scope.selectedEntry.backgroundImage;
-		$scope.entryID = $scope.selectedEntry.id;
-		
     }
     
     $scope.updateEntry = function() {
 
-	    //$scope.loading = true;
+	    $scope.loading = true;
     	
-        var url = '/api/entries/'+$scope.entryID;
-        console.log('Update entry with ID: '+$scope.entryID);
+        var url = '/api/entries/'+$scope.selectedEntry.id;
+        console.log('Update entry with ID: '+$scope.selectedEntry.id);
         
         var json = JSON.stringify($scope.selectedEntry);
         
@@ -118,7 +105,7 @@ app.controller("EntryController", function($scope, $http){
             results = data['results'];
             confirmation = results['confirmation'];
             if (confirmation=='success'){
-                alert($scope.entryID+' successfully updated');
+                alert($scope.selectedEntry.id+' successfully updated');
                 console.log(results);
             }
             else {
