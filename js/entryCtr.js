@@ -9,6 +9,10 @@ app.controller("EntryController", function($scope, $http){
 	$scope.entriesMap = {};
 
 	$scope.primaryURL = '';
+	$scope.buttonURL = '';
+	$scope.buttonText = '';
+	$scope.logoURL = '';
+	$scope.backgroundImgURL = '';
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -94,7 +98,10 @@ app.controller("EntryController", function($scope, $http){
     	console.log('Search InfoHubs Entry: '+JSON.stringify(entry));
 		
 		$scope.primaryURL = entry.url;
-	    console.log($scope.primaryURL);
+		$scope.buttonURL = entry.secondaryUrls['Menu'];
+		$scope.buttonText = 'Menu';
+		$scope.logoURL = '';
+		$scope.backgroundImgURL = '';
 		
     }
 });
