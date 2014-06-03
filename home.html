@@ -191,7 +191,7 @@
                             	  </div>
                             	  <div style="background:#fff" class="panel-footer">
                               	    <ol>
-                                	  <li ng-repeat="subcategoryName in orderForCategory(categoryName) track by $index">{{ subcategoryName }}</li>
+                                	  <li ng-repeat="subcategoryName in orderForCategory(categoryName) track by $index"><a ng-click="selectSubcategory(categoryName, subcategoryName)" href="">{{ subcategoryName }}</a></li>
                               	    </ol>
                             	  </div>
                         	    </div>
@@ -204,7 +204,7 @@
                 	        <div>
                 	          <h4>Edit Subcategory Configuration</h4>
                 	          
-                              <select ng-model="currentSubcategory" ng-change="selectSubcategory()" style="width:40%;margin-top:20px" class="form-control">
+                              <select ng-model="currentSubcategory" ng-change="updateSubcategory()" style="width:40%;margin-top:20px" class="form-control">
                                 <option ng-repeat="subcategoryName in orderForCategory(currentCategory) track by $index">{{ subcategoryName }}</option>
                               </select><br />
 

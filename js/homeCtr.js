@@ -150,12 +150,21 @@ app.controller("HomeController", function($scope, $http, $upload){
     	console.log(JSON.stringify(subcategory));
     }
 
-    
-    $scope.selectSubcategory = function() {
+    $scope.selectSubcategory = function(categoryName, subcategoryName) {
+    	console.log('SELECT SUBATEGORY: '+categoryName+' -- '+subcategoryName);
+    	$scope.currentCategory = categoryName;
+    	$scope.currentSubcategory = subcategoryName;
+
     	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
-    	
     	var subcategory = category[$scope.currentSubcategory];
-    	console.log('SELECT SUBCATEGORY: '+$scope.currentSubcategory+' = '+JSON.stringify(subcategory));
+    	$scope.selectedEntryIndex = 0;
+    }
+    
+    $scope.updateSubcategory = function() {
+    	var category = $scope.selectedDevice.configuration[$scope.currentCategory];
+    	var subcategory = category[$scope.currentSubcategory];
+    	$scope.selectedEntryIndex = 0;
+    	console.log('UPDATE SUBCATEGORY: '+$scope.currentSubcategory+' = '+JSON.stringify(subcategory));
     }
     
     
