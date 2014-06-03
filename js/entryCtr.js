@@ -82,25 +82,12 @@ app.controller("EntryController", function($scope, $http){
         });
     }
     
-    
-    $scope.selectEntryIndex = function(index, offset) {
-    	var i = calculateEntryIndex(index, offset);
-    	$scope.selectedEntryIndex = i;
-    	console.log('SELECT ENTRY INDEX: '+i);
-    } 
-    
-    function calculateEntryIndex(index, offset){
-    	var i = 0;
-    	if (offset < 3)
-    		i = 2.5*(index)+offset;
-    	else
-        	i = 2.5*(index-1)+offset;
+    $scope.selectFoursquareEntry = function(index){
+    	entry = $scope.searchResults.foursquare[index];
+    	console.log('Search Foursquare Entry: '+JSON.stringify(entry));
     	
-    	return i;
     }
-
     
-
 });
 
 
