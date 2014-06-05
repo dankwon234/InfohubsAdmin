@@ -12,6 +12,7 @@ app.controller("EntryController", function($scope, $http){
 	$scope.entries = new Array();
 	
 	$scope.newEntry = {
+		rating: "1",
         secondaryUrls: {}
     };
     
