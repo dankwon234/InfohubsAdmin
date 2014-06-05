@@ -163,6 +163,7 @@ app.controller("EntryController", function($scope, $http){
 		$http.post(url, json)
 		.success(function(data, status, headers, config) {
 	    	$scope.loading = false;
+	    	document.getElementById("secondaryUrl-url").value = "";
 		    results = data['results'];
 		    confirmation = results['confirmation'];
 		    if (confirmation=='success'){
