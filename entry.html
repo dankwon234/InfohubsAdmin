@@ -152,24 +152,6 @@
 		                      		  
 		                      		  
 		                      		   <div class="form-group">
-	                                    <h3>Content Info</h3>
-	                                    <h4>Button</h4>
-	                                    <table class="table table-striped">
-	                                        <thead>
-	                                            <tr>
-	                                                <th>Delete</th>
-	                                                <th>Purpose</th>
-	                                                <th>URL</th>
-	                                            </tr>
-	                                        </thead>
-	                                        <tbody>
-	                                            <tr ng-repeat="purpose in purposeKeys()">
-	                                                <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
-	                                                <td>{{ purpose }}</td>
-	                                                <td>{{ newEntry.secondaryUrls[purpose] }}</td>
-	                                            </tr>
-	                                        </tbody>
-	                                    </table>
 	                                    
 	                                    <div style="display:inline;float:left;max-width:40%">
 	                                      <span>Purpose</span><br>
@@ -192,10 +174,7 @@
 	                                      <span>URL</span>
 	                                      <input type="text" class="inputs form-control" placeholder="http://www.google.com" id="secondaryUrl-url">
 	                                  </div>
-	                                  <div style="display:inline;float:right;">
-	                                      <br>
-	                                      <a ng-click="addSecondaryUrl()" class="btn btn-custom">Add</a>
-	                                  </div>
+	                                  <a ng-click="addSecondaryUrl()" class="btn btn-custom">Add</a>
 	                                </div>
 		                      		  
 		                      		  
