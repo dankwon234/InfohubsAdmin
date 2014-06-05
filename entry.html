@@ -215,6 +215,7 @@
                                       <br />
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> <br />
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.logo" placeholder="Logo URL"><button href='#' class="btn">Upload</button>
+		                      		  <div class="dropZone" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">drop image file here</div>
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.backgroundImage" placeholder="Background Image URL"><button href='#' class="btn">Upload</button>
 		                      		  <br /><br />
 		                              <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="submitEntry()">Save</button>
