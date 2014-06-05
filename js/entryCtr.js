@@ -152,12 +152,13 @@ app.controller("EntryController", function($scope, $http){
     
     $scope.submitEntry = function(){
     
-	    $scope.loading = true;
+	   // $scope.loading = true;
 	
 		json = JSON.stringify($scope.newEntry);
 		console.log('newEntry: JSON = '+json);
 
-		var url = '/api/entries';
+		/*
+var url = '/api/entries';
 		$http.post(url, json)
 		.success(function(data, status, headers, config) {
 	    	$scope.loading = false;
@@ -178,6 +179,7 @@ app.controller("EntryController", function($scope, $http){
 	    	$scope.loading = false;
 		    console.log("error", data, status, headers, config);
 		});
+*/
 	}
     
     
