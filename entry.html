@@ -150,45 +150,48 @@
 								  
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.url" placeholder="PrimaryURL"> <br />
 		                      		  
-	
-	                                  <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Delete</th>
-                                                <th>Purpose</th>
-                                                <th>URL</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="purpose in purposeKeys()">
-                                                <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
-                                                <td>{{ purpose }}</td>
-                                                <td>{{ newEntry.secondaryUrls[purpose] }}</td>
-                                            </tr>
-                                        </tbody>
-	                                  </table>
+		                      		  
+		                      		   <div class="form-group">
+	                                    <table class="table table-striped">
+	                                        <thead>
+	                                            <tr>
+	                                                <th>Delete</th>
+	                                                <th>Purpose</th>
+	                                                <th>URL</th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr ng-repeat="purpose in purposeKeys()">
+	                                                <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
+	                                                <td>{{ purpose }}</td>
+	                                                <td>{{ newEntry.secondaryUrls[purpose] }}</td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
 	                                    
-	                                  <span>Purpose</span><br>
-	                                  <select id="secondaryUrl-purpose"  style="width:500px" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
-	                                  	<option value="Menu">Menu</option>
-	                                  	<option value="Reservations">Reservations</option>
-	                                  	<option value="Gallery">Gallery</option>
-	                                    <option value="Buy Now">Buy Now</option>
-	                                    <option value="Book Now">Book Now</option>
-	                                    <option value="Schedule">Schedule</option>
-	                                    <option value="Check In">Check In</option>
-	                                    <option value="Rates">Rates</option>
-	                                    <option value="Map">Map</option>
-	                                    <option value="Directions">Directions</option>
-	                                    <option value="Reviews">Reviews</option>
-	                                    <option value="More Info">More Info</option>
-	                                  </select>
-	
+	                                    <div style="display:inline;float:left;max-width:40%">
+	                                      <span>Purpose</span><br>
+	                                      <select id="secondaryUrl-purpose" style="width:25%" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
+	                                      	<option value="Menu">Menu</option>
+	                                      	<option value="Reservations">Reservations</option>
+	                                      	<option value="Gallery">Gallery</option>
+	                                        <option value="Buy Now">Buy Now</option>
+	                                        <option value="Book Now">Book Now</option>
+	                                        <option value="Schedule">Schedule</option>
+	                                        <option value="Check In">Check In</option>
+	                                        <option value="Rates">Rates</option>
+	                                        <option value="Map">Map</option>
+	                                        <option value="Directions">Directions</option>
+	                                        <option value="Reviews">Reviews</option>
+	                                        <option value="More Info">More Info</option>
+	                                      </select>
+	                                  </div>
 	                                  <div style="display:inline;float:left;max-width:100%;padding-left:15px">
 	                                      <span>URL</span>
 	                                      <input type="text" class="inputs form-control" placeholder="http://www.google.com" id="secondaryUrl-url">
 	                                  </div>
 	                                  <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="addSecondaryUrl()">Add</button>
+	                                </div>
 		                      		  
 		                      		  
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.title" placeholder="Title"> <br />
