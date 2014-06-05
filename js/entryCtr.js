@@ -155,7 +155,12 @@ app.controller("EntryController", function($scope, $http){
 		    console.log("error", data, status, headers, config);
 		});
 	}
-	
+    
+    $scope.deleteButton = function(purpose) {
+//    	console.log('Delete Button: '+purpose);
+    	delete $scope.editEntry.secondaryUrls[purpose];
+    }
+    
 	$scope.addSecondaryUrl = function() {
         console.log("addSecondaryUrls");
         var purpose = document.getElementById("secondaryUrl-purpose").value;
