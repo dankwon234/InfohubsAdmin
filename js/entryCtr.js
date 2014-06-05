@@ -146,7 +146,9 @@ app.controller("EntryController", function($scope, $http){
 
     $scope.purposeKeys = function() {
 //        console.log(Object.keys($scope.newEntry.secondaryUrls));
-        return Object.keys($scope.newEntry.secondaryUrls);
+		if($scope.newEntry.secondaryUrls){
+        	return Object.keys($scope.newEntry.secondaryUrls);	
+		}
     }
     
     
