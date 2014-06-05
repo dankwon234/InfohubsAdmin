@@ -152,10 +152,28 @@
 		                      		  
 		                      		  
 		                      		   <div class="form-group">
+	                                    <h3>Content Info</h3>
+	                                    <h4>Button</h4>
+	                                    <table class="table table-striped">
+	                                        <thead>
+	                                            <tr>
+	                                                <th>Delete</th>
+	                                                <th>Purpose</th>
+	                                                <th>URL</th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr ng-repeat="purpose in purposeKeys()">
+	                                                <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
+	                                                <td>{{ purpose }}</td>
+	                                                <td>{{ newEntry.secondaryUrls[purpose] }}</td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
 	                                    
 	                                    <div style="display:inline;float:left;max-width:40%">
 	                                      <span>Purpose</span><br>
-	                                      <select id="secondaryUrl-purpose"><!-- have to find a way to make this key the value of the option in angular -->
+	                                      <select id="secondaryUrl-purpose" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
 	                                      	<option value="Menu">Menu</option>
 	                                      	<option value="Reservations">Reservations</option>
 	                                      	<option value="Gallery">Gallery</option>
@@ -174,7 +192,7 @@
 	                                      <span>URL</span>
 	                                      <input type="text" class="inputs form-control" placeholder="http://www.google.com" id="secondaryUrl-url">
 	                                  </div>
-	                                  <a ng-click="addSecondaryUrl()" class="btn btn-custom">Add</a>
+	                                  <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="addSecondaryUrl()">Save</button>
 	                                </div>
 		                      		  
 		                      		  
