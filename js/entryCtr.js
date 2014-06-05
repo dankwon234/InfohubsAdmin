@@ -12,6 +12,11 @@ app.controller("EntryController", function($scope, $http){
 	$scope.newEntry = {};
 	$scope.entries = new Array();
 	
+	$scope.editEntry = {
+        secondaryUrls: {}
+    };
+    
+	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
 //    	fetchEntries();
@@ -150,6 +155,24 @@ app.controller("EntryController", function($scope, $http){
 		    console.log("error", data, status, headers, config);
 		});
 	}
+	
+	$scope.addSecondaryUrl = function() {
+        console.log("addSecondaryUrls");
+        var purpose = document.getElementById("secondaryUrl-purpose").value;
+        var url = document.getElementById("secondaryUrl-url").value;
+        console.log(purpose);
+        console.log(url);
+
+        $scope.editEntry.secondaryUrls[purpose] = url;
+
+        console.log(JSON.stringify($scope.editEntry.secondaryUrls));
+    }
+
+    $scope.purposeKeys = function() {
+//        console.log(Object.keys($scope.editEntry.secondaryUrls));
+        return Object.keys($scope.editEntry.secondaryUrls);
+    }
+    
     
 });
 
