@@ -199,7 +199,19 @@
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.title" placeholder="Title"> <br />
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.street" placeholder="Address"> <br />
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.phone" placeholder="Phone number"> <br />
-		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.rating" placeholder="Rating"> <br />
+		                      		  <span>Rating</span><br>
+							  		  <select ng-model="newEntry.rating" style="width:300px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
+                                      	<option value="1">1</option>
+                                      	<option value="2">2</option>
+                                      	<option value="3">3</option>
+                                      	<option value="4">4</option>
+                                      	<option value="5">5</option>
+                                      	<option value="6">6</option>
+                                      	<option value="7">7</option>
+                                      	<option value="8">8</option>
+                                      	<option value="9">9</option>
+                                      	<option value="10">2</option>
+                                      </select>
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> <br />
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.logo" placeholder="Logo URL"><button href='#' class="btn">Upload</button>
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.backgroundImage" placeholder="Background Image URL"><button href='#' class="btn">Upload</button>
