@@ -140,7 +140,7 @@ app.controller("EntryController", function($scope, $http){
         console.log(url);
 
         $scope.newEntry.secondaryUrls[purpose] = url;
-
+		document.getElementById("secondaryUrl-url").value = "";
         console.log(JSON.stringify($scope.newEntry.secondaryUrls));
     }
 
@@ -163,7 +163,6 @@ app.controller("EntryController", function($scope, $http){
 		$http.post(url, json)
 		.success(function(data, status, headers, config) {
 	    	$scope.loading = false;
-	    	document.getElementById("secondaryUrl-url").value = "";
 		    results = data['results'];
 		    confirmation = results['confirmation'];
 		    if (confirmation=='success'){
