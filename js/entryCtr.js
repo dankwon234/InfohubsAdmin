@@ -90,7 +90,7 @@ if ($scope.searchEntry.length<1){
     }
     
     $scope.selectFoursquareEntry = function(index){
-    	entry = $scope.searchResults.foursquare[index];
+    	$scope.selectedEntry = $scope.searchResults.foursquare[index];
     	console.log('Search Foursquare Entry: '+JSON.stringify(entry));
     	
 		$scope.primaryURL = "test";
