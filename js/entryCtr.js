@@ -16,6 +16,8 @@ app.controller("EntryController", function($scope, $http, $upload){
         secondaryUrls: {}
     };
     
+    $scope.searchFilter = '';
+    
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
