@@ -54,10 +54,12 @@ app.controller("EntryController", function($scope, $http, $upload){
     
     $scope.searchEntries = function() {
 
-    	if ($scope.searchEntry.length<1){
+    	/*
+if ($scope.searchEntry.length<1){
     		alert('Please Enter a Valid Venue.');
     		return;
     	}
+*/
 
 	    $scope.loading = true;
 	        	
