@@ -64,6 +64,7 @@ if ($scope.searchEntry.length<1){
 */
 
 	    $scope.loading = true;
+	    $scope.selectedEntry = '';
 	        	
         var url = '/api/entries?search='+$scope.searchEntry+'&foursquarefilter='+$scope.searchFilter;
         //this url only returns names for foursquare venues
