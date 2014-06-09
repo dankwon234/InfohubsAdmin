@@ -60,8 +60,8 @@ app.controller("EntryController", function($scope, $http, $upload){
     	}
 
 	    $scope.loading = true;
-    	
-        var url = '/api/entries?search='+$scope.searchEntry;
+	        	
+        var url = '/api/entries?search='+$scope.searchEntry+'&foursquarefilter='+$scope.searchFilter;
         //this url only returns names for foursquare venues
         
         $http.get(url).success(function(data, status, headers, config) {
