@@ -165,7 +165,7 @@ app.controller("EntryController", function($scope, $http, $upload){
 	    $scope.loading = true;
     	console.log('SELECT IMAGE: '+property);
 //        var url = '/api/upload?resource=entry&property='+property+'&id='+$scope.selectedDevice.uuid;
-        var url = '/api/upload?resource=entry';
+        var url = '/api/upload';
     	
     	
         $http.get(url).success(function(data, status, headers, config) {
