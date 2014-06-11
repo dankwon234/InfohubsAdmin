@@ -20,8 +20,8 @@ app.controller("EntryController", function($scope, $http, $upload){
     $scope.secondaryUrlPurpose = 'Menu';
     $scope.secondaryUrlLink = '';
     
-    $scope.newEntryLogo = {'id':'33mMrWVg'};
-    $scope.newEntryBackgroundImage = {'id':'33mMrWVg'};
+    $scope.newEntryLogo = {'id':'AjJxXTEA'};
+    $scope.newEntryBackgroundImage = {'id':'AjJxXTEA'};
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
