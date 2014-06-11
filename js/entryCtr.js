@@ -20,8 +20,8 @@ app.controller("EntryController", function($scope, $http, $upload){
     $scope.secondaryUrlPurpose = 'Menu';
     $scope.secondaryUrlLink = '';
     
-    $scope.newEntryLogo = '';
-    $scope.newEntryBackgroundImage = '';
+    $scope.newEntryLogo = {'id':'33mMrWVg'};
+    $scope.newEntryBackgroundImage = {'id':'33mMrWVg'};
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -209,10 +209,10 @@ app.controller("EntryController", function($scope, $http, $upload){
                     	console.log(JSON.stringify(results));
                     	
                     	if (property == 'logo'){
-	                    	$scope.newEntryLogo = results;
+	                    	$scope.newEntryLogo = results['image'];
                     	}
                     	else if (property == 'backgroundImage'){
-	                    	$scope.newEntryBackgroundImage = results;
+	                    	$scope.newEntryBackgroundImage = results['image'];
                     	}
                     	
 /*
