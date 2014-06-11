@@ -17,7 +17,8 @@ app.controller("EntryController", function($scope, $http, $upload){
     };
     
     $scope.searchFilter = '';
-    
+    $scope.secondaryUrlPurpose = 'Menu';
+    $scope.secondaryUrlLink = '';
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -112,13 +113,13 @@ app.controller("EntryController", function($scope, $http, $upload){
     
 	$scope.addSecondaryUrl = function() {
         console.log("addSecondaryUrls");
-        var purpose = document.getElementById("secondaryUrl-purpose").value;
-        var url = document.getElementById("secondaryUrl-url").value;
+        var purpose = $scope.secondaryUrlPurpose;
+        var url = $scope.secondaryUrlLink;
         console.log(purpose);
         console.log(url);
 
         $scope.newEntry.secondaryUrls[purpose] = url;
-		document.getElementById("secondaryUrl-url").value = "";
+		$scope.secondaryUrlLink = "";
         console.log(JSON.stringify($scope.newEntry.secondaryUrls));
     }
 

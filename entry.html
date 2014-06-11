@@ -172,7 +172,7 @@
 	                                    
 	                                    <div style="display:inline;float:left;padding-left:15px;">
 	                                      <span>Purpose</span><br>
-	                                      <select id="secondaryUrl-purpose" style="width:300px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
+	                                      <select ng-model="secondaryUrlPurpose"  style="width:300px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
 	                                      	<option value="Menu">Menu</option>
 	                                      	<option value="Reservations">Reservations</option>
 	                                      	<option value="Gallery">Gallery</option>
@@ -189,7 +189,7 @@
 	                                  </div>
 	                                  <div style="display:inline;float:left;max-width:100%;padding-left:15px">
 	                                      <span>URL</span>
-	                                      <input type="text" class="inputs form-control" placeholder="http://www.google.com" id="secondaryUrl-url">
+	                                      <input type="text" class="inputs form-control" placeholder="http://www.google.com" ng-model="secondaryUrlLink">
 	                                  </div>
 	                                  <div style="display:inline;float:left;padding-top:19px;padding-left:18px">
 	                                 	 <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="addSecondaryUrl()">Add</button>
