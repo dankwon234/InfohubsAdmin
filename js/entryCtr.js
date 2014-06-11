@@ -210,9 +210,11 @@ app.controller("EntryController", function($scope, $http, $upload){
                     	
                     	if (property == 'logo'){
 	                    	$scope.newEntryLogo = results['image'];
+	                    	$scope.newEntry.logo = $scope.newEntryLogo.id;
                     	}
                     	else if (property == 'backgroundImage'){
 	                    	$scope.newEntryBackgroundImage = results['image'];
+	                    	$scope.newEntry.backgroundImage = $scope.newEntryBackgroundImage.id;
                     	}
                     	
 /*
