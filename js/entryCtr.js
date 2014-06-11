@@ -137,6 +137,9 @@ app.controller("EntryController", function($scope, $http, $upload){
     $scope.submitEntry = function(){
     
 	   	$scope.loading = true;
+	   	
+	    $scope.newEntry.backgroundImage = $scope.newEntryBackgroundImage.id;
+	    $scope.newEntry.logo = $scope.newEntryLogo.id;
 	
 		json = JSON.stringify($scope.newEntry);
 		console.log('newEntry: JSON = '+json);
@@ -210,11 +213,9 @@ app.controller("EntryController", function($scope, $http, $upload){
                     	
                     	if (property == 'logo'){
 	                    	$scope.newEntryLogo = results['image'];
-	                    	$scope.newEntry.logo = $scope.newEntryLogo.id;
                     	}
                     	else if (property == 'backgroundImage'){
 	                    	$scope.newEntryBackgroundImage = results['image'];
-	                    	$scope.newEntry.backgroundImage = $scope.newEntryBackgroundImage.id;
                     	}
                     	
 /*
