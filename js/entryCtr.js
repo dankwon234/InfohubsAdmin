@@ -29,30 +29,7 @@ app.controller("EntryController", function($scope, $http, $upload){
         var newDate = new Date(date).toString();
         return moment(newDate).format('MMM D, h:mma');
     }
-    
-    function fetchEntries() {
-    	$scope.loading = true;
-        var url = '/api/entries';
-        $http.get(url).success(function(data, status, headers, config) {
-            results = data['results'];
-            confirmation = results['confirmation'];
-            if (confirmation=='success'){
-            	var entries = results['entries'];
-            	
-            	for (var i=0; i<entries.length; i++){
-            		var entry = entries[i];
-            		$scope.entriesMap[entry.id] = entry;
-            	}
-            	
-            } 
-            else {
-                alert(results['message']);
-            }
-        }).error(function(data, status, headers, config) {
-            console.log("error", data, status, headers, config);
-        });
-    }
-    
+        
     
     $scope.searchEntries = function() {
 
