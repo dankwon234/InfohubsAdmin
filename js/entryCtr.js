@@ -19,6 +19,9 @@ app.controller("EntryController", function($scope, $http, $upload){
     $scope.searchFilter = '';
     $scope.secondaryUrlPurpose = 'Menu';
     $scope.secondaryUrlLink = '';
+    
+    $scope.newEntryLogo = '';
+    $scope.newEntryBackgroundImage = '';
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -204,6 +207,14 @@ app.controller("EntryController", function($scope, $http, $upload){
                     if (confirmation=='success'){
                     	
                     	console.log(JSON.stringify(results));
+                    	
+                    	if (property == 'logo'){
+	                    	$scope.newEntryLogo = results;
+                    	}
+                    	else if (property == 'backgroundImage'){
+	                    	$scope.newEntryBackgroundImage = results;
+                    	}
+                    	
 /*
                         updatedDevice = results['device'];
                         
