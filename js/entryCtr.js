@@ -27,8 +27,6 @@ app.controller("EntryController", function($scope, $http, $upload){
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
-//    	fetchEntries();
-//    	fetchDevices();
     }    
     
     $scope.formattedDate = function(date) {
