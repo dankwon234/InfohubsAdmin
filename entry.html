@@ -19,7 +19,7 @@
 			-moz-opacity:0 ;
 			filter:alpha(opacity: 0);
 			opacity: 0;
-			z-index: 2;
+			z-index: 0;
 		}
 
   	  </style>
@@ -241,13 +241,14 @@
 					                                <span class="panel-eyecandy-title">
 					                                    Drag and Drop Logo
 					                                </span>
+					                                <br />
 					                                <span>
 					                                	or
 					                                </span>		
-					                                <button id="logoUploadBtn">Upload Image</button>						                                
-							                        <input class="upload_input btn btn-primary" type="file" ng-file-select="onFileSelect($files, 'logo')"/>
+					                                <button class="imageUploadBtn" ng-click="clickFileInput('logo')">Upload Image</button>						                                
 					                            </div>
 					                        </div>
+					                        <input class="upload_input btn btn-primary" id="logoFileInput"  type="file" ng-file-select="onFileSelect($files, 'logo')"/>
 					                  </div>
 					                    <!-- /.col-xs-6 col-md-3 -->
 					                  <div class="col-xs-6 col-md-3">
@@ -259,13 +260,14 @@
 					                                <span class="panel-eyecandy-title">
 					                                    Drag and Drop Background Image
 					                                </span>
+					                                <br />
 					                                <span>
 					                                	or
 					                                </span>
-					                                <button id="bgImageUploadBtn">Upload Image</button>							                                
-							                        <input class="upload_input btn btn-primary" type="file" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
+					                                <button class="imageUploadBtn" ng-click="clickFileInput('backgroundImage')">Upload Image</button>
 					                            </div>
-					                        </div>
+					                        </div>							                                
+							                <input class="upload_input btn btn-primary" id="backgroundImageFileInput" type="file" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
 					                  </div>
 					                </div>
 									  
