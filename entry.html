@@ -245,7 +245,7 @@
 					                                <span>
 					                                	or
 					                                </span>		
-					                                <button class="imageUploadBtn" image-file-type="logo">Upload Image</button>						                                
+					                                <button class="imageUploadBtn" image-file-type="logo" ng-click="uploadButtonClick()">Upload Image</button>						                                
 					                            </div>
 					                        </div>
 					                        <input class="upload_input btn btn-primary" id="logoFileInput" type="file" ng-click="onFileSelect($files, 'logo')"/>
@@ -264,7 +264,7 @@
 					                                <span>
 					                                	or
 					                                </span>
-					                                <button class="imageUploadBtn" image-file-type="backgroundImage">Upload Image</button>
+					                                <button class="imageUploadBtn" image-file-type="backgroundImage" ng-click="uploadButtonClick()">Upload Image</button>
 					                            </div>
 					                        </div>							                                
 							                <input class="upload_input btn btn-primary" id="backgroundImageFileInput" type="file" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
