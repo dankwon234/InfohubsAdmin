@@ -20,8 +20,10 @@ app.controller("EntryController", function($scope, $http, $upload){
     $scope.secondaryUrlPurpose = 'Menu';
     $scope.secondaryUrlLink = '';
     
-    $scope.newEntryLogo = {'id':'AjJxXTEA'};
-    $scope.newEntryBackgroundImage = {'id':'AjJxXTEA'};
+    var original_image_id = 'AjJxXTEA';
+    
+    $scope.newEntryLogo = {'id':original_image_id};
+    $scope.newEntryBackgroundImage = {'id':original_image_id};
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
@@ -148,6 +150,10 @@ app.controller("EntryController", function($scope, $http, $upload){
 		$http.post(url, json)
 		.success(function(data, status, headers, config) {
 	    	$scope.loading = false;
+	    	
+		    $scope.newEntryLogo = {'id':original_image_id};
+		    $scope.newEntryBackgroundImage = {'id':original_image_id};
+
 		    results = data['results'];
 		    confirmation = results['confirmation'];
 		    if (confirmation=='success'){
