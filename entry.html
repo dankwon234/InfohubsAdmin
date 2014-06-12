@@ -235,7 +235,7 @@
 					                                </span>
 					                            </div>
 					                        </div>
-					                        <input type="file" ng-model-instant onchange=onFileSelect($files, 'logo')/>
+					                        <input type="file" ng-model-instant onchange="angular.element(this).scope().onFileSelect($files, 'logo')"/>
 					  			            <!-- <div class="dropZone" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">Drop Logo File Here</div> -->
 					                  </div>
 					                    <!-- /.col-xs-6 col-md-3 -->
