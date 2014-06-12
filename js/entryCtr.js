@@ -2,7 +2,6 @@ var app = angular.module('Entry', ['angularFileUpload']);
 
 app.controller("EntryController", function($scope, $http, $upload){
 	$scope.loading = false;
-		console.log('test');
 	// Venue Search Stuff:
 	$scope.searchEntry = '';
 	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
@@ -27,6 +26,7 @@ app.controller("EntryController", function($scope, $http, $upload){
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
+		console.log('test');
     }    
     
     $scope.formattedDate = function(date) {
