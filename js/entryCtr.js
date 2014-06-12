@@ -131,14 +131,7 @@ app.controller("EntryController", function($scope, $http, $upload){
         	return Object.keys($scope.newEntry.secondaryUrls);	
 		}
     }
-    
-	$scope.uploadButtonClick = function(e) {
-		    e.preventDefault();
-		    console.log('here2');
-		    kind = $(this).attr('image-file-type');
-		    console.log(kind);
-		    $(kind+'FileInput').trigger('ng-click');   
-	}
+
     
     $scope.submitEntry = function(){
     
