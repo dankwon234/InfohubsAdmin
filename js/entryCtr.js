@@ -26,7 +26,6 @@ app.controller("EntryController", function($scope, $http, $upload){
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
-		console.log('test');
     }    
     
     $scope.formattedDate = function(date) {
@@ -133,12 +132,12 @@ app.controller("EntryController", function($scope, $http, $upload){
 		}
     }
     
-	$('.imageUploadBtn').click(function(e) {
+	$scope.uploadButtonClick = function(e) {
 	    e.preventDefault();
-	    console.log('here');
+	    console.log('here2');
 	    kind = $(this).attr('image-file-type');
 	    console.log(kind);
-	    $(kind+'FileInput').trigger('click');   
+	    $(kind+'FileInput').trigger('ng-click');   
 	});
     
     $scope.submitEntry = function(){
