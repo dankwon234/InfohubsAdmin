@@ -135,7 +135,9 @@ app.controller("EntryController", function($scope, $http, $upload){
     
 	$('.imageUploadBtn').click(function(e) {
 	    e.preventDefault();
+	    console.log('here');
 	    kind = $(this).attr('image-file-type');
+	    console.log(kind);
 	    $(kind+'FileInput').trigger('click');   
 	});
     
