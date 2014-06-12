@@ -26,6 +26,8 @@ app.controller("EntryController", function($scope, $http, $upload){
 	
     $scope.init = function() {
     	console.log('HOME CTR INIT');
+    	$('input[type=file]').bootstrapFileInput();
+		$('.file-inputs').bootstrapFileInput();
     }    
     
     $scope.formattedDate = function(date) {
