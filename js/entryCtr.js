@@ -206,7 +206,6 @@ app.controller("EntryController", function($scope, $http, $upload){
                     
                     //TODO: check confirmation key for success
                     confirmation = results['confirmation'];
-            	    $scope.loading = false;
                     if (confirmation=='success'){
                     	
                     	console.log(JSON.stringify(results));
@@ -218,6 +217,7 @@ app.controller("EntryController", function($scope, $http, $upload){
 	                    	$scope.newEntryBackgroundImage = results['image'];
                     	}
                     	
+						$scope.loading = false;
 /*
                         updatedDevice = results['device'];
                         
@@ -227,6 +227,7 @@ app.controller("EntryController", function($scope, $http, $upload){
 */
                     }
                     else{
+            	   		$scope.loading = false;
                     	alert(results['message']);
                     }
                   });

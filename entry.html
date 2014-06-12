@@ -216,11 +216,45 @@
                                       <br />
 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> <br />
 <!-- 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.logo" placeholder="Logo URL"><button href='#' class="btn">Upload</button> -->							
-									  {{newEntryLogo.id}}: <img style="width:300px" ng-src= "/site/images/{{newEntryLogo.id}}" /><br />
-		                      		  <div class="dropZone" style="width:300px" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">Drop New Logo Image File Here</div><br />
-<!-- 		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.backgroundImage" placeholder="Background Image URL"><button href='#' class="btn">Upload</button>  -->
-									  {{newEntryBackgroundImage.id}}: <img style="width:300px" ng-src= "/site/images/{{newEntryBackgroundImage.id}}" /><br />
-		                      		  <div class="dropZone" style="width:300px" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">Drop New Background Image File Here</div>
+									  
+									  
+									  
+									  <div style="margin-top:20px">
+									  	<h2>Images</h2>
+									  </div>
+					
+									  <div class="row" style="margin-top:20px">
+					                    <div class="col-xs-6 col-md-3">
+					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
+					                            <div class="panel-body asbestos">
+					                              <img ng-src= "/site/images/{{newEntryLogo.id}}?crop=160" />
+					                            </div>
+					                            <div class="panel-footer">
+					                                <span class="panel-eyecandy-title">
+					                                    Logo
+					                                </span>
+					                            </div>
+					                        </div>
+					  			            <div class="dropZone" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">Drop Logo File Here</div>
+					                  </div>
+					                    <!-- /.col-xs-6 col-md-3 -->
+					                  <div class="col-xs-6 col-md-3">
+					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
+					                            <div class="panel-body theme-color">
+					                              <img ng-src= "/site/images/{{newEntryBackgroundImage.id}}?crop=160" />
+					                            </div>
+					                            <div class="panel-footer">
+					                                <span class="panel-eyecandy-title">
+					                                    Background Image
+					                                </span>
+					                            </div>
+					                        </div>
+					  			            <div class="dropZone" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">Drop Background Image File Here</div>
+					                  </div>
+					                </div>
+									  
+									  
+									  
 		                      		  <br /><br />
 		                              <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="submitEntry()">Save</button>
 		                              
