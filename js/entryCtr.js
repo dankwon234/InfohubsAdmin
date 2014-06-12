@@ -133,7 +133,8 @@ app.controller("EntryController", function($scope, $http, $upload){
 		}
     }
     
-    $scope.clickFileInput(fileInputImageKind){
+    $scope.clickFileInput = function(fileInputImageKind){
+    	//console.log(fileInputImageKind);
 	    $(fileInputImageKind+'FileInput').click();
     }
     
