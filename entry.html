@@ -12,6 +12,16 @@
       	  background: rgba(0,0,0,0.4);
       	  z-index: 100000;
   	    }
+  	    
+  	    .upload_input {
+			position: relative;
+			text-align: right;
+			-moz-opacity:0 ;
+			filter:alpha(opacity: 0);
+			opacity: 0;
+			z-index: 2;
+		}
+
   	  </style>
 		
     </head>
@@ -233,8 +243,9 @@
 					                                </span>
 					                                <span>
 					                                	or
-					                                </span>							                                
-							                        <input type="file" ng-file-select="onFileSelect($files, 'logo')"/>
+					                                </span>		
+					                                <button id="logoUploadBtn">Upload Image</button>						                                
+							                        <input class="upload_input btn btn-primary" type="file" ng-file-select="onFileSelect($files, 'logo')"/>
 					                            </div>
 					                        </div>
 					                  </div>
@@ -250,8 +261,9 @@
 					                                </span>
 					                                <span>
 					                                	or
-					                                </span>							                                
-							                        <input type="file" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
+					                                </span>
+					                                <button id="bgImageUploadBtn">Upload Image</button>							                                
+							                        <input class="upload_input btn btn-primary" type="file" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
 					                            </div>
 					                        </div>
 					                  </div>
