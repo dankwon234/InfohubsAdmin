@@ -226,30 +226,30 @@
 									  <div class="row" style="margin-top:20px">
 					                    <div class="col-xs-6 col-md-3">
 					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos">
+					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">
 					                              <img ng-src= "/site/images/{{newEntryLogo.id}}?crop=160" />
 					                            </div>
 					                            <div class="panel-footer">
 					                                <span class="panel-eyecandy-title">
-					                                    Logo
+					                                    Drag and Drop Logo
 					                                </span>
 					                            </div>
 					                        </div>
-					  			            <div class="dropZone" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">Drop Logo File Here</div>
+					  			            <!-- <div class="dropZone" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">Drop Logo File Here</div> -->
 					                  </div>
 					                    <!-- /.col-xs-6 col-md-3 -->
 					                  <div class="col-xs-6 col-md-3">
 					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos">
+					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">
 					                              <img ng-src= "/site/images/{{newEntryBackgroundImage.id}}?crop=160" />
 					                            </div>
 					                            <div class="panel-footer">
 					                                <span class="panel-eyecandy-title">
-					                                    Background Image
+					                                    Drag and Drop Background Image
 					                                </span>
 					                            </div>
 					                        </div>
-					  			            <div class="dropZone" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">Drop Background Image File Here</div>
+					  			            <!-- <div class="dropZone" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">Drop Background Image File Here</div> -->
 					                  </div>
 					                </div>
 									  
