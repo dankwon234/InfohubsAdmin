@@ -133,10 +133,13 @@ app.controller("EntryController", function($scope, $http, $upload){
 		}
     }
     
-    $scope.clickFileInput = function(fileInputImageKind){
-    	console.log(fileInputImageKind+'FileInput');
-	    $(fileInputImageKind+'FileInput').click();
-    }
+    $('.upload_input').css("visibility", "hidden");
+
+	$('#imageUploadBtn').click(function(e) {
+	    e.preventDefault();
+	    kind = $(this).attr('image-file-type');
+	    $(kind+'FileInput').trigger('click');   
+	});
     
     $scope.submitEntry = function(){
     
