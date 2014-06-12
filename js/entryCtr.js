@@ -133,9 +133,7 @@ app.controller("EntryController", function($scope, $http, $upload){
 		}
     }
     
-    $('.upload_input').css("visibility", "hidden");
-
-	$('#imageUploadBtn').click(function(e) {
+	$('.imageUploadBtn').click(function(e) {
 	    e.preventDefault();
 	    kind = $(this).attr('image-file-type');
 	    $(kind+'FileInput').trigger('click');   
