@@ -7,7 +7,10 @@ app.controller("EntryController", function($scope, $http, $upload){
 	$scope.searchResults = { 'infohubs':new Array(), 'foursquare':new Array() };
 	$scope.entriesMap = {};
 
-	$scope.selectedEntry = '';
+    
+    var original_image_id = 's6M8PgfU';
+
+	$scope.selectedEntry = {logo: original_image_id, backgroundImage: original_image_id};
 	$scope.entries = new Array();
 	
 	$scope.newEntry = {
@@ -17,10 +20,7 @@ app.controller("EntryController", function($scope, $http, $upload){
     
     $scope.searchFilter = '';
     $scope.secondaryUrlPurpose = 'Menu';
-    $scope.secondaryUrlLink = '';
-    
-    var original_image_id = 's6M8PgfU';
-    
+    $scope.secondaryUrlLink = '';    
     $scope.newEntryLogo = {'id':original_image_id};
     $scope.newEntryBackgroundImage = {'id':original_image_id};
 	
