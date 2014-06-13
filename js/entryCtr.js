@@ -25,7 +25,7 @@ app.controller("EntryController", function($scope, $http, $upload){
     $scope.newEntryBackgroundImage = {'id':original_image_id};
 	
     $scope.init = function() {
-    	console.log('HOME CTR INIT');
+    	console.log('HOME CTR INIT 2');
     	$('input[type=file]').bootstrapFileInput();
 		$('.file-inputs').bootstrapFileInput();
     }    
