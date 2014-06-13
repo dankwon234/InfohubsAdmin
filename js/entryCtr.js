@@ -218,8 +218,14 @@ app.controller("EntryController", function($scope, $http, $upload){
                     	if (property == 'logo'){
 	                    	$scope.newEntryLogo = results['image'];
                     	}
+                    	else if (property == 'logoUpdate'){
+	                    	$scope.selectedEntry.logo = results['image'].id;
+                    	}
                     	else if (property == 'backgroundImage'){
 	                    	$scope.newEntryBackgroundImage = results['image'];
+                    	}
+                    	else if (property == 'backgroundImageUpdate'){
+	                    	$scope.selectedEntry.backgroundImage = results['image'].id;
                     	}
                     	
 						$scope.loading = false;

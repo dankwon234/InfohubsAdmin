@@ -132,7 +132,7 @@
 									  <div class="row" style="margin-top:20px">
 					                    <div class="col-xs-6 col-md-3">
 					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">
+					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logoUpdate')" ng-file-drag-over-class="optional-css-class">
 					                              <img ng-src= "/site/images/{{selectedEntry.logo}}?crop=160" />
 					                            </div>
 					                            <div class="panel-footer">
@@ -142,14 +142,14 @@
 					                                <span>
 					                                	or
 					                                </span>							                                
-							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logo')"/>
+							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logoUpdate')"/>
 					                            </div>
 					                        </div>
 					                  </div>
 					                    <!-- /.col-xs-6 col-md-3 -->
 					                  <div class="col-xs-6 col-md-3">
 					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">
+					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImageUpdate')" ng-file-drag-over-class="optional-css-class">
 					                              <img ng-src= "/site/images/{{selectedEntry.backgroundImage}}?crop=160" />
 					                            </div>
 					                            <div class="panel-footer">
@@ -159,11 +159,12 @@
 					                                <span>
 					                                	or
 					                                </span>						                                
-							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
+							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImageUpdate')"/>
 					                            </div>
 					                        </div>
 					                  </div>
 		                      		  
+		                      		  <br /><br />
 		                      		  
 		                              <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="updateEntry()">Save</button>
 		                              
