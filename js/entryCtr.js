@@ -19,7 +19,7 @@ app.controller("EntryController", function($scope, $http, $upload){
     $scope.secondaryUrlPurpose = 'Menu';
     $scope.secondaryUrlLink = '';
     
-    var original_image_id = 'AjJxXTEA';
+    var original_image_id = 's6M8PgfU';
     
     $scope.newEntryLogo = {'id':original_image_id};
     $scope.newEntryBackgroundImage = {'id':original_image_id};
