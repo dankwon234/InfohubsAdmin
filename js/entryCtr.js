@@ -29,7 +29,7 @@ app.controller("EntryController", function($scope, $http, $upload){
     	console.log('here');
     	$('input[type=file]').bootstrapFileInput();
 		$('.file-inputs').bootstrapFileInput();
-		console.log('here2');
+		console.log('here3');
     }    
     
     $scope.formattedDate = function(date) {
