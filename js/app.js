@@ -38,3 +38,21 @@ infoHubs.directive('spinner', function() {
     }
 });
 
+
+
+
+
+infoHubs.directive('divFileUpload', ['$window', function($window) {
+    return {
+        restrict: 'A',
+        scope: {},
+        link: function($scope, $element, $attrs) {
+            function clickTarget() {
+                $('#' + $attrs.inputTarget).click();
+            }
+
+            $element.click(clickTarget);
+        }
+    }
+}]);
+
