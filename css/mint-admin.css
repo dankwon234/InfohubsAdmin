@@ -185,15 +185,18 @@ body {
 /* Wrappers */
 /* ------------------------------- */
 #wrapper {
-  width: 75%; }
+  width: 100%; }
 
 #page-wrapper {
-  padding: 0 15px;
   min-height: 568px;
   background-color: #e7e7e7;
-  margin: 0; }
+  margin: 0; 
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  width: 100%;}
   @media (min-width: 768px) {
     #page-wrapper {
+      padding-right: 270px;
       position: absolute;
       top: 0px;
       left: 250px;
@@ -258,7 +261,7 @@ body {
   right: 0px; 
   bottom: 0px;
   left: 0px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #side-menu {
@@ -495,6 +498,12 @@ a {
 .btn-warning.btn-outline:hover,
 .btn-danger.btn-outline:hover {
   color: #fff; }
+
+/* Home */
+/* ------------------------------- */
+.device-images-label {
+  padding: 0;
+}
 
 /* Pages */
 /* ------------------------------- */
