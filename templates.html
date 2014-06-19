@@ -89,10 +89,11 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse collapse">
                           <div class="panel-body">
-                            <div class="form-group">
-                              <label>Device Name</label>
-                              <input style="width:90%" class="form-control" ng-model="selectedDevice.name" placeholder="Device Name">
-                            </div>
+                	          <h4>Select Template</h4>
+                	          
+                              <select ng-model="currentTemplate" ng-change="selectTemplate()" style="width:40%;margin-top:20px" class="form-control">
+                                <option ng-repeat="template in templates track by $index">{{ template.name }}</option>
+                              </select><br />
                             
                             
                 
