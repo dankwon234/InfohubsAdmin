@@ -185,7 +185,7 @@ body {
 /* Wrappers */
 /* ------------------------------- */
 #wrapper {
-  width: 100%; }
+  width: 75%; }
 
 #page-wrapper {
   background-color: #e7e7e7;
@@ -223,6 +223,7 @@ body {
 
 /* Header */
 /* ------------------------------- */  
+
 .header {
   position: absolute;
   top: 0px;
@@ -433,18 +434,6 @@ body {
   }
 }
 /*#side-menu {
-=======
-.content-wrapper {
-  position: absolute;
-  top: 90px;
-  right: 0px; 
-  bottom: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-
-#side-menu {
->>>>>>> More header styling
   background: #272a33; }
   #side-menu li a {
     -moz-transition: all 0.3s linear;
