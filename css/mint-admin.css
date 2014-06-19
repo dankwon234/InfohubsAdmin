@@ -252,6 +252,15 @@ body {
   bottom: -10px;
 }
 
+.content-wrapper {
+  position: absolute;
+  top: 90px;
+  right: 0px; 
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
 #side-menu {
   background: #272a33; }
   #side-menu li a {
