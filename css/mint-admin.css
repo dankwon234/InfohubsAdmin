@@ -668,8 +668,8 @@ a {
   color: #fff; }
 
 /* Home */
-/* ------------------------------- */
-<<<<<<< HEAD
+/* ------------------------------- */ 
+
 .device-images-container {
   padding: 0 10px 10px 10px;
 }
@@ -937,10 +937,6 @@ a {
 .device-configuration .search-results-label {
   margin-top: 20px;
   margin-bottom: 10px;
-=======
-.device-images-label {
-  padding: 0;
->>>>>>> Fixed bootstrap bug, made responsive adjustments, fixed labels
 }
 
 /* Pages */
