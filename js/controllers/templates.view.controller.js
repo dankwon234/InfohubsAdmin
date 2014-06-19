@@ -41,7 +41,7 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
         
         
         
-// - -  - -  - -  - -  - -  - - CRUD  - -  - -  - -  - -  - -  - -  - -  - - 
+// - - - - - - - - - - - - - - - - - - - - CRUD  - - - - - - - - - - - - - - - - - - - - 
         
         $scope.createTemplate = function(){
         	if ($scope.newTemplate.name.length < 1){
