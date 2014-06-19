@@ -3,7 +3,7 @@ var restService = angular.module('restService', []);
 
 restService.factory('restService', ['$http',
                                     function($http) {
-                                              var baseUrl = 'http://796.zuse-infohub.appspot.com';
+                                              var baseUrl = 'http://800.zuse-infohub.appspot.com';
 
                                               return {
                                                   getResource: function(resource, id, params) {
