@@ -185,7 +185,7 @@ body {
 /* Wrappers */
 /* ------------------------------- */
 #wrapper {
-  width: 100%; }
+  width: 75%; }
 
 #page-wrapper {
   padding: 0 15px;
@@ -199,6 +199,7 @@ body {
       left: 250px;
     } 
   }
+
 
 .header {
   position: absolute;
