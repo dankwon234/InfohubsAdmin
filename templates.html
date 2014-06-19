@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="infoHubs">
 
     <head>
 		{{head}}
@@ -12,7 +12,7 @@
 		
     </head>
 
-	<body ng-app="infoHubs" ng-controller="templatesViewController" ng-init="init()">
+	<body ng-controller="templatesViewController" ng-init="init()">
 
 	<div class="loading-overlay" ng-show="loading">
       <div spinner spin="loading"></div>
@@ -70,7 +70,7 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="page-header text-asbestos">Templates | {{ selectedDevice.name }}</h3>
+                        <h3 class="page-header text-asbestos">Templates</h3>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -89,18 +89,26 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse collapse">
                           <div class="panel-body">
-                	          <h4>Select Template</h4>
+                	        <h4>Select Template</h4>
                 	          
-                              <select ng-model="currentTemplate" ng-change="selectTemplate()" style="width:40%;margin-top:20px" class="form-control">
-                                <option ng-repeat="template in templates track by $index">{{ template.name }}</option>
-                              </select><br />
+                            <select ng-model="currentTemplateName" ng-change="changeCurrentTemplate()" style="width:40%;margin-top:20px" class="form-control">
+                              <option ng-repeat="templateName in templateNames() track by $index">{{ templateName }}</option>
+                            </select><br />
+ 
+
+ 
+                            HTML<br />
+                            <textarea ng-model="currentTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
                             
+                            <br /><br />
+
+                            CSS<br />
+                            <textarea ng-model="currentTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
                             
-                
                             
                             <hr />
-                            <button ng-click="updateSelectedDevice()" class="btn btn-primary">Update Template</button>
-                            <button ng-click="deleteSelectedDevice()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Template</button>
+                            <button ng-click="updateCurrentTemplate()" class="btn btn-primary">Update Template</button>
+                            <button ng-click="deleteCurrentTemplate()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Template</button>
                             
                           </div>
                         </div>
