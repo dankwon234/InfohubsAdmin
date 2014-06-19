@@ -39,6 +39,28 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
         	return names;
         }
         
+        $scope.previewTemplate = function(){
+        	var url = 'http://www.google.com';
+        	
+        	popup(url, 691, 691);
+        	popup(url, 315, 315);
+        	popup(url, 315, 370);
+        	popup(url, 315, 691);
+        }
+        
+
+        
+        function popup(url, w, h) {
+    		dimensions = 'height='+h+',width='+w;
+    	  	newwindow = window.open(url,'',dimensions);
+
+    	  	if (window.focus) {
+    	  		newwindow.focus();
+    	  	}
+    	  	
+    	  	return false;
+        }
+        
         
         
 // - - - - - - - - - - - - - - - - - - - - CRUD  - - - - - - - - - - - - - - - - - - - - 
