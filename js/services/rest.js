@@ -3,11 +3,11 @@ var restService = angular.module('restService', []);
 
 restService.factory('restService', ['$http',
                                     function($http) {
-//                                              var baseUrl = 'http://796.zuse-infohub.appspot.com';
+                                              var baseUrl = 'http://796.zuse-infohub.appspot.com';
 
                                               return {
                                                   getResource: function(resource, id, params) {
-                                                	  var endpoint = '/api/'+resource;
+                                                	  var endpoint = baseUrl+'/api/'+resource;
                                                 	  if (id != null)
                                                 		  endpoint = endpoint+'/'+id;
                                                 	  
@@ -26,15 +26,15 @@ restService.factory('restService', ['$http',
                                                   },
 
                                                   getEntries: function() {
-                                                      return $http.get('/api/entries?format=map'); //'assets/mockdata/entries.json'); //
+                                                      return $http.get(baseUrl+'/api/entries?format=map'); //'assets/mockdata/entries.json'); //
                                                   },
 
                                                   getDevices: function() {
-                                                      return $http.get('/api/devices');
+                                                      return $http.get(baseUrl+'/api/devices');
                                                   },
 
                                                   searchEntries: function(searchTerm, lat, long, fsCategory) {
-                                                      return $http.get('/api/entries?format=map&search=' + searchTerm + '&ll=' + lat + ',' + long + '&foursquarefilter=' + fsCategory);
+                                                      return $http.get(baseUrl+'/api/entries?format=map&search=' + searchTerm + '&ll=' + lat + ',' + long + '&foursquarefilter=' + fsCategory);
                                                   }
 
                                               }
