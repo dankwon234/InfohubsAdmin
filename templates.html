@@ -128,20 +128,29 @@
                         <div id="collapseTwo" class="panel-collapse collapse collapse">
                           <div class="panel-body">
                           
+                			<div class="row">
+                    			<div class="col-xs-6 col-md-6">
+                      			  <label>Name</label>
+                      			  <input class="form-control" ng-model="newTemplate.name" placeholder="name">
+                    			</div>
+                			</div>
+                			
+                			<br /><br />
+                          
+
+                            HTML<br />
+                            <textarea ng-model="newTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
+                            
+                            <br /><br />
+
+                            CSS<br />
+                            <textarea ng-model="newTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
+                          
                 	        
                 	        <hr />
                 	        
-                	        <div>
-                	          <h4>Edit Subcategory Configuration</h4>
-                	          
-                              <select ng-model="currentSubcategory" ng-change="updateSubcategory()" style="width:40%;margin-top:20px" class="form-control">
-                                <option ng-repeat="subcategoryName in orderForCategory(currentCategory) track by $index">{{ subcategoryName }}</option>
-                              </select><br />
-
-							  
-                
-                            </div>
-                            
+                            <br />
+                            <button ng-click="createTemplate()" class="btn btn-primary">Create Template</button>
                             
                             
                           
