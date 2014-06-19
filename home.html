@@ -132,38 +132,46 @@
                       <label>Images</label>
                     </div>                                          
                     <div class="col-sm-12 device-images-container">
-                      <div class="col-sm-4 device-images-outer">  
-                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-                          <div class="panel-body asbestos">
-                            <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
+                      <div class="col-sm-4 device-images-outer form-group">  
+                        <div class="device-images-inner" style="border-bottom:none">
+                          <div class="fa fa-plus-circle add-image" ng-hide="modelLocator.editDevice.image"></div>
+                          <div class="device-images-container" ng-file-drop="onFileSelect($files, 'logo')">
+                            <div class="dummy"></div>
+                            <div class="content" image image-id="modelLocator.editDevice.image"></div>
                           </div>
-                          <div class="panel-footer">
-                            <span class="panel-eyecandy-title">Logo</span>
-                          </div>
+                          <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
                         </div>
-    			              <div class="dropZone" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">drop image file here</div>
+                        <div class="device-images-label">
+                          LOGO
+                        </div>
                       </div>
                       <div class="col-sm-4 device-images-outer">
-                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-                          <div class="panel-body theme-color">
+                        <div class="device-images-inner" style="border-bottom:none">
+                          <div class="fa fa-plus-circle add-image" ng-hide="modelLocator.editDevice.image"></div>
+                          <div class="device-images-container" ng-file-drop="onFileSelect($files, 'logo')">
+                            <div class="dummy"></div>
+                            <div class="content" image image-id="modelLocator.editDevice.image"></div>
+                          </div>
+                          <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
+                        </div>
+                        <div class="device-images-label">
+                          COVER SCREEN
+                        </div>                        
                             <img src="/site/images/{{ selectedDevice.coverScreen }}?crop=160" />
-                          </div>
-                          <div class="panel-footer">
-                            <span class="panel-eyecandy-title">Cover Screen</span>
-                          </div>
-                        </div>
-    			              <div class="dropZone" ng-file-drop="onFileSelect($files, 'coverScreen')" ng-file-drag-over-class="optional-css-class">drop image file here</div>
                       </div>
                       <div class="col-sm-4 device-images-outer">
-                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-                          <div class="panel-body asbestos">
-                            <img src="/site/images/{{ selectedDevice.categoryScreen }}?crop=160" />
+                        <div class="device-images-inner" style="border-bottom:none">
+                          <div class="fa fa-plus-circle add-image" ng-hide="modelLocator.editDevice.image"></div>
+                          <div class="device-images-container" ng-file-drop="onFileSelect($files, 'logo')">
+                            <div class="dummy"></div>
+                            <div class="content" image image-id="modelLocator.editDevice.image"></div>
                           </div>
-                          <div class="panel-footer">
-                            <span class="panel-eyecandy-title">Category Screen</span>
-                          </div>
+                          <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
                         </div>
-    			              <div class="dropZone" ng-file-drop="onFileSelect($files, 'categoryScreen')" ng-file-drag-over-class="optional-css-class">drop image file here</div>
+                        <div class="device-images-label">
+                          CATEGORY SCREEN
+                        </div>
+                            <img src="/site/images/{{ selectedDevice.categoryScreen }}?crop=160" />
                       </div>
                     </div>
                     <hr />
