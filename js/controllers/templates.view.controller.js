@@ -10,7 +10,8 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
 	
     	$scope.init = function() {
         	$scope.loading = true;
-        	restService.getResource('templates', null, null).success(getTemplatesSuccess).error(getTemplatesFail);
+        	$scope.requestType = 'getTemplates';
+        	restService.getResource('templates', null, null).success(requestSuccessHandler).error(requestFailHandler);
     	}
     	
 
@@ -40,27 +41,7 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
         
         
         
-        // - -  - -  - -  - -  - -  - - CRUD  - -  - -  - -  - -  - -  - -  - -  - - 
-        
-        function getTemplatesSuccess(data, status, headers, config) {
-        	$scope.loading = false;
-            if(data.results.confirmation == 'success') {
-            	$scope.templates = data.results.templates;
-            	$scope.currentTemplate = $scope.templates[0];
-            	$scope.currentTemplateName = $scope.currentTemplate.name;
-            	
-            	return;
-            } 
-            
-            // fail:
-            alert(data.results.message);
-        }
-
-        function getTemplatesFail(data, status, headers, config) {
-            //TODO
-        	$scope.loading = false;
-        	console.log('Get Templates - FAIL');
-        }
+// - -  - -  - -  - -  - -  - - CRUD  - -  - -  - -  - -  - -  - -  - -  - - 
         
         $scope.createTemplate = function(){
         	if ($scope.newTemplate.name.length < 1){
@@ -70,7 +51,8 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
         	
         	console.log('Create Template: '+JSON.stringify($scope.newTemplate));
         	$scope.loading = true;
-        	restService.postResource('templates', $scope.newTemplate, null).success(postTemplatesSuccess).error(postTemplatesFail);
+        	$scope.requestType = 'createTemplate';
+        	restService.postResource('templates', $scope.newTemplate, null).success(requestSuccessHandler).error(requestFailHandler);
         }
         
         $scope.updateCurrentTemplate = function(){
@@ -78,50 +60,8 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
         		return;
         	
         	$scope.loading = true;
-        	restService.putResource('templates', $scope.currentTemplate, null).success(putTemplatesSuccess).error(putTemplatesFail);
-        }
-        
-        
-        function putTemplatesSuccess(data, status, headers, config) {
-        	$scope.loading = false;
-            if(data.results.confirmation == 'success') {
-            	console.log(JSON.stringify(data.results));
-            	alert('Template Successfully Updated');
-            	return;
-            } 
-            
-            // fail:
-            alert(data.results.message);
-        }
-        
-        function putTemplatesFail(data, status, headers, config) {
-            //TODO
-        	$scope.loading = false;
-        	console.log('Get Templates - FAIL');
-        }
-
-
-        function postTemplatesSuccess(data, status, headers, config) {
-        	$scope.loading = false;
-            if(data.results.confirmation == 'success') {
-            	console.log(JSON.stringify(data.results));
-            	
-        		$scope.newTemplate = {'name':'', 'css':'', 'html':''};
-        		var template = data.results.template;
-        		$scope.templates.unshift(template);        		
-            	
-            	alert('Template Successfully Created');
-            	return;
-            } 
-            
-            // fail:
-            alert(data.results.message);
-        }
-        
-        function postTemplatesFail(data, status, headers, config) {
-            //TODO
-        	$scope.loading = false;
-        	console.log('Get Templates - FAIL');
+        	$scope.requestType = 'updateTemplate';
+        	restService.putResource('templates', $scope.currentTemplate, null).success(requestSuccessHandler).error(requestFailHandler);
         }
         
 
@@ -129,6 +69,51 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
         	console.log('deleteCurrentTemplate');
 
         }
+        
+
+        
+
+// - -  - -  - -  - -  - -  - - NETWORK SUCCESS/FAIL HANDLERS - -  - -  - -  - -  - -  - -  - -  - - 
+
+        function requestSuccessHandler(data, status, headers, config){
+        	$scope.loading = false;
+            if (data.results.confirmation == 'success') {
+        		console.log('REQUEST SUCCESS HANDLER');
+            	console.log(JSON.stringify(data.results));
+            	
+            	if ($scope.requestType == 'getTemplates'){
+                	$scope.templates = data.results.templates;
+                	$scope.currentTemplate = $scope.templates[0];
+                	$scope.currentTemplateName = $scope.currentTemplate.name;
+                	return;
+            	}
+
+            	if ($scope.requestType == 'createTemplate'){
+            		$scope.newTemplate = {'name':'', 'css':'', 'html':''};
+            		var template = data.results.template;
+            		$scope.templates.unshift(template);        		
+                	
+                	alert('Template Successfully Created');
+                	return;
+            	}
+
+            	if ($scope.requestType == 'updateTemplate'){
+                	console.log(JSON.stringify(data.results));
+                	alert('Template Successfully Updated');
+                	return;
+            	}
+
+            } 
+            
+            // fail:
+            alert(data.results.message);
+        }
+
+        function requestFailHandler(data, status, headers, config, requestId){
+        	$scope.loading = false;
+        }
+
+        
         
         
 
