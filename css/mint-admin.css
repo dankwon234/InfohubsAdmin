@@ -281,6 +281,7 @@ body {
   bottom: -10px;
 }
 
+<<<<<<< HEAD
 /*Side_menu*/
 
 .sidebar, .sidebar-menu {
@@ -432,6 +433,18 @@ body {
   }
 }
 /*#side-menu {
+=======
+.content-wrapper {
+  position: absolute;
+  top: 90px;
+  right: 0px; 
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+#side-menu {
+>>>>>>> More header styling
   background: #272a33; }
   #side-menu li a {
     -moz-transition: all 0.3s linear;
