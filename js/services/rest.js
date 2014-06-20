@@ -91,7 +91,6 @@ restService.factory('restService', ['$http',
                                                 	  }
                                                 	  
                                                 	  console.log('DELETE RESOURCE: '+endpoint);
-//                                                      var json = JSON.stringify(object);
                                                       
                                                       return $http.delete(endpoint); 
                                                   },
@@ -100,6 +99,7 @@ restService.factory('restService', ['$http',
                                                   searchEntries: function(searchTerm, lat, long, fsCategory) {
                                                       return $http.get(baseUrl+'/api/entries?format=map&search=' + searchTerm + '&ll=' + lat + ',' + long + '&foursquarefilter=' + fsCategory);
                                                   }
+                                                  
 
                                               }
                                           }
