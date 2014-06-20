@@ -116,7 +116,8 @@
 /* TRANSITION */
 /* TRIPLE BORDERS */
 body, html {
-  width: 100%; }
+  width: 100%; 
+  height: 100%;}
 
 body {
   font-family: 'Open Sans', sans-serif, 'Arial', sans-serif;
@@ -193,7 +194,13 @@ body {
   margin: 0; 
   padding: 0 20px 20px 20px;
   overflow-y: auto;
-  width: 100%;}
+  width: 100%;
+position: absolute;
+top: 0px;
+right: 0px;
+bottom: 0px;
+left: 250px;
+overflow-y: auto;}
   @media (min-width: 768px) {
     #page-wrapper {
       padding-right: 270px;
@@ -202,7 +209,18 @@ body {
       left: 250px;
     } 
   }
-  
+
+.content-wrapper {
+  position: absolute;
+  top: 90px;
+  right: 0px; 
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+/* Header */
+/* ------------------------------- */  
 .header {
   position: absolute;
   top: 0px;
@@ -255,16 +273,147 @@ body {
   bottom: -10px;
 }
 
-.content-wrapper {
-  position: absolute;
-  top: 90px;
-  right: 0px; 
-  bottom: 0px;
-  left: 0px;
-  overflow-x: hidden;
+/*Side_menu*/
+
+.sidebar, .sidebar-menu {
+  position: relative;
+  width: 250px;
+  height: 100%;
+  background-color: #272A33;
+  padding: 20px;
 }
 
-#side-menu {
+@media only screen and (max-width: 767px) {
+
+  .sidebar, .sidebar-menu {
+    /*display: block;
+    width: 100%;
+    height: auto;*/
+    display: none;
+  }
+}
+
+.sidebar .user-info, .sidebar-menu .user-info {
+  position: relative;
+  display: block;
+}
+
+.sidebar .user-info .user-image, .sidebar-menu .user-info .user-image {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  float: left;
+  background: url('/admin/img/profile-1.jpg');
+}
+
+.sidebar .user-info .user-name, .sidebar-menu .user-info .user-name {
+  position: absolute;
+  right: 0px;
+  bottom: -70px;
+  left: 75px;
+  color: white;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.sidebar .accordion-container, .sidebar-menu .accordion-container {
+  position: absolute;
+  top: 105px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  font-size: 11px;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .sidebar .accordion-container, .sidebar-menu .accordion-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .sidebar .accordion-container .accordion-group, .sidebar-menu .accordion-container .accordion-group {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sidebar .accordion-container .panel, .sidebar-menu .accordion-container .panel {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.sidebar .accordion-container .panel-default > .panel-heading, .sidebar-menu .accordion-container .panel-default > .panel-heading {
+  cursor: pointer;
+  cursor: hand;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.sidebar .accordion-container .panel-group .panel-heading + .panel-collapse .panel-body, .sidebar-menu .accordion-container .panel-group .panel-heading + .panel-collapse .panel-body {
+  border: none;
+}
+
+.sidebar .accordion-container .accordion-header, .sidebar-menu .accordion-container .accordion-header {
+  text-align: center;
+  color: #767e96;
+}
+
+.sidebar .accordion-container .accordion-header .accordion-header-icon, .sidebar-menu .accordion-container .accordion-header .accordion-header-icon {
+  margin-top: 10px;
+  font-size: 32px;
+}
+
+.sidebar .accordion-container .accordion-header .accordion-header-label, .sidebar-menu .accordion-container .accordion-header .accordion-header-label {
+  color: blue;
+  font-size: 11px;
+  color: #767e96;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.sidebar .accordion-container .accordion-header .a:hover, .sidebar-menu .accordion-container .accordion-header .a:hover {
+  text-decoration: none;
+}
+
+.sidebar .accordion-container .device-label, .sidebar-menu .accordion-container .device-label {
+  cursor: pointer;
+  cursor: hand;
+  color: #767e96;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+}
+
+.sidebar-menu {
+  position: absolute;
+  top: 0px;
+  right: -250px;
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+
+  .sidebar-menu {
+    height: auto;
+    min-height: 100%;
+    display: none;
+  }
+}
+/*#side-menu {
   background: #272a33; }
   #side-menu li a {
     -moz-transition: all 0.3s linear;
@@ -346,7 +495,7 @@ body {
       right: 24px;
       top: 50%;
       margin-top: -5px;
-      position: absolute; }
+      position: absolute; }*/
 
 a {
   outline: none; }
@@ -565,6 +714,42 @@ a {
   margin-bottom: 20px !important;
 }
 
+.device-configuration .category-label {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.device-configuration .category-outer {
+  padding: 5px 15px 5px 15px;
+}
+
+.device-configuration .category-outer .category-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.device-configuration .category-outer .category-container .category-header {
+  width: 100%;
+  background-color: #686868;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.device-configuration .category-outer .category-container .subcategories {
+  padding: 10px 10px 0px 10px;
+  border: solid 1px #dfe2e4;
+}
+
+.subcategories .subcategory-item {
+  cursor: pointer;
+  margin-top: 10;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #7f8c8d;
+}
+
 .device-configuration .subcategory-entries {
   margin: 0;
   padding: 0;
@@ -701,6 +886,31 @@ a {
   text-transform: capitalize;
   word-wrap: break-word;
   font-size: 10px;
+}
+
+.device-configuration .search-container {
+  margin-top: 15px;
+}
+
+.device-configuration .subcategory-label {
+  margin-top: 10px;
+}
+
+.device-configuration .search-container .search-button-container {
+  padding-left: 10px;
+}
+
+.device-configuration .search-container .search-button {
+  width: 100%;
+}
+
+.device-configuration .search-results {
+  margin-bottom: 15px;
+}
+
+.device-configuration .search-results-label {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* Pages */
