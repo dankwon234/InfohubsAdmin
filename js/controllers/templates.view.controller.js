@@ -88,7 +88,13 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
         
 
         $scope.deleteCurrentTemplate = function(){
+        	if ($scope.currentTemplate==null)
+        		return;
+
         	console.log('deleteCurrentTemplate');
+        	$scope.loading = true;
+        	$scope.requestType = 'deleteTemplate';
+        	restService.deleteResource('templates', $scope.currentTemplate, null).success(requestSuccessHandler).error(requestFailHandler);
 
         }
         
@@ -124,6 +130,15 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
                 	alert('Template Successfully Updated');
                 	return;
             	}
+            	
+
+            	if ($scope.requestType == 'deleteTemplate'){
+                	console.log(JSON.stringify(data.results));
+                	alert('Template Successfully Deleted');
+                	return;
+            	}
+
+
 
             } 
             
