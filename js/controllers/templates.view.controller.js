@@ -135,6 +135,15 @@ templatesViewController.controller('templatesViewController', ['$scope', '$http'
             	if ($scope.requestType == 'deleteTemplate'){
                 	console.log(JSON.stringify(data.results));
                 	alert('Template Successfully Deleted');
+                	
+                	var index = $scope.templates.indexOf($scope.currentTemplate);
+                	if (index > -1) {
+                		$scope.templates.splice(index, 1);
+                		var i = (index+1) % $scope.templates.length;
+                    	$scope.currentTemplate = $scope.templates[i];
+                    	$scope.currentTemplateName = $scope.currentTemplate.name;
+                	}
+                	
                 	return;
             	}
 
