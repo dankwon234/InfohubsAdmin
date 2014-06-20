@@ -106,7 +106,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="panel-group">
-              <div style="border-bottom:none" class="panel panel-default">
+              <div style="border-bottom:none" class="panel panel-default device-accordion-group">
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" >Device Settings</a>
@@ -114,19 +114,17 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in">
                   <div class="panel-body">
-                    <div class="form-group">
+                    <div class="form-group col-sm-12">
                       <label for="deviceName" class="control-label">Device Name</label>
-                      <input class="form-control col-sm-12" id="deviceName" ng-model="selectedDevice.name" placeholder="Device Name">
-                    </div>           
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <label for="deviceLatitude" class="control-label">Latitude</label>
-                        <input class="form-control" id="deviceLatitude" ng-model="selectedDevice.latitude" placeholder="Latitude">
-                      </div>
-                      <div class="col-sm-6">
-                        <label for="deviceLongitude" class="control-label">Longitude</label>
-                        <input class="form-control" id="deviceLongitude" ng-model="selectedDevice.longitude" placeholder="Longitude">
-                      </div>
+                      <input class="form-control" id="deviceName" ng-model="selectedDevice.name" placeholder="Device Name">
+                    </div>                             
+                    <div class="col-sm-6 form-group">
+                      <label for="deviceLatitude" class="control-label">Latitude</label>
+                      <input class="form-control" id="deviceLatitude" ng-model="selectedDevice.latitude" placeholder="Latitude">
+                    </div>
+                    <div class="col-sm-6 form-group">
+                      <label for="deviceLongitude" class="control-label">Longitude</label>
+                      <input class="form-control" id="deviceLongitude" ng-model="selectedDevice.longitude" placeholder="Longitude">
                     </div>   
                     <div class="device-images-label col-xs-12">
                       <label>Images</label>
@@ -139,7 +137,6 @@
                             <div class="dummy"></div>
                             <div class="content" image image-id="modelLocator.editDevice.image"></div>
                           </div>
-                          <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
                         </div>
                         <div class="device-images-label">
                           LOGO
@@ -152,12 +149,10 @@
                             <div class="dummy"></div>
                             <div class="content" image image-id="modelLocator.editDevice.image"></div>
                           </div>
-                          <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
                         </div>
                         <div class="device-images-label">
                           COVER SCREEN
                         </div>                        
-                            <img src="/site/images/{{ selectedDevice.coverScreen }}?crop=160" />
                       </div>
                       <div class="col-sm-4 device-images-outer">
                         <div class="device-images-inner" style="border-bottom:none">
@@ -166,22 +161,21 @@
                             <div class="dummy"></div>
                             <div class="content" image image-id="modelLocator.editDevice.image"></div>
                           </div>
-                          <img src="/site/images/{{ selectedDevice.image }}?crop=160" />
                         </div>
                         <div class="device-images-label">
                           CATEGORY SCREEN
                         </div>
-                            <img src="/site/images/{{ selectedDevice.categoryScreen }}?crop=160" />
                       </div>
                     </div>
-                    <hr />
-                    <button ng-click="updateSelectedDevice()" class="btn btn-primary">Update Device</button>
-                    <button ng-click="deleteSelectedDevice()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Device</button> 
+                    <div class="col-sm-12 form-group">
+                      <button ng-click="updateSelectedDevice()" class="btn btn-success" id="btn-update">Update Device</button>
+                      <button ng-click="deleteSelectedDevice()" class="btn btn-danger" id="btn-delete">Delete Device</button>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div style="border-bottom:none" class="panel panel-default">
+              <div style="border-bottom:none" class="panel panel-default device-configuration">
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Device Configuration</a>
@@ -189,18 +183,16 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in">
                   <div class="panel-body">           
-  						      <div class="row" style="margin-top:20px">
+  						      <div class="row">
   							      <div ng-repeat="categoryName in selectedDevice.configuration.sequence track by $index" class="col-xs-6 col-md-3">
                         <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
                           <div class="panel-body asbestos">
                             <h4><a style="color:#fff" ng-click="selectCategory(categoryName)" href="">{{ categoryName }}</a></h4>
                           </div>
                           <div style="background:#fff" class="panel-footer">
-                            <ol>
-                              <li ng-repeat="subcategoryName in orderForCategory(categoryName) track by $index">
-                                <a ng-click="selectSubcategory(categoryName, subcategoryName)" href="">{{ subcategoryName }}</a>
-                              </li>
-                            </ol>
+                            <div ng-repeat="subcategoryName in orderForCategory(categoryName) track by $index">
+                              <a ng-click="selectSubcategory(categoryName, subcategoryName)" href="">{{ subcategoryName }}</a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -212,57 +204,76 @@
                         <option ng-repeat="subcategoryName in orderForCategory(currentCategory) track by $index">{{ subcategoryName }}</option>
                       </select>
                       <br />
-
-  							      <div id="container">  
-      						   	  <div ng-repeat="page in numberOfPages() track by $index" class="contents">
-      							      <div ng-show="$index%3 == 0" class="col-xs-6 col-md-3 widePanel">
-                            <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 0)" href="">
-                              <strong>{{ entryForIndex($index, 0) }}</strong>
-                            </a>
+                      <div class="col-sm-12" class="subcategory-entries-container">
+                          <label class="control-label subcategory-label">Edit Subcategory Entries</label>
+                          <div class="subcategory-entries">
+                              <div class="subcategory-container" subcategories-entries entries="modelLocator.entries" subcategory="modelLocator.selectedSubcategory" selected-entry-index="modelLocator.selectedEntryIndex">
+                                <!--WARNING: This section is DUMMY DATA meant to be replaced with HTML created with Angular-->
+                                <div class="box-outer ng-scope" style="left: 0px">
+                                  <div class="box-1-1" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">National Museum of the American Indian</div>                                    
+                                    </div>
+                                  </div>
+                                  <div class="box-1-2" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">Fraunces Tavern Museum</div>
+                                    </div>
+                                  </div>
+                                  <div class="box-1-3" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">Museum of American Finance</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="box-outer ng-scope" style="left: 320px">
+                                  <div class="box-2-1" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">National Museum of the American Indian</div>                                    
+                                    </div>
+                                  </div>
+                                  <div class="box-2-2" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">Fraunces Tavern Museum</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="box-outer ng-scope" style="left: 640px">
+                                  <div class="box-3-1" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">National Museum of the American Indian</div>                                    
+                                    </div>
+                                  </div>
+                                  <div class="box-3-2" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">Fraunces Tavern Museum</div>
+                                    </div>
+                                  </div>
+                                  <div class="box-3-3" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">Museum of American Finance</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="box-outer ng-scope" style="left: 960px">
+                                  <div class="box-4-1" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">National Museum of the American Indian</div>                                    
+                                    </div>
+                                  </div>
+                                  <div class="box-4-2" ng-click="selectEntry(0)">
+                                    <div class="box-grey">
+                                      <div class="entry-label">Fraunces Tavern Museum</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="box-outer ng-scope" style="left: 1280px">
+                                  <div class="fa fa-plus-circle entries-add-button" ng-click="addSubcategories()">
+                                  </div>
+                                </div>
+                              </div>
                           </div>
-      							      <div ng-show="$index%3 == 0" class="col-xs-6 col-md-3 splitPanel">
-      							        <div ng-show="$index%3 == 0" class="topBoxEntry">
-                              <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 1)" href="">
-                                <strong>{{ entryForIndex($index, 1) }}</strong>
-                              </a>
-                            </div>
-      							        <div ng-show="$index%3 == 0" class="bottomBoxEntry">
-                              <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 2)" href="">
-                                <strong>{{ entryForIndex($index, 2) }}</strong>
-                              </a>
-                            </div>
-      							      </div>
-
-      							      <div ng-show="($index-1)%3 == 0" class="col-xs-6 col-md-3 tallPanel">
-                            <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 3)" href="">
-                              <strong>{{ entryForIndex($index, 3) }}</strong>
-                            </a>
-                          </div>
-      							      <div ng-show="($index-1)%3 == 0" class="col-xs-6 col-md-3 widePanel">
-                            <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 4)" href="">
-                              <strong>{{ entryForIndex($index, 4) }}</strong>
-                            </a>
-                          </div>
-      							  
-      							      <div ng-show="($index-2)%3 == 0" class="col-xs-6 col-md-3 widePanel">
-                            <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 0)" href="">
-                              <strong>{{ entryForIndex($index, 5) }}</strong>
-                            </a>
-                          </div>
-      							      <div ng-show="($index-2)%3 == 0" class="col-xs-6 col-md-3 splitPanel">
-      							        <div ng-show="($index-2)%3 == 0" class="topBoxEntry">
-                              <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 1)" href="">
-                                <strong>{{ entryForIndex($index, 6) }}</strong>
-                              </a>
-                            </div>
-      							        <div ng-show="($index-2)%3 == 0" class="bottomBoxEntry">
-                              <a style="color:#fff;text-decoration:none" ng-click="selectEntryIndex($index, 2)" href="">
-                                <strong>{{ entryForIndex($index, 7) }}</strong>
-                              </a>
-                            </div>
-      							      </div>
-      							    </div>
-  							      </div>
+                      </div>
                     </div>          
   							    <div style="margin-top:20px">
                   	  <h4>Select Venue</h4>
