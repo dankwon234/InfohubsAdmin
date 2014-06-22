@@ -256,6 +256,12 @@ body {
   padding: 10px 35px 16px 0px;
 }
 
+@media only screen and (max-width: 972px) {
+  .header #nav-toggle {
+    visibility: visible;
+  }
+}
+
 .header #nav-toggle span, .header #nav-toggle span:before, .header #nav-toggle span:after {
   cursor: pointer;
   border-radius: 1px;
@@ -1374,8 +1380,57 @@ a:hover.theme-color {
   font-weight: bold !important; }
 
 .page-header {
-  margin-top: 15px;
-  font-weight: 300 !important; }
+  width: 100%;
+  min-height: 105px;
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
+  line-height: 105px;
+  font-size: 24px;
+  color: #7f8c8d;
+  font-weight: 300;
+  font-family: sans-serif;
+  margin: 0;}
+
+@media only screen and (max-width: 972px) {
+  .page-header {
+    padding: 20px;
+    padding-left: 0;
+    font-size: 20px;
+    min-height: 20px;
+    line-height: 15px;
+  }
+}
+
+.page-header .info {
+  display: inline;
+}
+
+@media only screen and (max-width: 972px) {
+  .page-header .info {
+    display: block;
+  }
+}
+
+.page-header .pipe {
+  display: inline;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 972px) {
+  .page-header .pipe {
+    visibility: hidden;
+  }
+}
+
+.page-header .name {
+  display: inline;
+}
+
+@media only screen and (max-width: 972px) {
+  .page-header .name {
+    display: block;
+  }
+}
 
 svg {
   width: 100% !important; }

@@ -49,6 +49,7 @@
         <div class="header-logo-background">
           <div class="header-logo"></div>
         </div>
+        <!--NOTE: This nav-toggle doesn't work. This will be addressed ASAP -->
         <a id="nav-toggle" href="#" side-nav><span></span></a>
       </div>
       <div class="content-wrapper">
@@ -137,7 +138,11 @@
           </div>
         </div>
         <div id="page-wrapper">
-          <h3 class="page-header text-asbestos">Device Info | {{ selectedDevice.name }}</h3>
+          <div class="page-header text-asbestos">
+            <div class="info">Device Info</div>
+            <div class="pipe">&nbsp;|&nbsp; </div>
+            <div class="name">{{ selectedDevice.name }}</div>
+          </div>
           <!-- /.col-lg-12 -->
           <div class="row">
             <div class="col-lg-12">
