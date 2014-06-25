@@ -18,7 +18,7 @@
     <link href="/admin/css/plugins/timeline/timeline.css" rel="stylesheet">
 
     <!-- Mint Admin CSS - Include with every page -->
-    <link href="/admin/css/mint-admin.css?v=1" rel="stylesheet">
+    <link href="/admin/css/mint-admin.css" rel="stylesheet">
         
     <!-- libs -->
     <script src="/admin/js/lib/jquery/dist/jquery.min.js"></script>
@@ -61,11 +61,11 @@
           </div>
           <div class="accordion-container ng-scope" ios-scroll="">
             <accordion>
-              <div class="panel-group" ng-transclude="">
+              <div class="panel-group" id="side-accordion" ng-transclude="">
                 <div class="accordion-group panel panel-default ng-isolate-scope" is-open="true">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseOne">
                         <div class="accordion-header ng-scope">
                           <div class="accordion-header-icon fa fa-envelope fa-fw fa-3x"></div>
                           <div class="accordion-header-label">DEVICES</div>
@@ -73,16 +73,19 @@
                       </a>
                     </h4>
                   </div>
-                  <div class="panel-collapse collapse" collapse="!isOpen" style="height: 0px;">
+                  <div class="panel-collapse collapse in" id="collapseOne" >
                     <div class="panel-body" ng-transclude="">
                       <accordion-heading class="ng-scope"></accordion-heading>
+                      <div class="device-item" ng-repeat="device in devices track by $index">
+                        <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="accordion-group panel panel-default ng-isolate-scope">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseTwo">
                         <div class="accordion-header ng-scope">
                           <div class="accordion-header-icon fa fa-edit fa-fw fa-3x"></div>
                           <div class="accordion-header-label">CONTENT</div>
@@ -90,7 +93,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div class="panel-collapse collapse" collapse="!isOpen" style="height: 0px;">
+                  <div class="panel-collapse collapse" id="collapseTwo" collapse="!isOpen" style="height: 0px;">
                     <div class="panel-body" ng-transclude="">
                       <accordion-heading class="ng-scope"></accordion-heading>
                       <span class="ng-scope">Testing!</span>
@@ -100,7 +103,7 @@
                 <div class="accordion-group panel panel-default ng-isolate-scope">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseThree">
                         <div class="accordion-header ng-scope">
                           <div class="accordion-header-icon fa fa-th fa-fw fa-3x"></div>
                           <div class="accordion-header-label">TEMPLATES</div>
@@ -108,7 +111,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div class="panel-collapse collapse" collapse="!isOpen" style="height: 0px;">
+                  <div class="panel-collapse collapse" id="collapseThree" collapse="!isOpen" style="height: 0px;">
                     <div class="panel-body" ng-transclude="">
                       <accordion-heading class="ng-scope"></accordion-heading>
                       <span class="ng-scope">Testing!</span>
@@ -118,7 +121,7 @@
                 <div class="accordion-group panel panel-default ng-isolate-scope">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseFour">
                         <div class="accordion-header ng-scope">
                           <div class="accordion-header-icon fa fa-bar-chart-o fa-fw fa-3x"></div>
                           <div class="accordion-header-label">ANALYTICS</div>
@@ -126,7 +129,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div class="panel-collapse collapse" collapse="!isOpen" style="height: 0px;">
+                  <div class="panel-collapse collapse" id="collapseFour" collapse="!isOpen" style="height: 0px;">
                     <div class="panel-body" ng-transclude="">
                       <accordion-heading class="ng-scope"></accordion-heading>
                       <span class="ng-scope">Testing!</span>
