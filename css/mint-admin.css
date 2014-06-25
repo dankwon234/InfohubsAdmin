@@ -407,6 +407,17 @@ body {
   padding: 10px 20px 10px 20px;
 }
 
+.device-item {
+  padding: 9px 20px 10px 20px;  
+}
+
+.device-item a.ng-binding {
+  color: #767e96;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
 .sidebar-menu {
   position: absolute;
   top: 0px;
