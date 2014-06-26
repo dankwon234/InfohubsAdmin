@@ -39,190 +39,138 @@
   </head>
 
 	<body ng-controller="templatesViewController" ng-init="init()">
-
-	<div class="loading-overlay" ng-show="loading">
+  	<div class="loading-overlay" ng-show="loading">
       <div spinner spin="loading"></div>
-	</div>
-
-
-        <div id="wrapper">
-        
-          {{header}}
-
-
-
-            <nav class="navbar-default navbar-static-side" role="navigation">
-                <div class="sidebar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <div class="user-info-wrapper">	
-                                <div class="user-info-profile-image">
-                                    <img src="/admin/img/profile-1.jpg" alt=""  width="65" height="65">
-                                </div>
-                                <div class="user-info">
-                                    <div style="height:70px;text-align:bottom" class="username">David <strong>Champion</strong></div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-envelope fa-fw fa-3x"></i> Devices<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li ng-repeat="device in devices track by $index">
-                                    <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
-                                </li>
-                            
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-edit fa-fw fa-3x"></i> Content</a>
-                        </li>
-                        <li>
-                            <a href="/admin/templates"><i class="fa fa-th fa-fw fa-3x"></i> Templates</a>
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-bar-chart-o fa-fw fa-3x"></i> Analytics</a>
-                        </li>
-                    </ul>
-                    <!-- /#side-menu -->
+  	</div>
+    <div id="wrapper">
+      <!--HEADER: include in partial -->
+      <div class="header">
+        <div class="header-logo-background">
+          <div class="header-logo"></div>
+        </div>
+        <!--NOTE: This nav-toggle doesn't work. This will be addressed ASAP -->
+        <a id="nav-toggle" href="#" side-nav><span></span></a>
+      </div>
+      <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav" id="side-menu">
+            <li>
+              <div class="user-info-wrapper">	
+                <div class="user-info-profile-image">
+                  <img src="/admin/img/profile-1.jpg" alt=""  width="65" height="65">
                 </div>
-                <!-- /.sidebar-collapse -->
-            </nav>
-            <!-- /.navbar-static-side -->
-
-
-
-
-            <div id="page-wrapper">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3 class="page-header text-asbestos">Templates</h3>
-                    </div>
+                <div class="user-info">
+                  <div style="height:70px;text-align:bottom" class="username">David <strong>Champion</strong></div>
                 </div>
-                <!-- /.col-lg-12 -->
-                
-                <br /><br />
-
-                <div class="row">
-                
-                    <div class="col-lg-12">
-                    
-                      <div style="border-bottom:none" class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Manage Templates</a>
-                          </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse collapse">
-                          <div class="panel-body">
-                	        <h4>Select Template</h4>
-                	          
-                            <select ng-model="currentTemplateName" ng-change="changeCurrentTemplate()" style="width:40%;margin-top:20px" class="form-control">
-                              <option ng-repeat="templateName in templateNames() track by $index">{{ templateName }}</option>
-                            </select><br />
- 
-
- 
-                            HTML<br />
-                            <textarea ng-model="currentTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
-                            
-                            <br /><br />
-
-                            CSS<br />
-                            <textarea ng-model="currentTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
-                            
-                            
-                            <hr />
-                            <button ng-click="previewTemplate()" class="btn btn-primary">Preview</button>
-                            <button ng-click="updateCurrentTemplate()" style="margin-left:20px;" class="btn btn-primary">Update Template</button>
-                            <button ng-click="deleteCurrentTemplate()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Template</button>
-                            
-                          </div>
-                        </div>
-                      </div>
-                                    
-
-
-
-
-                      <div style="border-bottom:none" class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Create New Template</a>
-                          </h4>
-                        </div>
-                        
-                        <div id="collapseTwo" class="panel-collapse collapse collapse">
-                          <div class="panel-body">
-                          
-                			<div class="row">
-                    			<div class="col-xs-6 col-md-6">
-                      			  <label>Name</label>
-                      			  <input class="form-control" ng-model="newTemplate.name" placeholder="name">
-                    			</div>
-                			</div>
-                			
-                			<br /><br />
-                          
-
-                            HTML<br />
-                            <textarea ng-model="newTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
-                            
-                            <br /><br />
-
-                            CSS<br />
-                            <textarea ng-model="newTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
-                          
-                	        
-                	        <hr />
-                	        
-                            <br />
-                            <button ng-click="createTemplate()" class="btn btn-primary">Create Template</button>
-                            
-                            
-                          
-                          
-                        </div>
-                      </div>
-
-                    </div>
+              </div>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-envelope fa-fw fa-3x"></i> Devices<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li ng-repeat="device in devices track by $index">
+                  <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
+                </li>
+              </ul>
+              <!-- /.nav-second-level -->
+            </li>
+            <li>
+              <a href="tables.html"><i class="fa fa-edit fa-fw fa-3x"></i> Content</a>
+            </li>
+            <li>
+              <a href="/admin/templates"><i class="fa fa-th fa-fw fa-3x"></i> Templates</a>
+            </li>
+            <li>
+              <a href="tables.html"><i class="fa fa-bar-chart-o fa-fw fa-3x"></i> Analytics</a>
+            </li>
+          </ul>
+          <!-- /#side-menu -->
+        </div>
+        <!-- /.sidebar-collapse -->
+      </nav>
+      <!-- /.navbar-static-side -->
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header text-asbestos">Templates</h3>
+          </div>
+        </div>
+        <!-- /.col-lg-12 -->
+        <br /><br />
+        <div class="row">                
+          <div class="col-lg-12">
+            <div style="border-bottom:none" class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Manage Templates</a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse collapse">
+                <div class="panel-body">
+                	<h4>Select Template</h4>
+                    <select ng-model="currentTemplateName" ng-change="changeCurrentTemplate()" style="width:40%;margin-top:20px" class="form-control">
+                      <option ng-repeat="templateName in templateNames() track by $index">{{ templateName }}</option>
+                    </select><br />
+                    HTML<br />
+                    <textarea ng-model="currentTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
+                    <br /><br />
+                    CSS<br />
+                    <textarea ng-model="currentTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
+                    <hr />
+                    <button ng-click="previewTemplate()" class="btn btn-primary">Preview</button>
+                    <button ng-click="updateCurrentTemplate()" style="margin-left:20px;" class="btn btn-primary">Update Template</button>
+                    <button ng-click="deleteCurrentTemplate()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Template</button> 
                 </div>
-
-
-
+              </div>
             </div>
-            <!-- /#page-wrapper -->
-
+            <div style="border-bottom:none" class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Create New Template</a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse collapse">
+                <div class="panel-body">  
+                	<div class="row">
+                    <div class="col-xs-6 col-md-6">
+                      <label>Name</label>
+                      <input class="form-control" ng-model="newTemplate.name" placeholder="name">
+                    </div>
+                	</div>
+                	<br /><br />
+                  HTML<br />
+                  <textarea ng-model="newTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
+                  <br /><br />
+                  CSS<br />
+                  <textarea ng-model="newTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
+                  <hr />
+                	<br />
+                  <button ng-click="createTemplate()" class="btn btn-primary">Create Template</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-        <!-- /#wrapper -->
+      <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
 
-
-
-
-
-        <!-- Core Scripts - Include with every page -->
-        {{scripts}}
+    <!-- Core Scripts - Include with every page -->  
     <script src="/admin/js/jquery-1.10.2.js"></script>
     <script src="/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <!-- Page-Level Plugin Scripts - Dashboard -->
-<!--         <script src="/admin/js/plugins/morris/raphael-2.1.0.min.js"></script>
-        <script src="/admin/js/plugins/morris/morris.js"></script>
- -->
-        <!-- Mint Admin Scripts - Include with every page -->
-        <script src="/admin/js/mint-admin.js"></script>
-
-        <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
-<!--         <script src="/admin/js/demo/dashboard-demo.js"></script>
- -->
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+    <!-- <script src="/admin/js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="/admin/js/plugins/morris/morris.js"></script> -->
+    <!-- Mint Admin Scripts - Include with every page -->
+    <script src="/admin/js/mint-admin.js"></script>
+    <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+    <!-- <script src="/admin/js/demo/dashboard-demo.js"></script>-->
     <script src="/admin/js/knob.js"></script>
     <script src="/admin/js/spin.js"></script> 
     <script src="http://malsup.github.com/jquery.form.js"></script>
-<!--    <script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <!-- <script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
     <script src="/admin/js/fileupload/angular-file-upload.js"></script>
-      <script src="/admin/js/homeCtr.js"></script>
- -->        
-    </body>
-
+    <script src="/admin/js/homeCtr.js"></script> -->        
+  </body>
 </html>
