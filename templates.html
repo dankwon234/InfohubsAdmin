@@ -51,105 +51,160 @@
         <!--NOTE: This nav-toggle doesn't work. This will be addressed ASAP -->
         <a id="nav-toggle" href="#" side-nav><span></span></a>
       </div>
-      <nav class="navbar-default navbar-static-side" role="navigation">
-        <div class="sidebar-collapse">
-          <ul class="nav" id="side-menu">
-            <li>
-              <div class="user-info-wrapper">	
-                <div class="user-info-profile-image">
-                  <img src="/admin/img/profile-1.jpg" alt=""  width="65" height="65">
-                </div>
-                <div class="user-info">
-                  <div style="height:70px;text-align:bottom" class="username">David <strong>Champion</strong></div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-envelope fa-fw fa-3x"></i> Devices<span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level">
-                <li ng-repeat="device in devices track by $index">
-                  <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
-                </li>
-              </ul>
-              <!-- /.nav-second-level -->
-            </li>
-            <li>
-              <a href="tables.html"><i class="fa fa-edit fa-fw fa-3x"></i> Content</a>
-            </li>
-            <li>
-              <a href="/admin/templates"><i class="fa fa-th fa-fw fa-3x"></i> Templates</a>
-            </li>
-            <li>
-              <a href="tables.html"><i class="fa fa-bar-chart-o fa-fw fa-3x"></i> Analytics</a>
-            </li>
-          </ul>
-          <!-- /#side-menu -->
-        </div>
-        <!-- /.sidebar-collapse -->
-      </nav>
-      <!-- /.navbar-static-side -->
-      <div id="page-wrapper">
-        <div class="row">
-          <div class="col-lg-12">
-            <h3 class="page-header text-asbestos">Templates</h3>
+      <div class="content-wrapper">
+        <!--SIDEBAR: as with the header, this section should have its own partial -->
+        <div class="sidebar ng-scope">
+          <div class="user-info ng-scope">
+            <div class="user-image ng-isolate-scope" image="" image-url="modelLocator.user.image" style="background-image: url(http://localhost:8888/admin1/app/assets/img/profile-1.jpg);"></div>
+            <div class="user-name ng-binding">David Champion</div>
           </div>
-        </div>
-        <!-- /.col-lg-12 -->
-        <br /><br />
-        <div class="row">                
-          <div class="col-lg-12">
-            <div style="border-bottom:none" class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Manage Templates</a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse collapse">
-                <div class="panel-body">
-                	<h4>Select Template</h4>
-                    <select ng-model="currentTemplateName" ng-change="changeCurrentTemplate()" style="width:40%;margin-top:20px" class="form-control">
-                      <option ng-repeat="templateName in templateNames() track by $index">{{ templateName }}</option>
-                    </select><br />
-                    HTML<br />
-                    <textarea ng-model="currentTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
-                    <br /><br />
-                    CSS<br />
-                    <textarea ng-model="currentTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
-                    <hr />
-                    <button ng-click="previewTemplate()" class="btn btn-primary">Preview</button>
-                    <button ng-click="updateCurrentTemplate()" style="margin-left:20px;" class="btn btn-primary">Update Template</button>
-                    <button ng-click="deleteCurrentTemplate()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Template</button> 
-                </div>
-              </div>
-            </div>
-            <div style="border-bottom:none" class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Create New Template</a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse collapse">
-                <div class="panel-body">  
-                	<div class="row">
-                    <div class="col-xs-6 col-md-6">
-                      <label>Name</label>
-                      <input class="form-control" ng-model="newTemplate.name" placeholder="name">
+          <div class="accordion-container ng-scope" ios-scroll="">
+            <accordion>
+              <div class="panel-group" id="side-accordion" ng-transclude="">
+                <div class="accordion-group panel panel-default ng-isolate-scope" is-open="true">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseOne">
+                        <div class="accordion-header ng-scope">
+                          <div class="accordion-header-icon fa fa-envelope fa-fw fa-3x"></div>
+                          <div class="accordion-header-label">DEVICES</div>
+                        </div>
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="panel-collapse collapse in" id="collapseOne" >
+                    <div class="panel-body" ng-transclude="">
+                      <accordion-heading class="ng-scope"></accordion-heading>
+                      <div class="device-item" ng-repeat="device in devices track by $index">
+                        <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
+                      </div>
                     </div>
-                	</div>
-                	<br /><br />
-                  HTML<br />
-                  <textarea ng-model="newTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
-                  <br /><br />
-                  CSS<br />
-                  <textarea ng-model="newTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
-                  <hr />
-                	<br />
-                  <button ng-click="createTemplate()" class="btn btn-primary">Create Template</button>
+                  </div>
                 </div>
+                <div class="accordion-group panel panel-default ng-isolate-scope">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseTwo">
+                        <div class="accordion-header ng-scope">
+                          <div class="accordion-header-icon fa fa-edit fa-fw fa-3x"></div>
+                          <div class="accordion-header-label">CONTENT</div>
+                        </div>
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="panel-collapse collapse" id="collapseTwo" collapse="!isOpen" style="height: 0px;">
+                    <div class="panel-body" ng-transclude="">
+                      <accordion-heading class="ng-scope"></accordion-heading>
+                      <span class="ng-scope">Testing!</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group panel panel-default ng-isolate-scope">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseThree">
+                        <div class="accordion-header ng-scope">
+                          <div class="accordion-header-icon fa fa-th fa-fw fa-3x"></div>
+                          <div class="accordion-header-label">TEMPLATES</div>
+                        </div>
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="panel-collapse collapse" id="collapseThree" collapse="!isOpen" style="height: 0px;">
+                    <div class="panel-body" ng-transclude="">
+                      <accordion-heading class="ng-scope"></accordion-heading>
+                      <span class="ng-scope">Testing!</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group panel panel-default ng-isolate-scope">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseFour">
+                        <div class="accordion-header ng-scope">
+                          <div class="accordion-header-icon fa fa-bar-chart-o fa-fw fa-3x"></div>
+                          <div class="accordion-header-label">ANALYTICS</div>
+                        </div>
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="panel-collapse collapse" id="collapseFour" collapse="!isOpen" style="height: 0px;">
+                    <div class="panel-body" ng-transclude="">
+                      <accordion-heading class="ng-scope"></accordion-heading>
+                      <span class="ng-scope">Testing!</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </accordion>
+          </div>
+        </div>
+        <div id="page-wrapper">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="page-header text-asbestos">Templates</h3>
+            </div>
+          </div>
+          <!-- /.col-lg-12 -->
+          <br /><br />
+          <div class="row">                
+            <div class="col-lg-12">
+              <div class="panel-group" id="accordion1">
+                <div style="border-bottom:none" class="panel panel-default templates-management">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">Manage Templates</a>
+                    </h4>
+                  </div>
+                  <div id="collapseFive" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                    	<h4>Select Template</h4>
+                        <select ng-model="currentTemplateName" ng-change="changeCurrentTemplate()" style="width:40%;margin-top:20px" class="form-control">
+                          <option ng-repeat="templateName in templateNames() track by $index">{{ templateName }}</option>
+                        </select><br />
+                        HTML<br />
+                        <textarea ng-model="currentTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
+                        <br /><br />
+                        CSS<br />
+                        <textarea ng-model="currentTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
+                        <hr />
+                        <button ng-click="previewTemplate()" class="btn btn-primary">Preview</button>
+                        <button ng-click="updateCurrentTemplate()" style="margin-left:20px;" class="btn btn-primary">Update Template</button>
+                        <button ng-click="deleteCurrentTemplate()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Template</button> 
+                    </div>
+                  </div>
+                </div>
+                <div style="border-bottom:none" class="panel panel-default create-templates">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">Create New Template</a>
+                    </h4>
+                  </div>
+                  <div id="collapseSix" class="panel-collapse collapse in">
+                    <div class="panel-body">  
+                    	<div class="row">
+                        <div class="col-xs-6 col-md-6">
+                          <label>Name</label>
+                          <input class="form-control" ng-model="newTemplate.name" placeholder="name">
+                        </div>
+                    	</div>
+                    	<br /><br />
+                      HTML<br />
+                      <textarea ng-model="newTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
+                      <br /><br />
+                      CSS<br />
+                      <textarea ng-model="newTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
+                      <hr />
+                    	<br />
+                      <button ng-click="createTemplate()" class="btn btn-primary">Create Template</button>
+                    </div>
+                  </div>
+                </div>  
               </div>
             </div>
           </div>
         </div>
+        <!-- /#content-wrapper -->
       </div>
       <!-- /#page-wrapper -->
     </div>
