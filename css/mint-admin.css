@@ -223,6 +223,7 @@ body {
 
 /* Header */
 /* ------------------------------- */  
+
 .header {
   position: absolute;
   top: 0px;
@@ -340,7 +341,6 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-
   .sidebar .accordion-container, .sidebar-menu .accordion-container {
     position: relative;
     width: 100%;

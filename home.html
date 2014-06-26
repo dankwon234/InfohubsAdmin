@@ -33,15 +33,17 @@
 
     <!-- Main Angular App.js  -->
     <script src="/admin/js/app.js"></script>   
-  	<script src="/admin/js/services/rest.js"></script>
-		<script src="/admin/js/controllers/devices.view.controller.js"></script>
-		<script src="/admin/js/controllers/templates.view.controller.js"></script>	
-  </head>
-	<body ng-app="infoHubs" ng-controller="devicesViewController" ng-init="init()">
+    <script src="/admin/js/services/rest.js"></script>
+    <script src="/admin/js/controllers/devices.view.controller.js"></script>
+    <script src="/admin/js/controllers/templates.view.controller.js"></script>
 
-  	<div class="loading-overlay" ng-show="loading">
+    
+  </head>
+  <body ng-app="infoHubs" ng-controller="devicesViewController" ng-init="init()">
+
+    <div class="loading-overlay" ng-show="loading">
       <div spinner spin="loading"></div>
-  	</div>
+    </div>
     <div id="wrapper">
       <!--HEADER: include in partial -->
       <div class="header">
@@ -373,12 +375,12 @@
 <!--         <script src="/admin/js/demo/dashboard-demo.js"></script>
  -->
     <script src="/admin/js/knob.js"></script>
-		<script src="/admin/js/spin.js"></script> 
-  	<script src="http://malsup.github.com/jquery.form.js"></script>
-<!-- 		<script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
-		<script src="/admin/js/fileupload/angular-file-upload.js"></script>
-    	<script src="/admin/js/homeCtr.js"></script>
+    <script src="/admin/js/spin.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+<!--    <script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="/admin/js/fileupload/angular-file-upload.js"></script>
+      <script src="/admin/js/homeCtr.js"></script>
  -->        
   </body>
 </html>
