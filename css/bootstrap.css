@@ -1845,13 +1845,13 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
     border-color: #cccccc; }
 
 .btn-primary {
-  color: white;
-  background-color: #1abc9c;
-  border-color: #17a689; }
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-    color: white;
-    background-color: #15987e;
-    border-color: #0f705d; }
+    color: #fff;
+    background-color: #3071a9;
+    border-color: #285e8e;}
   .open .btn-primary.dropdown-toggle {
     color: white;
     background-color: #15987e;
@@ -1886,12 +1886,12 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
 
 .btn-danger {
   color: white;
-  background-color: #e74c3c;
-  border-color: #e43725; }
+  background-color: #d9534f;
+  border-color: #d43f3a; }
   .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
     color: white;
-    background-color: #df2e1b;
-    border-color: #b62516; }
+    background-color: #d2322d;
+    border-color: #ac2925; }
   .open .btn-danger.dropdown-toggle {
     color: white;
     background-color: #df2e1b;
@@ -1906,12 +1906,12 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
 
 .btn-success {
   color: white;
-  background-color: #2ecc71;
-  border-color: #29b765; }
+  background-color: #5cb85c;
+  border-color: #4cae4c; }
   .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
     color: white;
-    background-color: #26ab5f;
-    border-color: #1e854a; }
+    background-color: #47a447;
+    border-color: #398439; }
   .open .btn-success.dropdown-toggle {
     color: white;
     background-color: #26ab5f;
@@ -1925,13 +1925,13 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
     border-color: #29b765; }
 
 .btn-info {
-  color: white;
-  background-color: #3498db;
-  border-color: #258cd1; }
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da; }
   .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
-    color: white;
-    background-color: #2383c4;
-    border-color: #1c699d; }
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc; }
   .open .btn-info.dropdown-toggle {
     color: white;
     background-color: #2383c4;

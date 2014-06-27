@@ -157,24 +157,25 @@
                   </div>
                   <div id="collapseFive" class="panel-collapse collapse in">
                     <div class="panel-body">
-                      <div class="form-body col-sm-5">
+                      <div class="form-group col-sm-5">
                       	<label for="select-template" class="control-label">Select Template</label>
                         <select ng-model="currentTemplateName" ng-change="changeCurrentTemplate()" class="form-control" id="select-template">
                           <option ng-repeat="templateName in templateNames() track by $index">{{ templateName }}</option>
                         </select>
                       </div>
-                      <div class="form-body col-sm-12">
+                      <div class="form-group col-sm-12">
                         <label for="select-template" class="control-label">HTML</label>
                         <textarea ng-model="currentTemplate.html" placeholder="HTML" style="width:100%;height:300px"></textarea>
                       </div>
-                      <div class="form-body col-sm-12">
+                      <div class="form-group col-sm-12">
                         <label for="select-template" class="control-label">CSS</label>
                         <textarea ng-model="currentTemplate.css" placeholder="CSS" style="width:100%;height:300px"></textarea>
                       </div>
-                        <hr />
-                        <button ng-click="previewTemplate()" class="btn btn-primary">Preview</button>
-                        <button ng-click="updateCurrentTemplate()" style="margin-left:20px;" class="btn btn-primary">Update Template</button>
-                        <button ng-click="deleteCurrentTemplate()" style="margin-left:20px;background-color:red;border-color:red" class="btn btn-primary">Delete Template</button> 
+                      <div class="form-group col-sm-12">
+                        <button ng-click="deleteCurrentTemplate()" class="btn btn-danger" id="btn-delete">Delete Template</button> 
+                        <button ng-click="updateCurrentTemplate()" class="btn btn-success" id="btn-update">Update Template</button>
+                        <button ng-click="previewTemplate()" class="btn btn-info" id="btn-preview">Preview</button>
+                      </div>
                     </div>
                   </div>
                 </div>
