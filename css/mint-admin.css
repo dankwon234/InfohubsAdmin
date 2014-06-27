@@ -722,12 +722,18 @@ a {
 #btn-delete {
   float: right;
   font-size: 12px;
+  margin-left: 22px; 
+}
+
+#btn-preview {
+  float: right;
+  font-size: 12px;
+  margin-left: 22px; 
 }
 
 #btn-update {
   float: right;
   font-size: 12px;
-  margin-left: 22px; 
 }
 
 .device-accordion-group {
