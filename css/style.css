@@ -2244,3 +2244,14 @@ a {
 .panel-group .create-templates {
   margin-bottom: 20px;
   border-bottom: none; }
+
+@media only screen and (max-width: 767px) {
+  .button-group {
+    display: inline-block;
+    text-align: center; }
+    .button-group button.btn {
+      float: none !important;
+      font-size: 12px;
+      margin: 15px 10px 0 10px !important;
+      display: inline-block;
+      text-align: center; } }
