@@ -223,6 +223,7 @@ body {
 
 /* Header */
 /* ------------------------------- */  
+
 .header {
   position: absolute;
   top: 0px;
@@ -340,7 +341,6 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-
   .sidebar .accordion-container, .sidebar-menu .accordion-container {
     position: relative;
     width: 100%;
@@ -668,7 +668,8 @@ a {
   color: #fff; }
 
 /* Home */
-/* ------------------------------- */
+/* ------------------------------- */ 
+
 .device-images-container {
   padding: 0 10px 10px 10px;
 }
@@ -721,12 +722,18 @@ a {
 #btn-delete {
   float: right;
   font-size: 12px;
+  margin-left: 22px; 
+}
+
+#btn-preview {
+  float: right;
+  font-size: 12px;
+  margin-left: 22px; 
 }
 
 #btn-update {
   float: right;
   font-size: 12px;
-  margin-left: 22px; 
 }
 
 .device-accordion-group {

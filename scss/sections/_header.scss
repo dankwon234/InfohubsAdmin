@@ -1,0 +1,60 @@
+/* Header */
+/* ------------------------------- */  
+
+.header {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 90px;
+  background-color: #2d3eb7;
+}
+
+.header .header-logo-background {
+  width: 250px;
+  height: 100%;
+  background-color: #2c49c0;
+}
+
+.header .header-logo-background .header-logo {
+  position: relative;
+  top: 22px;
+  width: 161px;
+  height: 43px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url("../img/logo.png");
+}
+
+.header #nav-toggle {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  visibility: hidden;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+
+@media only screen and (max-width: 767px) {
+  .header #nav-toggle {
+    visibility: visible;
+  }
+}
+
+.header #nav-toggle span, .header #nav-toggle span:before, .header #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+.header #nav-toggle span:before {
+  top: -10px;
+}
+
+.header #nav-toggle span:after {
+  bottom: -10px;
+}

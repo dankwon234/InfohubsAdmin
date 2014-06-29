@@ -1,0 +1,296 @@
+/* Home */
+/* ------------------------------- */ 
+
+#page-wrapper {
+  background-color: #e7e7e7;
+  margin: 0; 
+  padding: 0 270px 20px 20px;
+  overflow-y: auto;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 250px;
+  overflow-y: auto;}
+  @media only screen and (max-width: 767px) {
+    #page-wrapper {
+      padding-right: 20px;
+      left: 0px;
+    } 
+  }
+
+.content-wrapper {
+  position: absolute;
+  top: 90px;
+  right: 0px; 
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .content-wrapper {
+    overflow: visible;
+  }
+}
+
+.device-images-container {
+  padding: 0 10px 10px 10px;
+}
+
+.device-images-outer {
+  padding: 5px;
+}
+
+.device-images-outer .device-images-label {
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  border: solid 1px #dfe2e4;
+  border-top: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 11px;
+  color: #686868;
+}
+
+.device-images-outer .device-images-inner {
+  cursor: pointer;
+  cursor: hand;
+  padding: 10px;
+  background-color: #686868;
+  border: solid 1px #dfe2e4;
+}
+
+.device-images-outer .device-images-inner .dummy {
+  margin-top: 75%;
+}
+
+.device-images-outer .add-image {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1000;
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+  color: #dfe2e4;
+  margin-top: -16px;
+  margin-left: -16px;
+}
+
+
+.device-accordion-group {
+  margin-bottom: 20px !important;
+}
+
+.device-configuration .category-label {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.device-configuration .category-outer {
+  padding: 5px 15px 5px 15px;
+}
+
+.device-configuration .category-outer .category-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.device-configuration .category-outer .category-container .category-header {
+  width: 100%;
+  background-color: #686868;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.device-configuration .category-outer .category-container .subcategories {
+  padding: 10px 10px 0px 10px;
+  border: solid 1px #dfe2e4;
+}
+
+.subcategories .subcategory-item {
+  cursor: pointer;
+  margin-top: 10;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #7f8c8d;
+}
+
+.device-configuration .subcategory-entries {
+  margin: 0;
+  padding: 0;
+  min-height: 203px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.device-configuration .subcategory-entries .subcategory-container {
+  position: relative;
+  min-width: 100%;
+  min-height: 202px;
+}
+
+.device-configuration .box-outer {
+  width: 302px;
+  height: 202px;
+  position: absolute;
+  display: inline-block;
+  border: dashed 1px #686868;
+  margin-right: 20px;
+}
+
+.device-configuration .box-1-1 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  padding: 5px;
+}
+
+.device-configuration .box-1-2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  padding: 5px;
+  left: 200px;
+}
+
+.device-configuration .box-1-3 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  padding: 5px;
+  left: 200px;
+  top: 100px;
+}
+
+.device-configuration .box-2-1 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  padding: 5px;
+}
+
+.device-configuration .box-2-2 {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  padding: 5px;
+  left: 200px;
+}
+
+.device-configuration .box-3-1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  padding: 5px;
+}
+
+.device-configuration .box-3-2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  padding: 5px;
+  top: 100px;
+}
+
+.device-configuration .box-3-3 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  padding: 5px;
+  left: 100px;
+}
+
+.device-configuration .box-4-1 {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  padding: 5px;
+}
+
+.device-configuration .box-4-2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  padding: 5px;
+  left: 100px;
+}
+
+.device-configuration .entries-add-button {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 100%;
+  color: darkgrey;
+  font-size: 100px;
+  text-align: center;
+}
+
+.device-configuration .box-grey {
+  background-color: #999999;
+}
+
+.device-configuration .inner-box, .device-configuration .box-grey {
+  cursor: pointer;
+  cursor: hand;
+  width: 100%;
+  height: 100%;
+}
+
+.device-configuration .subcategory-entries .entry-label {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  color: white;
+  padding: 10px;
+  text-transform: capitalize;
+  word-wrap: break-word;
+  font-size: 10px;
+}
+
+.device-configuration .search-container {
+  margin-top: 15px;
+}
+
+.device-configuration .subcategory-label {
+  margin-top: 10px;
+}
+
+.device-configuration .search-container .search-button-container {
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .device-configuration .search-container .search-button-container {
+    padding: 10px 0 0 0;
+  }
+}
+
+.device-configuration .search-container .search-button {
+  width: 100%;
+}
+
+.device-configuration .search-results {
+  margin-bottom: 15px;
+}
+
+.device-configuration .search-results-label {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+

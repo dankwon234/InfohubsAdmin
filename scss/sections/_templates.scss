@@ -1,0 +1,45 @@
+/* Templates */
+/* ------------------------------- */ 
+
+#page-wrapper {
+  background-color: #e7e7e7;
+  margin: 0; 
+  padding: 0 270px 20px 20px;
+  overflow-y: auto;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 250px;
+  overflow-y: auto;}
+  @media only screen and (max-width: 767px) {
+    #page-wrapper {
+      padding-right: 20px;
+      left: 0px;
+    } 
+  }
+
+.content-wrapper {
+  position: absolute;
+  top: 90px;
+  right: 0px; 
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .content-wrapper {
+    overflow: visible;
+  }
+}
+.panel-group .templates-management {
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+.panel-group .create-templates {
+  margin-bottom: 20px;
+  border-bottom: none;
+}

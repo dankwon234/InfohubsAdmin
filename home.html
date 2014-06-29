@@ -18,7 +18,7 @@
     <link href="/admin/css/plugins/timeline/timeline.css" rel="stylesheet">
 
     <!-- Mint Admin CSS - Include with every page -->
-    <link href="/admin/css/mint-admin.css" rel="stylesheet">
+    <link href="/admin/css/style.css" rel="stylesheet">
         
     <!-- libs -->
     <script src="/admin/js/lib/jquery/dist/jquery.min.js"></script>
@@ -33,16 +33,17 @@
 
     <!-- Main Angular App.js  -->
     <script src="/admin/js/app.js"></script>   
-  	<script src="/admin/js/services/rest.js"></script>
-		<script src="/admin/js/controllers/devices.view.controller.js"></script>
-		<script src="/admin/js/controllers/templates.view.controller.js"></script>	
+    <script src="/admin/js/services/rest.js"></script>
+    <script src="/admin/js/controllers/devices.view.controller.js"></script>
+    <script src="/admin/js/controllers/templates.view.controller.js"></script>
+
+    
   </head>
+  <body ng-app="infoHubs" ng-controller="devicesViewController" ng-init="init()">
 
-	<body ng-app="infoHubs" ng-controller="devicesViewController" ng-init="init()">
-
-  	<div class="loading-overlay" ng-show="loading">
+    <div class="loading-overlay" ng-show="loading">
       <div spinner spin="loading"></div>
-  	</div>
+    </div>
     <div id="wrapper">
       <!--HEADER: include in partial -->
       <div class="header">
@@ -153,10 +154,10 @@
                 <div style="border-bottom:none" class="panel panel-default device-accordion-group">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" >Device Settings</a>
+                      <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFive" >Device Settings</a>
                     </h4>
                   </div>
-                  <div id="collapseOne" class="panel-collapse collapse in">
+                  <div id="collapseFive" class="panel-collapse collapse in">
                     <div class="panel-body">
                       <div class="form-group col-sm-12">
                         <label for="deviceName" class="control-label">Device Name</label>
@@ -196,8 +197,8 @@
                           </div>
                           <div class="device-images-label">
                             COVER SCREEN
-                          </div>                        
-                        </div>
+                          </div>   
+                        </div>    
                         <div class="col-sm-4 device-images-outer">
                           <div class="device-images-inner" style="border-bottom:none">
                             <div class="fa fa-plus-circle add-image" ng-hide="modelLocator.editDevice.image"></div>
@@ -212,8 +213,8 @@
                         </div>
                       </div>
                       <div class="col-sm-12 form-group">
-                        <button ng-click="updateSelectedDevice()" class="btn btn-success" id="btn-update">Update Device</button>
                         <button ng-click="deleteSelectedDevice()" class="btn btn-danger" id="btn-delete">Delete Device</button>
+                        <button ng-click="updateSelectedDevice()" class="btn btn-success" id="btn-update">Update Device</button>
                       </div>
                     </div>
                   </div>
@@ -222,14 +223,14 @@
                 <div style="border-bottom:none" class="panel panel-default device-configuration">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Device Configuration</a>
+                      <a data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">Device Configuration</a>
                     </h4>
                   </div>
-                  <div id="collapseTwo" class="panel-collapse collapse in">
+                  <div id="collapseSix" class="panel-collapse collapse in">
                     <div class="panel-body">   
                       <label class="control-label category-label ng-scope">Select Subcategory</label>
                       <div ng-repeat="categoryName in selectedDevice.configuration.sequence track by $index">      
-    						        <div class="col-sm-6 col-md-3 category-outer"> 
+                        <div class="col-sm-6 col-md-3 category-outer"> 
                           <div class="category-container">
                             <div class="category-header">{{categoryName}}</div>
                             <div class="subcategories">
@@ -237,8 +238,8 @@
                                 {{ subcategoryName }}
                               </div>
                             </div>
-                          </div>     
-                        </div>
+                          </div>    
+                        </div> 
                       </div>
                       <div class="col-sm-12" class="subcategory-entries-container">
                         <label class="control-label subcategory-label">Edit Subcategory Entries</label>
@@ -374,12 +375,12 @@
 <!--         <script src="/admin/js/demo/dashboard-demo.js"></script>
  -->
     <script src="/admin/js/knob.js"></script>
-		<script src="/admin/js/spin.js"></script> 
-  	<script src="http://malsup.github.com/jquery.form.js"></script>
-<!-- 		<script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
-		<script src="/admin/js/fileupload/angular-file-upload.js"></script>
-    	<script src="/admin/js/homeCtr.js"></script>
+    <script src="/admin/js/spin.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+<!--    <script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="/admin/js/fileupload/angular-file-upload.js"></script>
+      <script src="/admin/js/homeCtr.js"></script>
  -->        
   </body>
 </html>
