@@ -1770,6 +1770,16 @@ ul.inbox-pagination li {
   position: relative;
   display: block; }
 
+.sidebar a:hover {
+  text-decoration: none;
+  display: block; }
+
+.sidebar a {
+  display: block; }
+
+.sidebar a.panel-heading:last-child {
+  padding-bottom: 30px; }
+
 .sidebar .user-info .user-image, .sidebar-menu .user-info .user-image {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
