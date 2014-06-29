@@ -12,15 +12,14 @@
     <div class="loading-overlay" ng-show="loading">
       <div spinner spin="loading"></div>
     </div>
+    
+    
     <div id="wrapper">
+    
       <!--HEADER: include in partial -->
-      <div class="header">
-        <div class="header-logo-background">
-          <div class="header-logo"></div>
-        </div>
-        <!--NOTE: This nav-toggle doesn't work. This will be addressed ASAP -->
-        <a id="nav-toggle" href="#" side-nav><span></span></a>
-      </div>
+      {{header}}
+      
+      
       <div class="content-wrapper">
         <!--SIDEBAR: as with the header, this section should have its own partial -->
         <div class="sidebar ng-scope">
