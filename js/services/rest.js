@@ -3,11 +3,11 @@ var restService = angular.module('restService', []);
 
 restService.factory('restService', ['$http',
                                     function($http) {
-                                              var baseUrl = 'http://813.zuse-infohub.appspot.com';
+//                                              var baseUrl = 'http://813.zuse-infohub.appspot.com';
 
                                               return {
                                                   getResource: function(resource, id, params) {
-                                                	  var endpoint = baseUrl+'/api/'+resource;
+                                                	  var endpoint = '/api/'+resource;
                                                 	  if (id != null)
                                                 		  endpoint = endpoint+'/'+id;
                                                 	  
@@ -25,7 +25,7 @@ restService.factory('restService', ['$http',
                                                   },
                                                   
                                                   postResource: function(resource, object, params) {
-                                                	  var endpoint = baseUrl+'/api/'+resource;
+                                                	  var endpoint = '/api/'+resource;
                                                 	  
                                                 	  if (object == null) // must have an object
                                                 		  return;
@@ -50,7 +50,7 @@ restService.factory('restService', ['$http',
                                                   
 
                                                   putResource: function(resource, object, params) {
-                                                	  var endpoint = baseUrl+'/api/'+resource;
+                                                	  var endpoint = '/api/'+resource;
                                                 	  
                                                 	  if (object == null) // must have an object
                                                 		  return;
@@ -74,7 +74,7 @@ restService.factory('restService', ['$http',
 
                                                   
                                                   deleteResource: function(resource, object, params) {
-                                                	  var endpoint = baseUrl+'/api/'+resource;
+                                                	  var endpoint = '/api/'+resource;
                                                 	  
                                                 	  if (object == null) // must have an object
                                                 		  return;
@@ -97,7 +97,7 @@ restService.factory('restService', ['$http',
 
 
                                                   searchEntries: function(searchTerm, lat, long, fsCategory) {
-                                                      return $http.get(baseUrl+'/api/entries?format=map&search=' + searchTerm + '&ll=' + lat + ',' + long + '&foursquarefilter=' + fsCategory);
+                                                      return $http.get('/api/entries?format=map&search=' + searchTerm + '&ll=' + lat + ',' + long + '&foursquarefilter=' + fsCategory);
                                                   }
                                                   
 
