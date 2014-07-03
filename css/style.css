@@ -1696,6 +1696,7 @@ ul.inbox-pagination li {
   color: #fff; }
 
 .loading-overlay {
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;

@@ -1,4 +1,4 @@
-var infoHubs = angular.module('infoHubs', ['devices.view.controller', 'templates.view.controller', 'restService', 'ui.bootstrap']);
+var infoHubs = angular.module('infoHubs', ['devices.view.controller', 'templates.view.controller', 'entry.view.controller','restService', 'ui.bootstrap']);
 
 infoHubs.directive('spinner', function() {
     return {

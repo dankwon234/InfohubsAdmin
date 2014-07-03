@@ -1,346 +1,324 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>InfoHubs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Mint by Grozav is a flat design approach towards Admin Dashboards. Intuitive, cutting-edge, clean and easy to use and customize, as every Application UI should be. ">
+    <meta name="keywords" content="mint, flat, admin, dashboard, app, template, theme, grozav, admin template, admin dashboard, bootstrap, admin bootstrap, awesome" />
+    <link rel="author" href="http://grozav.com"/>
 
-    <head>
-		{{head}}
+    <!-- Core CSS - Include with every page -->
+    <link href="/admin/css/bootstrap.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
-  	  <style>
-  	    .loading-overlay {
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			background: rgba(0,0,0,0.4);
-			z-index: 100000;
-  	    }
-  	    .panel-eyecandy-title{
-	  	    overflow: hidden;
-  	    }
-  	  </style>
+    <!-- Page-Level Plugin CSS - Dashboard -->
+    <link href="/admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="/admin/css/plugins/timeline/timeline.css" rel="stylesheet">
+
+    <!-- Mint Admin CSS - Include with every page -->
+    <link href="/admin/css/style.css" rel="stylesheet">
+        
+    <!-- libs -->
+    <script src="/admin/js/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/admin/js/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/admin/js/lib/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js"></script>
+    <script src="/admin/js/lib/angular/angular.js"></script>
+    <script src="/admin/js/lib/danialfarid-angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <script src="/admin/js/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/admin/js/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/admin/js/lib/angular-route/angular-route.min.js"></script>
+    <script src="/admin/js/lib/angular-cookies/angular-cookies.min.js"></script>
+
+    <!-- Main Angular App.js  -->
+    <script src="/admin/js/app.js"></script>   
+    <script src="/admin/js/services/rest.js"></script>
+    <script src="/admin/js/controllers/devices.view.controller.js"></script>
+    <script src="/admin/js/controllers/templates.view.controller.js"></script>
 		
-    </head>
+  </head>
 
-	<body ng-app="Entry" ng-controller="EntryController" ng-init="init()">
+	<body ng-app="infoHubs" ng-controller="EntryController" ng-init="init()">
 
 		<div class="loading-overlay" ng-show="loading">
-	      <div spinner spin="loading"></div>
+	    <div spinner spin="loading"></div>
 		</div>
-
-
-        <div id="wrapper">
-        
-          {{header}}
-
-
-
-            <nav class="navbar-default navbar-static-side" role="navigation">
-                <div class="sidebar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <div class="user-info-wrapper">	
-                                <div class="user-info-profile-image">
-                                    <img src="/admin/img/profile-1.jpg" alt=""  width="65" height="65">
-                                </div>
-                                <div class="user-info">
-                                    <div style="height:70px;text-align:bottom" class="username">David <strong>Champion</strong></div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-envelope fa-fw fa-3x"></i> Devices X<span class="fa arrow"></span></a>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-edit fa-fw fa-3x"></i> Content</a>
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-th fa-fw fa-3x"></i> Templates</a>
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-bar-chart-o fa-fw fa-3x"></i> Analytics</a>
-                        </li>
-                    </ul>
-                    <!-- /#side-menu -->
-                </div>
-                <!-- /.sidebar-collapse -->
-            </nav>
-            <!-- /.navbar-static-side -->
-
-
-
-
-            <div id="page-wrapper">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3 class="page-header text-asbestos">Content</h3>
+    <div id="wrapper">
+	    <div class="header">
+	      <div class="header-logo-background">
+	        <div class="header-logo"></div>
+	      </div>
+	      <!--NOTE: This nav-toggle doesn't work. This will be addressed ASAP -->
+	      <a id="nav-toggle" href="#" side-nav><span></span></a>
+	    </div>
+      <div class="content-wrapper">
+        <!--SIDEBAR: as with the header, this section should have its own partial -->
+        <div class="sidebar ng-scope">
+          <div class="user-info ng-scope">
+            <div class="user-image ng-isolate-scope" image="" image-url="modelLocator.user.image" style="background-image: url(/admin/img/profile-1.jpg);"></div>
+            <div class="user-name ng-binding">David Champion</div>
+          </div>
+          <div class="accordion-container ng-scope" ios-scroll="">
+            <accordion>
+              <div class="panel-group" id="side-accordion">
+                <div class="accordion-group panel panel-default ng-isolate-scope" is-open="true">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle ng-binding" data-toggle="collapse" data-parent="#side-accordion" href="#collapseOne">
+                        <div class="accordion-header ng-scope">
+                          <div class="accordion-header-icon fa fa-envelope fa-fw fa-3x"></div>
+                          <div class="accordion-header-label">DEVICES</div>
+                        </div>
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="panel-collapse collapse in" id="collapseOne" >
+                    <div class="panel-body">
+                      <div class="device-item" ng-repeat="device in devices track by $index">
+                        <a ng-click="selectDevice($index)" href="">{{ device.name }}</a>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <!-- /.col-lg-12 -->
-                
-                <br /><br />
+                <a href="/admin/entries" class="panel-heading">
+                  <h4 class="panel-title">
+                    <div class="accordion-header ng-scope">
+                      <div class="accordion-header-icon fa fa-edit fa-fw fa-3x"></div>
+                      <div class="accordion-header-label">CONTENT</div>
+                    </div>
+                  </h4>
+                </a>
+                <a href="/admin/templates" class="panel-heading">
+                  <h4 class="panel-title">
+                    <div class="accordion-header ng-scope">
+                      <div class="accordion-header-icon fa fa-th fa-fw fa-3x"></div>
+                      <div class="accordion-header-label">TEMPLATES</div>
+                    </div>
+                  </h4>
+                </a>
+                <a href="/admin/analytics" class="panel-heading">
+                  <h4 class="panel-title">
+                    <div class="accordion-header ng-scope">
+                      <div class="accordion-header-icon fa fa-bar-chart-o fa-fw fa-3x"></div>
+                      <div class="accordion-header-label">ANALYTICS</div>
+                    </div>
+                  </h4>
+                </a>
+              </div>
+            </accordion>
+          </div>
+        </div>
+        <!--END SIDEBAR  -->
 
-                <div class="row">
-                
-                    <div class="col-lg-12">
-                    
-						<div style="border-bottom:none" class="panel panel-default">
-	                        <div class="panel-heading">
-	                          <h4 class="panel-title">
-	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Manage Entries</a>
-	                          </h4>
-	                        </div>
-	                        <div id="collapseOne" class="panel-collapse collapse collapse">
-	                      
-		                          <div class="panel-body">
-		                            <div style="margin-top:20px">
-	                	          <h4>Select Venue</h4>
-								  
-<!-- 	                      		  <input style="width:50%" class="form-control" ng-model="searchFilter" placeholder="Search Filter"><br /> -->
-	                      		  <input style="width:50%" class="form-control" ng-model="searchEntry" placeholder="Venue Name"><br />
-	                              <button data-toggle='modal' href='#loginModal' ng-click="searchEntries()" class="btn btn-primary">Search</button>
-	                              
-	                              <br /><br />
-	                              
-	                	          <h5>Foursquare Venues</h5>
-	                	          <ul>
-	                	            <li ng-repeat="entry in searchResults.foursquare track by $index"><a ng-click="selectFoursquareEntry($index)" href="">{{ entry.title }}</a></li>
-	                	          </ul>
-	                              
-	                              <br />
-	
-	                	          <h5>Other Venues</h5>
-	                	          <ul>
-	                	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
-	                	          </ul>
-								  
-								  <br /><br />
-	                              
-	                	          <h4>Template B</h4>
-								  
-								  <div class="form-horizontal">
-								  		
-								  	  <h3>{{selectedEntry.title}}</h3>
-								  
-		                      		  <input style="width:50%" class="form-control" ng-model="selectedEntry.url" placeholder="PrimaryURL"> <br />
-		                      		  <input style="width:50%" class="form-control" ng-model="selectedEntry.secondaryUrls['Menu']" placeholder="Button URL"> <br />
-		                      		  <input style="width:50%" class="form-control" placeholder="Button Text"> <br />
-		                      		  
-		                      		  
-		                      		  <div style="margin-top:20px">
-									  	<h2>Images</h2>
-									  </div>
-					
-									  <div class="row" style="margin-top:20px">
-					                    <div class="col-xs-6 col-md-3">
-					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logoUpdate')" ng-file-drag-over-class="optional-css-class">
-					                              <img ng-src= "/site/images/{{selectedEntry.logo}}?crop=160" />
-					                            </div>
-					                            <div class="panel-footer">
-					                                <span class="panel-eyecandy-title">
-					                                    Drag and Drop Logo
-					                                </span>
-					                                <span>
-					                                	or
-					                                </span>							                                
-							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logoUpdate')"/>
-					                            </div>
-					                        </div>
-					                  </div>
-					                    <!-- /.col-xs-6 col-md-3 -->
-					                  <div class="col-xs-6 col-md-3">
-					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImageUpdate')" ng-file-drag-over-class="optional-css-class">
-					                              <img ng-src= "/site/images/{{selectedEntry.backgroundImage}}?crop=160" />
-					                            </div>
-					                            <div class="panel-footer">
-					                                <span class="panel-eyecandy-title">
-					                                    Drag and Drop Background
-					                                </span>
-					                                <span>
-					                                	or
-					                                </span>						                                
-							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImageUpdate')"/>
-					                            </div>
-					                        </div>
-					                  </div>
-									  </div>
-		                      		  <br />
-		                      		  
-		                              <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="updateEntry()">Save</button>
-		                              
-		                              <br /><br />
-								  </div>
-	                              
-								</div>
-	                          </div>
-	                        </div>
-						</div>
-						
-						
-						<div style="border-bottom:none;margin-top:30px" class="panel panel-default">
-	                        <div class="panel-heading">
-	                          <h4 class="panel-title">
-	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Create New Entry</a>
-	                          </h4>
-	                        </div>
-	                        <div id="collapseTwo" class="panel-collapse collapse collapse">
-	                      
-		                          <div class="panel-body">
-		                            <div style="margin-top:20px">
-	                              
-	                	          <h4>Template B</h4>
-								  
-								  <div class="form-horizontal">
-								  
-		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.url" placeholder="PrimaryURL"> <br />
-		                      		  
-		                      		  
-		                      		   <div class="form-group">
-	                                    <table class="table table-striped">
-	                                        <thead>
-	                                            <tr>
-	                                                <th>Delete</th>
-	                                                <th>Purpose</th>
-	                                                <th>URL</th>
-	                                            </tr>
-	                                        </thead>
-	                                        <tbody>
-	                                            <tr ng-repeat="purpose in purposeKeys()">
-	                                                <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
-	                                                <td>{{ purpose }}</td>
-	                                                <td>{{ newEntry.secondaryUrls[purpose] }}</td>
-	                                            </tr>
-	                                        </tbody>
-	                                    </table>
-	                                    
-	                                    <div style="display:inline;float:left;padding-left:15px;">
-	                                      <span>Purpose</span><br>
-	                                      <select ng-model="secondaryUrlPurpose"  style="width:300px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
-	                                      	<option value="Menu">Menu</option>
-	                                      	<option value="Reservations">Reservations</option>
-	                                      	<option value="Gallery">Gallery</option>
-	                                        <option value="Buy Now">Buy Now</option>
-	                                        <option value="Book Now">Book Now</option>
-	                                        <option value="Schedule">Schedule</option>
-	                                        <option value="Check In">Check In</option>
-	                                        <option value="Rates">Rates</option>
-	                                        <option value="Map">Map</option>
-	                                        <option value="Directions">Directions</option>
-	                                        <option value="Reviews">Reviews</option>
-	                                        <option value="More Info">More Info</option>
-	                                      </select>
-	                                  </div>
-	                                  <div style="display:inline;float:left;max-width:100%;padding-left:15px">
-	                                      <span>URL</span>
-	                                      <input type="text" class="inputs form-control" placeholder="http://www.google.com" ng-model="secondaryUrlLink">
-	                                  </div>
-	                                  <div style="display:inline;float:left;padding-top:19px;padding-left:18px">
-	                                 	 <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="addSecondaryUrl()">Add</button>
-	                                  </div>
-	                                </div>
-		                      		  
-		                      		  
-		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.title" placeholder="Title"> <br />
-		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.street" placeholder="Address"> <br />
-		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.phone" placeholder="Phone number"> <br />
-		                      		  <span>Rating</span><br>
-							  		  <select ng-model="newEntry.rating" style="width:100px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
-                                      	<option value="1">1</option>
-                                      	<option value="2">2</option>
-                                      	<option value="3">3</option>
-                                      	<option value="4">4</option>
-                                      	<option value="5">5</option>
-                                      	<option value="6">6</option>
-                                      	<option value="7">7</option>
-                                      	<option value="8">8</option>
-                                      	<option value="9">9</option>
-                                      	<option value="10">10</option>
-                                      </select>
-                                      <br />
-		                      		  <input style="width:50%" class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> <br />
-									  
-									  
-									  <div style="margin-top:20px">
-									  	<h2>Images</h2>
-									  </div>
-					
-									  <div class="row" style="margin-top:20px">
-					                    <div class="col-xs-6 col-md-3">
-					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">
-					                              <img ng-src= "/site/images/{{newEntryLogo.id}}?crop=160" />
-					                            </div>
-					                            <div class="panel-footer">
-					                                <span class="panel-eyecandy-title">
-					                                    Drag and Drop Logo
-					                                </span>
-					                                <span>
-					                                	or
-					                                </span>							                                
-							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logo')"/>
-					                            </div>
-					                        </div>
-					                  </div>
-					                    <!-- /.col-xs-6 col-md-3 -->
-					                  <div class="col-xs-6 col-md-3">
-					                        <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                            <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">
-					                              <img ng-src= "/site/images/{{newEntryBackgroundImage.id}}?crop=160" />
-					                            </div>
-					                            <div class="panel-footer">
-					                                <span class="panel-eyecandy-title">
-					                                    Drag and Drop Background
-					                                </span>
-					                                <span>
-					                                	or
-					                                </span>						                                
-							                        <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
-					                            </div>
-					                        </div>
+        <div id="page-wrapper">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="page-header text-asbestos">Content</h3>
+            </div>
+          </div>
+          <!-- /.col-lg-12 -->
+					<div class="row">
+            <div class="col-lg-12">       
+						  <div style="border-bottom:none" class="panel panel-default">
+	              <div class="panel-heading">
+	                <h4 class="panel-title">
+	                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Manage Entries</a>
+	                </h4>
+	              </div>
+	              <div id="collapseFive" class="panel-collapse collapse in">
+	                <div class="panel-body">
+		                <div style="margin-top:20px">
+	                	  <h4>Select Venue</h4>
+	                    <input style="width:50%" class="form-control" ng-model="searchEntry" placeholder="Venue Name" /><br />
+                      <button data-toggle='modal' href='#loginModal' ng-click="searchEntries()" class="btn btn-primary">Search</button>
+                      <br /><br />
+                      <h5>Foursquare Venues</h5>
+                	    <ul>
+                	      <li ng-repeat="entry in searchResults.foursquare track by $index"><a ng-click="selectFoursquareEntry($index)" href="">{{ entry.title }}</a></li>
+                	    </ul>
+                      <br />
+											<h5>Other Venues</h5>
+          	          <ul>
+          	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
+          	          </ul>
+							  			<br /><br />
+                      <h4>Template B</h4>
+										  <div class="form-horizontal">
+							  	 			<h3>{{selectedEntry.title}}</h3>							  
+                  		  <input style="width:50%" class="form-control" ng-model="selectedEntry.url" placeholder="PrimaryURL"> <br />
+                  		  <input style="width:50%" class="form-control" ng-model="selectedEntry.secondaryUrls['Menu']" placeholder="Button URL"> <br />
+                  		  <input style="width:50%" class="form-control" placeholder="Button Text"> <br />
+		                    <div style="margin-top:20px">
+									  	    <h2>Images</h2>
+									      </div>
+									      <div class="row" style="margin-top:20px">
+					                <div class="col-xs-6 col-md-3">
+					                  <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
+					                    <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logoUpdate')" ng-file-drag-over-class="optional-css-class">
+					                      <img ng-src= "/site/images/{{selectedEntry.logo}}?crop=160" />
+					                    </div>
+					                    <div class="panel-footer">
+					                      <span class="panel-eyecandy-title">Drag and Drop Logo</span>
+					                      <span>or</span>							                                
+							                  <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logoUpdate')"/>
+					                    </div>
 					                  </div>
 					                </div>
-									  
-									  
-									  
-		                      		  <br />
-		                              <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="submitEntry()">Save</button>
-		                              
-		                              <br /><br />
-								  </div>
-	                              
-								</div>
-	                          </div>
+					                <!-- /.col-xs-6 col-md-3 -->
+					                <div class="col-xs-6 col-md-3">
+					                  <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
+					                    <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImageUpdate')" ng-file-drag-over-class="optional-css-class">
+					                      <img ng-src= "/site/images/{{selectedEntry.backgroundImage}}?crop=160" />
+					                    </div>
+					                    <div class="panel-footer">
+					                      <span class="panel-eyecandy-title">Drag and Drop Background</span>
+					                      <span>or</span>						                                
+							                  <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImageUpdate')"/>
+					                    </div>
+					                  </div>
+					                </div>
+									      </div>
+		                    <br />
+		                    <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="updateEntry()">Save</button>
+		                    <br /><br />
+								  		</div>              
+										</div>
+	                </div>
+	              </div>
+						  </div>
+							<div style="border-bottom:none;margin-top:30px" class="panel panel-default">
+	              <div class="panel-heading">
+	                <h4 class="panel-title">
+	                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Create New Entry</a>
+	                </h4>
+	              </div>
+	              <div id="collapseTwo" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div style="margin-top:20px">
+	                    <h4>Template B</h4>
+								  		<div class="form-horizontal">
+								  			<input style="width:50%" class="form-control" ng-model="newEntry.url" placeholder="PrimaryURL"> 
+								  			<br />
+		                    <div class="form-group">
+	                        <table class="table table-striped">
+	                          <thead>
+	                            <tr>
+	                              <th>Delete</th>
+                                <th>Purpose</th>
+                                <th>URL</th>
+	                            </tr>
+	                          </thead>
+	                          <tbody>
+	                            <tr ng-repeat="purpose in purposeKeys()">
+                                <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
+                                <td>{{ purpose }}</td>
+                                <td>{{ newEntry.secondaryUrls[purpose] }}</td>
+	                            </tr>
+	                          </tbody>
+	                        </table>	                                    
+                          <div style="display:inline;float:left;padding-left:15px;">
+                            <span>Purpose</span><br>
+                            <select ng-model="secondaryUrlPurpose"  style="width:300px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
+                            	<option value="Menu">Menu</option>
+                            	<option value="Reservations">Reservations</option>
+                            	<option value="Gallery">Gallery</option>
+                              <option value="Buy Now">Buy Now</option>
+                              <option value="Book Now">Book Now</option>
+                              <option value="Schedule">Schedule</option>
+                              <option value="Check In">Check In</option>
+                              <option value="Rates">Rates</option>
+                              <option value="Map">Map</option>
+                              <option value="Directions">Directions</option>
+                              <option value="Reviews">Reviews</option>
+                              <option value="More Info">More Info</option>
+                            </select>
 	                        </div>
-						</div>
-						
-						
-                    </div>
-                </div>
+	                        <div style="display:inline;float:left;max-width:100%;padding-left:15px">
+	                          <span>URL</span>
+	                          <input type="text" class="inputs form-control" placeholder="http://www.google.com" ng-model="secondaryUrlLink">
+	                        </div>
+	                        <div style="display:inline;float:left;padding-top:19px;padding-left:18px">
+	                          <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="addSecondaryUrl()">Add</button>
+	                        </div>
+	                      </div>
+	                		  <input style="width:50%" class="form-control" ng-model="newEntry.title" placeholder="Title"> 
+	                		  <br />
+	                		  <input style="width:50%" class="form-control" ng-model="newEntry.street" placeholder="Address"> 
+	                		  <br />
+	                		  <input style="width:50%" class="form-control" ng-model="newEntry.phone" placeholder="Phone number"> 
+	                		  <br />
+	                		  <span>Rating</span><br>
+							  		    <select ng-model="newEntry.rating" style="width:100px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
+                        	<option value="1">1</option>
+                        	<option value="2">2</option>
+                        	<option value="3">3</option>
+                        	<option value="4">4</option>
+                        	<option value="5">5</option>
+                        	<option value="6">6</option>
+                        	<option value="7">7</option>
+                        	<option value="8">8</option>
+                        	<option value="9">9</option>
+                        	<option value="10">10</option>
+                        </select>
+                        <br />
+		                    <input style="width:50%" class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> <br />
+												  <div style="margin-top:20px">
+												  	<h2>Images</h2>
+												  </div>
+									  			<div class="row" style="margin-top:20px">
+					                  <div class="col-xs-6 col-md-3">
+					                    <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
+					                      <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">
+					                        <img ng-src= "/site/images/{{newEntryLogo.id}}?crop=160" />
+					                      </div>
+					                      <div class="panel-footer">
+					                        <span class="panel-eyecandy-title">Drag and Drop Logo</span>
+					                        <span>or</span>							                                
+							                    <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logo')"/>
+					                      </div>
+					                    </div>
+					                  </div>
+					                  <!-- /.col-xs-6 col-md-3 -->
+					                  <div class="col-xs-6 col-md-3">
+					                    <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
+					                      <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">
+					                        <img ng-src= "/site/images/{{newEntryBackgroundImage.id}}?crop=160" />
+					                      </div>
+					                      <div class="panel-footer">
+					                        <span class="panel-eyecandy-title">Drag and Drop Background</span>
+					                        <span>or</span>						                                
+							                    <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
+					                      </div>
+					                    </div>
+					                  </div>
+					                </div>
+									  			<br />
+		                      <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="submitEntry()">Save</button>
+		                      <br /><br />
+								  			</div>              
+											</div>
+	                  </div>
+	                </div>
+								</div>
+              </div>
             </div>
             <!-- /#page-wrapper -->
-
+          </div>
         </div>
-        <!-- /#wrapper -->
+      </div>
+      <!-- /#wrapper -->
 
+        <script src="/admin/js/jquery-1.10.2.js"></script>
+        <script src="/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
+        <!-- Page-Level Plugin Scripts - Dashboard -->
+        <!-- Mint Admin Scripts - Include with every page -->
+        <script src="/admin/js/mint-admin.js"></script>
 
-
-
-        <!-- Core Scripts - Include with every page -->
-        {{scripts}}
-	    <script src="/admin/js/knob.js"></script>
-  		<script src="/admin/js/spin.js"></script>
-        
-        
+    	<script src="/admin/js/knob.js"></script>
+    	<script src="/admin/js/spin.js"></script> 
+    	
     	<script src="http://malsup.github.com/jquery.form.js"></script>
-
-		<script src="/admin/js/fileupload/angular-file-upload-shim.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
-		<script src="/admin/js/fileupload/angular-file-upload.js"></script>
-    	<script src="https://raw.githubusercontent.com/dennykwon/InfohubsAdmin/pscontentpage/js/entryCtr.js"></script>
-    	<script src="http://gregpike.net/demos/bootstrap-file-input/bootstrap.file-input.js"></script>
-        
-
     </body>
 
 </html>
