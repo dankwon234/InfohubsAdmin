@@ -353,6 +353,10 @@ body {
   font-size: 12px;
   margin-right: 20px; }
 
+#btn-save {
+  float: right;
+  font-size: 12px; }
+
 /* Pages */
 /* ------------------------------- */
 /* Dashboard Chat */
@@ -2255,3 +2259,102 @@ a {
 .panel-group .create-templates {
   margin-bottom: 20px;
   border-bottom: none; }
+
+#page-wrapper {
+  background-color: #e7e7e7;
+  margin: 0;
+  padding: 0 270px 20px 20px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 250px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+@media only screen and (max-width: 767px) {
+  #page-wrapper {
+    padding-right: 20px;
+    left: 0px; } }
+.content-wrapper {
+  position: absolute;
+  top: 90px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden; }
+
+.venue-search-container {
+  padding: 0 0 0 10px; }
+  @media only screen and (max-width: 767px) {
+    .venue-search-container {
+      padding: 10px 0 0 0; } }
+  .venue-search-container .venue-search {
+    margin-top: 24px;
+    width: 100%;
+    transition: none; }
+    @media only screen and (max-width: 767px) {
+      .venue-search-container .venue-search {
+        margin: 0; } }
+
+.entry-title {
+  font-size: 16px;
+  margin: 13px 0 15px 0; }
+  .entry-title ~ input {
+    margin-bottom: 10px; }
+
+.entry-images-container {
+  padding: 0 10px 0 10px; }
+
+.entry-images-outer {
+  padding: 5px; }
+
+.entry-images-container {
+  padding: 0 10px 10px 10px; }
+
+.entry-images-outer {
+  padding: 5px; }
+
+.entry-images-outer .entry-images-label {
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  border: solid 1px #dfe2e4;
+  border-top: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 11px;
+  color: #686868; }
+
+.entry-images-outer .entry-images-inner {
+  cursor: pointer;
+  cursor: hand;
+  padding: 10px;
+  background-color: #686868;
+  border: solid 1px #dfe2e4; }
+
+.entry-images-outer .entry-images-inner .dummy {
+  margin-top: 75%; }
+
+.entry-images-outer .add-image {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1000;
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+  color: #dfe2e4;
+  margin-top: -16px;
+  margin-left: -16px; }
+
+.add-button {
+  margin-top: 19px; }
+  @media only screen and (max-width: 767px) {
+    .add-button {
+      margin-top: 15px; } }

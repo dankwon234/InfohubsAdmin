@@ -127,66 +127,75 @@
 	              </div>
 	              <div id="collapseFive" class="panel-collapse collapse in">
 	                <div class="panel-body">
-		                <div style="margin-top:20px">
-	                	  <h4>Select Venue</h4>
-	                    <input style="width:50%" class="form-control" ng-model="searchEntry" placeholder="Venue Name" /><br />
-                      <button data-toggle='modal' href='#loginModal' ng-click="searchEntries()" class="btn btn-primary">Search</button>
-                      <br /><br />
-                      <h5>Foursquare Venues</h5>
-                	    <ul>
-                	      <li ng-repeat="entry in searchResults.foursquare track by $index"><a ng-click="selectFoursquareEntry($index)" href="">{{ entry.title }}</a></li>
-                	    </ul>
-                      <br />
+	                	<div class="col-sm-12 search-container">
+		                	<div class="form-group col-sm-10 padding-none margin-none">
+	                	    <label class="control-label">Select Venue</label>
+	                      <input class="form-control" ng-model="searchEntry" placeholder="Venue Name" />
+	                    </div>
+	                    <div class="form-group col-sm-2 padding-none venue-search-container">
+	                      <button data-toggle='modal' href='#loginModal' ng-click="searchEntries()" class="btn btn-default venue-search">Search</button>
+	                    </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+	                    <h5>Foursquare Venues</h5>
+	              	    <ul>
+	              	      <li ng-repeat="entry in searchResults.foursquare track by $index">
+	              	      	<a ng-click="selectFoursquareEntry($index)" href="">{{ entry.title }}</a>
+	              	      </li>
+	              	    </ul>
+                    </div>
+                    <div class="form-group col-sm-12">
 											<h5>Other Venues</h5>
-          	          <ul>
-          	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
-          	          </ul>
-							  			<br /><br />
-                      <h4>Template B</h4>
+	        	          <ul>
+	        	            <li ng-repeat="entry in searchResults.infohubs track by $index"><a ng-click="selectInfoHubsEntry($index)" href="">{{ entry.title }}</a></li>
+	        	          </ul>
+        	          </div>
+						  			<div class="form-group col-sm-12 col-md-6">
+		                  <label>Template B</label>
 										  <div class="form-horizontal">
-							  	 			<h3>{{selectedEntry.title}}</h3>							  
-                  		  <input style="width:50%" class="form-control" ng-model="selectedEntry.url" placeholder="PrimaryURL"> <br />
-                  		  <input style="width:50%" class="form-control" ng-model="selectedEntry.secondaryUrls['Menu']" placeholder="Button URL"> <br />
-                  		  <input style="width:50%" class="form-control" placeholder="Button Text"> <br />
-		                    <div style="margin-top:20px">
-									  	    <h2>Images</h2>
-									      </div>
-									      <div class="row" style="margin-top:20px">
-					                <div class="col-xs-6 col-md-3">
-					                  <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                    <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logoUpdate')" ng-file-drag-over-class="optional-css-class">
-					                      <img ng-src= "/site/images/{{selectedEntry.logo}}?crop=160" />
-					                    </div>
-					                    <div class="panel-footer">
-					                      <span class="panel-eyecandy-title">Drag and Drop Logo</span>
-					                      <span>or</span>							                                
-							                  <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logoUpdate')"/>
-					                    </div>
-					                  </div>
-					                </div>
-					                <!-- /.col-xs-6 col-md-3 -->
-					                <div class="col-xs-6 col-md-3">
-					                  <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                    <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImageUpdate')" ng-file-drag-over-class="optional-css-class">
-					                      <img ng-src= "/site/images/{{selectedEntry.backgroundImage}}?crop=160" />
-					                    </div>
-					                    <div class="panel-footer">
-					                      <span class="panel-eyecandy-title">Drag and Drop Background</span>
-					                      <span>or</span>						                                
-							                  <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImageUpdate')"/>
-					                    </div>
-					                  </div>
-					                </div>
-									      </div>
-		                    <br />
-		                    <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="updateEntry()">Save</button>
-		                    <br /><br />
-								  		</div>              
-										</div>
+							  	 			<h3 class="entry-title">{{selectedEntry.title}}</h3>							  
+		              		  <input class="form-control" ng-model="selectedEntry.url" placeholder="Primary URL"> 
+		              		  <input class="form-control" ng-model="selectedEntry.secondaryUrls['Menu']" placeholder="Button URL"> 
+		              		  <input class="form-control" placeholder="Button Text">
+		              		</div>
+                	  </div>
+                	  <div class="form-group col-sm-12 margin-none">
+								  	  <label>Images</label>
+								  	</div>
+								  	<div class="form-group col-sm-12 entry-images-container">
+                      <div class="col-sm-4 entry-images-outer form-group">  
+                        <div class="entry-images-inner" style="border-bottom:none">
+                          <div class="fa fa-plus-circle add-image" ng-hide="selectedEntry.logo"></div>
+                          <div class="entry-images-container" ng-file-drop="onFileSelect($files, 'logoUpdate')">
+                            <div class="dummy"></div>
+                             <img class="content" image ng-src="/site/images/{{selectedEntry.logo}}?crop=160" />
+                          </div>
+                        </div>
+                        <div class="entry-images-label">
+                          LOGO
+                        </div>
+                      </div>
+                      <div class="col-sm-4 entry-images-outer form-group">  
+                        <div class="entry-images-inner" style="border-bottom:none">
+                          <div class="fa fa-plus-circle add-image" ng-hide="selectedEntry.backgroundImage"></div>
+                          <div class="entry-images-container" ng-file-drop="onFileSelect($files, 'backgroundImageUpdate')">
+                            <div class="dummy"></div>
+                             <img class="content" image ng-src="/site/images/{{selectedEntry.backgroundImage}}?crop=160" />
+                          </div>
+                        </div>
+                        <div class="entry-images-label">
+                          BACKGROUND
+                        </div>
+                      </div> 
+							  		</div>  
+							  		<div class="col-sm-12 form-group">
+	                    <button data-toggle='modal' href='#' class="btn btn-success" ng-click="updateEntry()" class="btn btn-success" id="btn-save">Save</button>
+	                  </div>            
 	                </div>
 	              </div>
 						  </div>
-							<div style="border-bottom:none;margin-top:30px" class="panel panel-default">
+
+							<div style="border-bottom:none;" class="panel panel-default">
 	              <div class="panel-heading">
 	                <h4 class="panel-title">
 	                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Create New Entry</a>
@@ -194,60 +203,79 @@
 	              </div>
 	              <div id="collapseTwo" class="panel-collapse collapse in">
                   <div class="panel-body">
-                    <div style="margin-top:20px">
-	                    <h4>Template B</h4>
-								  		<div class="form-horizontal">
-								  			<input style="width:50%" class="form-control" ng-model="newEntry.url" placeholder="PrimaryURL"> 
-								  			<br />
-		                    <div class="form-group">
-	                        <table class="table table-striped">
-	                          <thead>
-	                            <tr>
-	                              <th>Delete</th>
-                                <th>Purpose</th>
-                                <th>URL</th>
-	                            </tr>
-	                          </thead>
-	                          <tbody>
-	                            <tr ng-repeat="purpose in purposeKeys()">
-                                <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
-                                <td>{{ purpose }}</td>
-                                <td>{{ newEntry.secondaryUrls[purpose] }}</td>
-	                            </tr>
-	                          </tbody>
-	                        </table>	                                    
-                          <div style="display:inline;float:left;padding-left:15px;">
-                            <span>Purpose</span><br>
-                            <select ng-model="secondaryUrlPurpose"  style="width:300px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
-                            	<option value="Menu">Menu</option>
-                            	<option value="Reservations">Reservations</option>
-                            	<option value="Gallery">Gallery</option>
-                              <option value="Buy Now">Buy Now</option>
-                              <option value="Book Now">Book Now</option>
-                              <option value="Schedule">Schedule</option>
-                              <option value="Check In">Check In</option>
-                              <option value="Rates">Rates</option>
-                              <option value="Map">Map</option>
-                              <option value="Directions">Directions</option>
-                              <option value="Reviews">Reviews</option>
-                              <option value="More Info">More Info</option>
-                            </select>
-	                        </div>
-	                        <div style="display:inline;float:left;max-width:100%;padding-left:15px">
-	                          <span>URL</span>
-	                          <input type="text" class="inputs form-control" placeholder="http://www.google.com" ng-model="secondaryUrlLink">
-	                        </div>
-	                        <div style="display:inline;float:left;padding-top:19px;padding-left:18px">
-	                          <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="addSecondaryUrl()">Add</button>
-	                        </div>
-	                      </div>
-	                		  <input style="width:50%" class="form-control" ng-model="newEntry.title" placeholder="Title"> 
-	                		  <br />
-	                		  <input style="width:50%" class="form-control" ng-model="newEntry.street" placeholder="Address"> 
-	                		  <br />
-	                		  <input style="width:50%" class="form-control" ng-model="newEntry.phone" placeholder="Phone number"> 
-	                		  <br />
-	                		  <span>Rating</span><br>
+							  		<div class="col-sm-12 col-md-6 form-group">
+							  			<label>Template B</label>
+							  			<input class="form-control" ng-model="newEntry.url" placeholder="PrimaryURL"> 
+							  		</div>
+                  	<div class="col-sm-12">
+                    	<div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Delete</th>
+                              <th>Purpose</th>
+                              <th>URL</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr ng-repeat="purpose in purposeKeys()">
+                              <td><a ng-click="deleteButton(purpose)" href="">delete</a></td>
+                              <td>{{ purpose }}</td>
+                              <td>{{ newEntry.secondaryUrls[purpose] }}</td>
+                            </tr>
+                          </tbody>
+                        </table>	    
+                      </div> 
+                    </div>    
+                    <div class="col-sm-4 form-group">
+                      <span>Purpose</span><br>
+                      <select ng-model="secondaryUrlPurpose" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
+                      	<option value="Menu">Menu</option>
+                      	<option value="Reservations">Reservations</option>
+                      	<option value="Gallery">Gallery</option>
+                        <option value="Buy Now">Buy Now</option>
+                        <option value="Book Now">Book Now</option>
+                        <option value="Schedule">Schedule</option>
+                        <option value="Check In">Check In</option>
+                        <option value="Rates">Rates</option>
+                        <option value="Map">Map</option>
+                        <option value="Directions">Directions</option>
+                        <option value="Reviews">Reviews</option>
+                        <option value="More Info">More Info</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                      <span>URL</span>
+                      <input type="text" class="inputs form-control" placeholder="http://www.google.com" ng-model="secondaryUrlLink">
+                    </div>
+                    <div class="col-sm-5 form-group add-button">
+                      <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="addSecondaryUrl()">Add</button>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 form-group">
+                        <div class="col-sm-6">
+              		        <input class="form-control" ng-model="newEntry.title" placeholder="Title"> 
+              		      </div>
+              		    </div>
+              		  </div>
+              		  <div class="row">
+                      <div class="col-sm-12 form-group">
+                        <div class="col-sm-6">
+              		        <input class="form-control" ng-model="newEntry.street" placeholder="Address"> 
+              		      </div>
+              		    </div>
+              		  </div>
+              		  <div class="row">
+                      <div class="col-sm-12 form-group">
+                        <div class="col-sm-6">	         
+              		        <input class="form-control" ng-model="newEntry.phone" placeholder="Phone number"> 
+            				    </div>
+            				  </div>
+            				</div>
+            			  <div class="row">
+                      <div class="col-sm-12 form-group">
+                      	<div class="col-sm-1">
+	                		  <label>Rating</label>
 							  		    <select ng-model="newEntry.rating" style="width:100px;" class="form-control"><!-- have to find a way to make this key the value of the option in angular -->
                         	<option value="1">1</option>
                         	<option value="2">2</option>
@@ -260,44 +288,49 @@
                         	<option value="9">9</option>
                         	<option value="10">10</option>
                         </select>
-                        <br />
-		                    <input style="width:50%" class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> <br />
-												  <div style="margin-top:20px">
-												  	<h2>Images</h2>
-												  </div>
-									  			<div class="row" style="margin-top:20px">
-					                  <div class="col-xs-6 col-md-3">
-					                    <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                      <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'logo')" ng-file-drag-over-class="optional-css-class">
-					                        <img ng-src= "/site/images/{{newEntryLogo.id}}?crop=160" />
-					                      </div>
-					                      <div class="panel-footer">
-					                        <span class="panel-eyecandy-title">Drag and Drop Logo</span>
-					                        <span>or</span>							                                
-							                    <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'logo')"/>
-					                      </div>
-					                    </div>
-					                  </div>
-					                  <!-- /.col-xs-6 col-md-3 -->
-					                  <div class="col-xs-6 col-md-3">
-					                    <div class="panel panel-primary text-center panel-eyecandy" style="border-bottom:none">
-					                      <div class="panel-body asbestos" ng-file-drop="onFileSelect($files, 'backgroundImage')" ng-file-drag-over-class="optional-css-class">
-					                        <img ng-src= "/site/images/{{newEntryBackgroundImage.id}}?crop=160" />
-					                      </div>
-					                      <div class="panel-footer">
-					                        <span class="panel-eyecandy-title">Drag and Drop Background</span>
-					                        <span>or</span>						                                
-							                    <input type="file" title="Upload" ng-file-select="onFileSelect($files, 'backgroundImage')"/>
-					                      </div>
-					                    </div>
-					                  </div>
-					                </div>
-									  			<br />
-		                      <button data-toggle='modal' href='#' class="btn btn-primary" ng-click="submitEntry()">Save</button>
-		                      <br /><br />
-								  			</div>              
-											</div>
-	                  </div>
+                        </div>
+                      </div>
+                    </div>
+            			  <div class="row">
+                      <div class="col-sm-12 form-group">
+                      	<div class="col-sm-6 form-group">
+                    			<input class="form-control" ng-model="newEntry.foursquareGenre" placeholder="Genres"> 
+                    		</div>
+                    	</div>	
+                    </div>
+                    <!---------------------------------->
+                	  <div class="form-group col-sm-12 margin-none">
+								  	  <label>Images</label>
+								  	</div>
+								  	<div class="form-group col-sm-12 entry-images-container">
+                      <div class="col-sm-4 entry-images-outer form-group">  
+                        <div class="entry-images-inner" style="border-bottom:none">
+                          <div class="fa fa-plus-circle add-image" ng-hide="newEntryLogo.id"></div>
+                          <div class="entry-images-container" ng-file-drop="onFileSelect($files, 'logo')">
+                            <div class="dummy"></div>
+                             <img class="content" image ng-src="/site/images/{{newEntryLogo.id}}?crop=160" />
+                          </div>
+                        </div>
+                        <div class="entry-images-label">
+                          LOGO
+                        </div>
+                      </div>
+                      <div class="col-sm-4 entry-images-outer form-group">  
+                        <div class="entry-images-inner" style="border-bottom:none">
+                          <div class="fa fa-plus-circle add-image" ng-hide="newEntryBackgroundImage.id"></div>
+                          <div class="entry-images-container" ng-file-drop="onFileSelect($files, 'backgroundImage')">
+                            <div class="dummy"></div>
+                             <img class="content" image ng-src="/site/images/{{newEntryBackgroundImage.id}}?crop=160" />
+                          </div>
+                        </div>
+                        <div class="entry-images-label">
+                          BACKGROUND
+                        </div>
+                      </div> 
+							  		</div>  
+							  		<div class="col-sm-12 form-group">
+	                    <button data-toggle='modal' href='#' class="btn btn-success" ng-click="submitEntry()" class="btn btn-success" id="btn-save">Save</button>
+	                  </div>               
 	                </div>
 								</div>
               </div>
@@ -307,18 +340,18 @@
         </div>
       </div>
       <!-- /#wrapper -->
+    </div>  
+    <script src="/admin/js/jquery-1.10.2.js"></script>
+    <script src="/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
-        <script src="/admin/js/jquery-1.10.2.js"></script>
-        <script src="/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+    <!-- Mint Admin Scripts - Include with every page -->
+    <script src="/admin/js/mint-admin.js"></script>
 
-        <!-- Page-Level Plugin Scripts - Dashboard -->
-        <!-- Mint Admin Scripts - Include with every page -->
-        <script src="/admin/js/mint-admin.js"></script>
-
-    	<script src="/admin/js/knob.js"></script>
-    	<script src="/admin/js/spin.js"></script> 
-    	
-    	<script src="http://malsup.github.com/jquery.form.js"></script>
-    </body>
+		<script src="/admin/js/knob.js"></script>
+		<script src="/admin/js/spin.js"></script> 
+		
+		<script src="http://malsup.github.com/jquery.form.js"></script>
+  </body>
 
 </html>
