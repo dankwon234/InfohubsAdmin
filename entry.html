@@ -1,41 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InfoHubs</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="Mint by Grozav is a flat design approach towards Admin Dashboards. Intuitive, cutting-edge, clean and easy to use and customize, as every Application UI should be. ">
-    <meta name="keywords" content="mint, flat, admin, dashboard, app, template, theme, grozav, admin template, admin dashboard, bootstrap, admin bootstrap, awesome" />
-    <link rel="author" href="http://grozav.com"/>
+    {{head}}
 
-    <!-- Core CSS - Include with every page -->
-    <link href="/admin/css/bootstrap.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Page-Level Plugin CSS - Dashboard -->
-    <link href="/admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
-    <link href="/admin/css/plugins/timeline/timeline.css" rel="stylesheet">
-
-    <!-- Mint Admin CSS - Include with every page -->
-    <link href="/admin/css/style.css" rel="stylesheet">
-        
-    <!-- libs -->
-    <script src="/admin/js/lib/jquery/dist/jquery.min.js"></script>
-    <script src="/admin/js/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/admin/js/lib/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js"></script>
-    <script src="/admin/js/lib/angular/angular.js"></script>
-    <script src="/admin/js/lib/danialfarid-angular-file-upload/dist/angular-file-upload.min.js"></script>
-    <script src="/admin/js/lib/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="/admin/js/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="/admin/js/lib/angular-route/angular-route.min.js"></script>
-    <script src="/admin/js/lib/angular-cookies/angular-cookies.min.js"></script>
-
-    <!-- Main Angular App.js  -->
-    <script src="/admin/js/app.js"></script>   
-    <script src="/admin/js/services/rest.js"></script>
-    <script src="/admin/js/controllers/devices.view.controller.js"></script>
-    <script src="/admin/js/controllers/templates.view.controller.js"></script>
-		
   </head>
 
 	<body ng-app="infoHubs" ng-controller="EntryController" ng-init="init()">
@@ -44,13 +11,7 @@
 	    <div spinner spin="loading"></div>
 		</div>
     <div id="wrapper">
-	    <div class="header">
-	      <div class="header-logo-background">
-	        <div class="header-logo"></div>
-	      </div>
-	      <!--NOTE: This nav-toggle doesn't work. This will be addressed ASAP -->
-	      <a id="nav-toggle" href="#" side-nav><span></span></a>
-	    </div>
+      {{header}}
       <div class="content-wrapper">
         <!--SIDEBAR: as with the header, this section should have its own partial -->
         <div class="sidebar ng-scope">
@@ -341,17 +302,7 @@
       </div>
       <!-- /#wrapper -->
     </div>  
-    <script src="/admin/js/jquery-1.10.2.js"></script>
-    <script src="/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-
-    <!-- Page-Level Plugin Scripts - Dashboard -->
-    <!-- Mint Admin Scripts - Include with every page -->
-    <script src="/admin/js/mint-admin.js"></script>
-
-		<script src="/admin/js/knob.js"></script>
-		<script src="/admin/js/spin.js"></script> 
-		
-		<script src="http://malsup.github.com/jquery.form.js"></script>
+    {{scripts}}
   </body>
 
 </html>
